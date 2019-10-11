@@ -1,0 +1,288 @@
+{
+  "contractName": "WhiteListInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserCapInWei",
+      "outputs": [
+        {
+          "name": "userCapWei",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.18;\n\n\ncontract WhiteListInterface {\n    function getUserCapInWei(address user) external view returns (uint userCapWei);\n}\n",
+  "sourcePath": "/home/node/app/workshop-master/contracts/WhiteListInterface.sol",
+  "ast": {
+    "absolutePath": "/home/node/app/workshop-master/contracts/WhiteListInterface.sol",
+    "exportedSymbols": {
+      "WhiteListInterface": [
+        14150
+      ]
+    },
+    "id": 14151,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14142,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 14150,
+        "linearizedBaseContracts": [
+          14150
+        ],
+        "name": "WhiteListInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 14149,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getUserCapInWei",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14145,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14144,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14149,
+                  "src": "85:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14143,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "85:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "84:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14147,
+                  "name": "userCapWei",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14149,
+                  "src": "122:15:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14146,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "122:4:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "121:17:27"
+            },
+            "scope": 14150,
+            "src": "60:79:27",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14151,
+        "src": "26:115:27"
+      }
+    ],
+    "src": "0:142:27"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/node/app/workshop-master/contracts/WhiteListInterface.sol",
+    "exportedSymbols": {
+      "WhiteListInterface": [
+        14150
+      ]
+    },
+    "id": 14151,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14142,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 14150,
+        "linearizedBaseContracts": [
+          14150
+        ],
+        "name": "WhiteListInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 14149,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getUserCapInWei",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14145,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14144,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14149,
+                  "src": "85:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14143,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "85:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "84:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14147,
+                  "name": "userCapWei",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14149,
+                  "src": "122:15:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14146,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "122:4:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "121:17:27"
+            },
+            "scope": 14150,
+            "src": "60:79:27",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14151,
+        "src": "26:115:27"
+      }
+    ],
+    "src": "0:142:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-10-11T14:32:49.114Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

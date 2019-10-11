@@ -1,0 +1,314 @@
+{
+  "contractName": "OrderListFactoryInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "admin",
+          "type": "address"
+        }
+      ],
+      "name": "newOrdersContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.18;\n\n\nimport \"./OrderListInterface.sol\";\n\n\ninterface OrderListFactoryInterface {\n    function newOrdersContract(address admin) public returns(OrderListInterface);\n}\n",
+  "sourcePath": "/home/node/app/workshop-master/contracts/permissionless/OrderListFactoryInterface.sol",
+  "ast": {
+    "absolutePath": "/home/node/app/workshop-master/contracts/permissionless/OrderListFactoryInterface.sol",
+    "exportedSymbols": {
+      "OrderListFactoryInterface": [
+        22287
+      ]
+    },
+    "id": 22288,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 22278,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:48"
+      },
+      {
+        "absolutePath": "/home/node/app/workshop-master/contracts/permissionless/OrderListInterface.sol",
+        "file": "./OrderListInterface.sol",
+        "id": 22279,
+        "nodeType": "ImportDirective",
+        "scope": 22288,
+        "sourceUnit": 22390,
+        "src": "26:34:48",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 22287,
+        "linearizedBaseContracts": [
+          22287
+        ],
+        "name": "OrderListFactoryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 22286,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "newOrdersContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22281,
+                  "name": "admin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22286,
+                  "src": "132:13:48",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 22280,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "132:7:48",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "131:15:48"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 22285,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22284,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22286,
+                  "src": "162:18:48",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OrderListInterface_$22389",
+                    "typeString": "contract OrderListInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 22283,
+                    "name": "OrderListInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 22389,
+                    "src": "162:18:48",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OrderListInterface_$22389",
+                      "typeString": "contract OrderListInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "161:20:48"
+            },
+            "scope": 22287,
+            "src": "105:77:48",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 22288,
+        "src": "63:121:48"
+      }
+    ],
+    "src": "0:185:48"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/node/app/workshop-master/contracts/permissionless/OrderListFactoryInterface.sol",
+    "exportedSymbols": {
+      "OrderListFactoryInterface": [
+        22287
+      ]
+    },
+    "id": 22288,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 22278,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:48"
+      },
+      {
+        "absolutePath": "/home/node/app/workshop-master/contracts/permissionless/OrderListInterface.sol",
+        "file": "./OrderListInterface.sol",
+        "id": 22279,
+        "nodeType": "ImportDirective",
+        "scope": 22288,
+        "sourceUnit": 22390,
+        "src": "26:34:48",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 22287,
+        "linearizedBaseContracts": [
+          22287
+        ],
+        "name": "OrderListFactoryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 22286,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "newOrdersContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22281,
+                  "name": "admin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22286,
+                  "src": "132:13:48",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 22280,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "132:7:48",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "131:15:48"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 22285,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22284,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22286,
+                  "src": "162:18:48",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_OrderListInterface_$22389",
+                    "typeString": "contract OrderListInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 22283,
+                    "name": "OrderListInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 22389,
+                    "src": "162:18:48",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OrderListInterface_$22389",
+                      "typeString": "contract OrderListInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "161:20:48"
+            },
+            "scope": 22287,
+            "src": "105:77:48",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 22288,
+        "src": "63:121:48"
+      }
+    ],
+    "src": "0:185:48"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-10-11T14:32:49.573Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
