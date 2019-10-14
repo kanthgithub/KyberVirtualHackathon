@@ -1,0 +1,3 @@
+https://medium.com/coinmonks/delegatecall-calling-another-contract-function-in-solidity-b579f804178c
+https://medium.com/@blockchain101/calling-the-function-of-another-contract-in-solidity-f9edfa921f4c
+https://solidity.readthedocs.io/en/v0.4.18/types.html?highlight=keccak256s
