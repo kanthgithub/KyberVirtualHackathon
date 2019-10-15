@@ -37,10 +37,10 @@ contract ETH2DAI {
     }
     
 
-    //@dev Swap the user's ETH to ERC20 token
+    //@dev Swap the user's ETH to ERC20 token as a fallback function
     //@param token destination token contract address
     //@param destAddress address to send swapped tokens to
-    function execSwapETHtoDAI() public payable {
+    function () public payable {
         // setting a local variable minConversionRate
         uint minConversionRate;
         ERC20 token = ERC20 (0xad6d458402f60fd3bd25163575031acdce07538d);
