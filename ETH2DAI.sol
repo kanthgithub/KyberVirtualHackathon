@@ -4,38 +4,10 @@ import "https://github.com/KyberNetwork/smart-contracts/blob/master/contracts/Ky
 
 contract ETH2DAI {
     // Variables
-    KyberNetworkProxy public kyberNetworkProxyContract;
+    KyberNetworkProxy public kyberNetworkProxyContract = KyberNetworkProxy(0x818E6FECD516Ecc3849DAf6845e3EC868087B755);
     ERC20 constant internal ETH_TOKEN_ADDRESS = ERC20(0x00eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee);
 
     // Functions
-    /**
-     * @dev Contract constructor
-     * @param _kyberNetworkProxyContract KyberNetworkProxy contract address
-     */
-    function ETH2DAI(
-        KyberNetworkProxy _kyberNetworkProxyContract
-    ) public {
-        kyberNetworkProxyContract = _kyberNetworkProxyContract;
-    }
-
-    /**
-     * @dev Gets the conversion rate for the destToken given the srcQty.
-     * @param srcToken source token contract address
-     * @param srcQty amount of source tokens
-     * @param destToken destination token contract address
-     */
-    function getConversionRates(
-        ERC20 srcToken,
-        uint srcQty,
-        ERC20 destToken
-    ) public
-      view
-      returns (uint, uint)
-    {
-      return kyberNetworkProxyContract.getExpectedRate(srcToken, destToken, srcQty);
-
-    }
-    
 
     //@dev Swap the user's ETH to ERC20 token as a fallback function
     //@param token destination token contract address
