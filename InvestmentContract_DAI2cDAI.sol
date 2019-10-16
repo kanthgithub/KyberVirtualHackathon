@@ -47,57 +47,26 @@ contract InvestmentContract is Ownable, ReentrancyGuard{
     
     CErc20 public CErc20Contract;  // for the purpose of setting up the address of the depoloyed Compound DAI contract
     Daistablecoin public DSTokenContract;  // for the purpose of setting up the address of the depoloyed MakerDAO's DAI contract
-    address public currentContractAddress = address(this);
-    
-    // temp variables to be deleted
-    uint public investment_amount;
-    uint public mintedUnits;
     
     constructor (CErc20 _CErc20Contract, Daistablecoin _DSTokenContract) public {
         CErc20Contract = _CErc20Contract;
         DSTokenContract = _DSTokenContract;
     }
     
-    
-    // test function to be deleted
-    function checkBalancefx() public view returns(uint) {
-        uint temp = DSTokenContract.balanceOf(currentContractAddress);
-        return temp;
+    function approveCompoundDAI(uint _howmuchtoApprove) internal {
+        require(DSTokenContract.approve(address(CErc20Contract), _howmuchtoApprove));
     }
     
-    
-    // test function to be deleted
-    function investment_amountfx() public {
-        investment_amount = DSTokenContract.balanceOf(currentContractAddress);
-    }
-    
-    // NOTE TO SELF: THIS FUNCTION HAS TO BE CHANGED TO INTERNAL
-    function approveCompoundDAI(uint _howmuchtoApprove) public returns (bool) {
-        bool result = (DSTokenContract.approve(address(CErc20Contract), _howmuchtoApprove));
-        return result;
-    }
-    
-    // test function to be deleted
-    function mintedUnitsfx() public returns(uint) {
+    // NOTE: to change the address to which the cDAI has to be transferred
+    function investingDAI() public {
+        uint investment_amount = DSTokenContract.balanceOf(currentContractAddress);
+        approveCompoundDAI(investment_amount);
         CErc20Contract.mint(investment_amount);
-        mintedUnits = CErc20Contract.balanceOf(currentContractAddress);
-        return mintedUnits;
+        uint mintedUnits = CErc20Contract.balanceOf(currentContractAddress);
+        approveCompoundDAI(0);
+        require(DSTokenContract.balanceOf(currentContractAddress) == 0);
+        require(CErc20Contract.transfer(address(0xBF21b5C851488A4Ba3b7b8bd436c1eE7DBd185CD), mintedUnits));
     }
-    
-    function transfercDAI() public returns(uint) {
-        uint qty = CErc20Contract.balanceOf(currentContractAddress);
-        CErc20Contract.transfer(address(0xBF21b5C851488A4Ba3b7b8bd436c1eE7DBd185CD), qty);
-    }
-    
-    
-    // function investingDAI() public {
-    //     uint investment_amount = DSTokenContract.balanceOf(currentContractAddress);
-    //     require(approveCompoundDAI(investment_amount));
-    //     uint mintedUnits = CErc20Contract.mint(investment_amount);
-    //     require(approveCompoundDAI(0));
-    //     require(DSTokenContract.balanceOf(currentContractAddress) == 0);
-    //     require(CErc20Contract.transfer(address(0xBF21b5C851488A4Ba3b7b8bd436c1eE7DBd185CD), mintedUnits));
-    // }
     
     function () external payable {
         revert();
