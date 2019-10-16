@@ -26,7 +26,4 @@ contract ETH2DAI {
         // Send the swapped tokens to the destination address
         require(token.transfer(address(msg.sender), destAmount));
     }
-    
- 
-    
 }
