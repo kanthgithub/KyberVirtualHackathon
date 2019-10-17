@@ -45,7 +45,7 @@ const LandingPage = () => (
         </div>
       </div>
     </section>
-    <section className="pt-5 pt-md-11">
+    <section className="pt-5 pt-md-11 bg-light">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-md-4 col-lg-5">
