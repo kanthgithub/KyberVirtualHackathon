@@ -1,7 +1,22 @@
-.App {
+/* .App {
   text-align: center;
-}
- 
+} */
+
 h1 {
   font-size: 48px !important;
+}
+
+body {
+  background-color: #f9fbfd;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  border-color: #edf2f9;
+  box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+}
+
+.font30 {
+  font-size: 30px;
+  font-weight: 700;
 }
