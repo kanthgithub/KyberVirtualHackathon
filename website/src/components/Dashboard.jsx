@@ -70,7 +70,7 @@ class Dashboard extends Component {
           color: "rgb(255, 205, 86)"
         },
         { name: "ETHLOVOL", price: ethlovolmarket, color: "rgb(2, 24, 190)" },
-        { name: "ETHHIVOL", price: ethhivolmarket, color: "rgb(99, 99, 132)" }
+        { name: "ETHHIVOL", price: ethhivolmarket, color: "rgb(38, 38, 38)" }
       ];
 
       const totalMarketCap = marketcaps.reduce(

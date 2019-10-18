@@ -20,8 +20,8 @@ export default {
     },
     {
       label: "ETHHIVOL",
-      borderColor: "rgb(99, 99, 132)",
-      backgroundColor: "rgb(99, 99, 132)",
+      borderColor: "rgb(38, 38, 38)",
+      backgroundColor: "rgb(38, 38, 38)",
       fill: false,
       data: [0.0, -1.94, 1.02, 1.14, 4.73, 4.24, 1.18, 0.87, 1.25, 2.02]
     },

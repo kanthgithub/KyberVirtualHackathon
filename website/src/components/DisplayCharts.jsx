@@ -7,8 +7,10 @@ import lineChartData from "../data/tokensets-roi";
 import eth20smacoStats from "../data/eth20smaco-stats";
 import nineElevelStats from "../data/9-11-stats";
 import eightTwentyNineStats from "../data/8-29-stats";
-import averageReabalanceStats from "../data/average-rebalance";
 import averageRebalance from "../data/average-rebalance";
+import ethTokensetsGainLoss from "../data/eth-tokenset-gainloss";
+import ethTokensetsNineEleven from "../data/eth-tokenset-9-11";
+import StackedBarChart from "./Charts/StackedBarChart";
 
 const DisplayCharts = ({ marketcaps }) => {
   const barChartData = {
@@ -35,6 +37,14 @@ const DisplayCharts = ({ marketcaps }) => {
             title={"10 day stats"}
             xLabel="Date"
             yLabel="ROI(%)"
+          />
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-12 col-xl-8">
+          <StackedBarChart
+            data={ethTokensetsGainLoss}
+            title={"ETH Based TokenSets Gain/Loss"}
           />
         </div>
       </div>
@@ -65,6 +75,14 @@ const DisplayCharts = ({ marketcaps }) => {
             title={"If invested on 9/11"}
             xLabel="Date"
             yLabel="ROI(%)"
+          />
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-12 col-xl-8">
+          <StackedBarChart
+            data={ethTokensetsNineEleven}
+            title={"ETH Based TokenSets Gain/Loss"}
           />
         </div>
       </div>

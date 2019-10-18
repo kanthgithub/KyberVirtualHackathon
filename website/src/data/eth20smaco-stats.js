@@ -104,8 +104,8 @@ export default {
   datasets: [
     {
       label: "ETHHIVOL",
-      borderColor: "rgb(99, 99, 132)",
-      backgroundColor: "rgb(99, 99, 132)",
+      borderColor: "rgb(38, 38, 38)",
+      backgroundColor: "rgb(38, 38, 38)",
       fill: false,
       data: [
         1.0,
