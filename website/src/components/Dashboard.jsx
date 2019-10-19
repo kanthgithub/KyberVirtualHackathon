@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+
 import Card from "./Card";
 import "../App.css";
 import { fetchTokensSetsAPI, fetchEtherPriceAPI } from "../api/fetch";
 import DisplayCharts from "./DisplayCharts";
+import Loading from "./Loading";
 
 class Dashboard extends Component {
   state = { marketprices: [], marketcaps: [], totalMarketCap: null };
@@ -123,7 +125,7 @@ class Dashboard extends Component {
             <div className="col-12 col-lg-10">
               <div className="row">
                 {!marketprices.length && (
-                  <h2 className="col-12 col-xl-12 text-center">Loading...</h2>
+                  <Loading />
                 )}
                 {marketprices &&
                   marketprices.map(({ name, price }) => (
