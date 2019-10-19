@@ -3,7 +3,8 @@ import TrendPNG from "../assets/trend.png";
 import ShapeOnePNG from "../assets/shape1.png";
 import ShapeTwoPNG from "../assets/shape2.png";
 import ShapeThreePNG from "../assets/shape3.png";
-import "../App.css";
+
+import '../App.css';
 
 const LandingPage = () => (
   <div>
