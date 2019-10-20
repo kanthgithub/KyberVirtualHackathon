@@ -20,3 +20,37 @@ body {
   font-size: 30px;
   font-weight: 700;
 }
+
+.circleBackground {
+  fill: none !important;
+  stroke: #fff1f1;
+}
+
+.circleProgress {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.circleText {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cDAI {
+  font-weight: bold;
+  font-size: 24px;
+  color: #5540bf;
+}
+
+.sma20 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #11112f;
+}
+
+.minvol {
+  font-weight: bold;
+  font-size: 24px;
+  color: #f14a5c;
+}
