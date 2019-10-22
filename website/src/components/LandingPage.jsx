@@ -15,7 +15,7 @@ const LandingPage = () => (
         <a className="navbar-brand">
           <h2>DeFi Strategies</h2>
         </a>
-        <Link to="/home" className="btn btn-primary shadow ml-auto">
+        <Link to="/dashboard" className="btn btn-primary shadow ml-auto">
           Get Started
         </Link>
       </div>
@@ -40,63 +40,13 @@ const LandingPage = () => (
               Synthetix + dYdX in one single transaction.
             </p>
             <div className="text-center text-md-left">
-              <Link to="/home" className="btn btn-primary shadow lift mr-1">
+              <Link
+                to="/dashboard"
+                className="btn btn-primary shadow lift mr-1"
+              >
                 Get Started
               </Link>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section className="pt-5 pt-md-11 bg-light">
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-12 col-md-3 col-lg-3">
-            <PercentageCircle minvol={75} cDAI={25}>
-              <foreignObject x="35%" y="32%" width="100" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="cDAI">
-                  cDAI
-                </p>
-              </foreignObject>
-              <foreignObject x="15%" y="55%" width="200" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="minvol">
-                  ETHMINVOL
-                </p>
-              </foreignObject>
-            </PercentageCircle>
-          </div>
-          <div className="col-12 col-md-3 col-lg-3">
-            <PercentageCircle sma20={50} minvol={50}>
-              <foreignObject x="15%" y="32%" width="200" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="minvol">
-                  ETHMINVOL
-                </p>
-              </foreignObject>
-              <foreignObject x="20%" y="55%" width="200" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="sma20">
-                  ETH20SMA
-                </p>
-              </foreignObject>
-            </PercentageCircle>
-          </div>
-          <div className="col-12 col-md-3 col-lg-3">
-            <PercentageCircle sma20={25} cDAI={50} minvol={25}>
-              <foreignObject x="35%" y="25%" width="100" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="cDAI">
-                  cDAI
-                </p>
-              </foreignObject>
-              <foreignObject x="15%" y="40%" width="200" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="minvol">
-                  ETHMINVOL
-                </p>
-              </foreignObject>
-              <foreignObject x="20%" y="56%" width="200" height="100">
-                <p xmlns="http://www.w3.org/1999/xhtml" className="sma20">
-                  ETH20SMA
-                </p>
-              </foreignObject>
-            </PercentageCircle>
           </div>
         </div>
       </div>
@@ -121,7 +71,7 @@ const LandingPage = () => (
               per inceptos. Etiam libero eu nibh porttitor amet fermentum.
             </p>
             <div className="text-center text-md-left">
-              <Link to="/home" className="btn btn-dark shadow lift mr-1">
+              <Link to="/dashboard" className="btn btn-dark shadow lift mr-1">
                 Read More
               </Link>
             </div>
@@ -143,7 +93,7 @@ const LandingPage = () => (
               amet do eiusmod tempor incididunt ultrices gravida.
             </p>
             <div className="text-center text-md-left">
-              <Link to="/home" className="btn btn-dark shadow lift mr-1">
+              <Link to="/dashboard" className="btn btn-dark shadow lift mr-1">
                 Read More
               </Link>
             </div>
@@ -167,7 +117,7 @@ const LandingPage = () => (
               amet convallis, porttitor magna ullamcorper, amet mauris.
             </p>
             <div className="text-center text-md-left">
-              <Link to="/home" className="btn btn-dark shadow lift mr-1">
+              <Link to="/dashboard" className="btn btn-dark shadow lift mr-1">
                 Read More
               </Link>
             </div>
