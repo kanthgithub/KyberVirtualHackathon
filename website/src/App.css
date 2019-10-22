@@ -21,9 +21,13 @@ body {
   font-weight: 700;
 }
 
+.font20 {
+  font-size: 20px;
+}
+
 .circleBackground {
   fill: none !important;
-  stroke: #fff1f1;
+  stroke: #f2f2f2;
 }
 
 .circleProgress {
@@ -33,8 +37,17 @@ body {
 }
 
 .circleText {
-  font-size: 12px;
+  font-size: 64px;
   font-weight: bold;
+}
+
+.percentageText {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.circleContainer {
+  width: 100px;
 }
 
 .cDAI {
@@ -53,4 +66,28 @@ body {
   font-weight: bold;
   font-size: 24px;
   color: #f14a5c;
+}
+
+.hedger {
+  color: #5540bf;
+}
+
+.shortTermBear {
+  color: #f03b68;
+}
+
+.shortTermSwings {
+  color: #262626;
+}
+
+.shortTermBull {
+  color: #f49124;
+}
+
+.longTermBull {
+  color: #4bc0c0;
+}
+
+.lender {
+  color: #1314ad;
 }
