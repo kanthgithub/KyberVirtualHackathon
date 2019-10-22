@@ -39,13 +39,20 @@ const LandingPage = () => (
               Allocate your money across Compound + TokenSets + Fulcrum +
               Synthetix + dYdX in one single transaction.
             </p>
-            <div className="text-center text-md-left">
-              <Link
-                to="/dashboard"
-                className="btn btn-primary shadow lift mr-1"
-              >
-                Get Started
-              </Link>
+            <div className="d-flex">
+              <div className="text-center text-md-left">
+                <Link
+                  to="/dashboard"
+                  className="btn btn-primary shadow lift mr-1"
+                >
+                  Get Started
+                </Link>
+              </div>
+              <div className="text-center text-md-left">
+                <Link to="/survey" className="btn btn-dark shadow lift mx-3">
+                  Take a survey
+                </Link>
+              </div>
             </div>
           </div>
         </div>
