@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 import Card from "./Card";
 import "../App.css";
@@ -6,7 +6,7 @@ import { fetchTokensSetsAPI, fetchEtherPriceAPI } from "../api/fetch";
 import DisplayCharts from "./DisplayCharts";
 import Loading from "./Loading";
 
-class Dashboard extends Component {
+class Dashboard extends PureComponent {
   state = { marketprices: [], marketcaps: [], totalMarketCap: null };
 
   componentDidMount() {
