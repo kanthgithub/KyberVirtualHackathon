@@ -1,12 +1,11 @@
 import React from "react";
-import TrendPNG from "../assets/trend.png";
-import ShapeOnePNG from "../assets/shape1.png";
-import ShapeTwoPNG from "../assets/shape2.png";
-import ShapeThreePNG from "../assets/shape3.png";
+import TrendPNG from "../../assets/trend.png";
+import ShapeOnePNG from "../../assets/shape1.png";
+import ShapeTwoPNG from "../../assets/shape2.png";
+import ShapeThreePNG from "../../assets/shape3.png";
 import { Link } from "react-router-dom";
 
-import "../App.css";
-import PercentageCircle from "./PercentageCircle";
+import "../../App.css";
 
 const LandingPage = () => (
   <div>
