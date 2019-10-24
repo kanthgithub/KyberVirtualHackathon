@@ -8,8 +8,6 @@ interface WETH {
 }
 
 
-pragma solidity ^0.5.0;
-
 // we are creating an interface of RebalancingSetIssuanceModule to call the issuance contract
 interface RebalancingSetIssuanceModule {
     // function balanceOf(address src) external view returns (uint);
@@ -18,15 +16,13 @@ interface RebalancingSetIssuanceModule {
 }
 
 
-pragma solidity ^0.5.0;
-
 // we are creating an interface of the ethhivol set to check balance and transfer
 interface ethhivol {
     function balanceOf(address src) external view returns (uint);
     function transfer(address dst, uint256 amount) external returns (bool success);
 }
 
-pragma solidity ^0.5.0;
+
 
 import "./ReentrancyGuard.sol";
 import "./Ownable.sol";
@@ -188,3 +184,6 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     
     
 }
+    
+
+    
