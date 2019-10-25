@@ -1,16 +1,17 @@
 import React from "react";
-import "../App.css";
 import { Link } from "react-router-dom";
 
+import "../App.css";
+
 const Accordion = ({ title, description, parent, index }) => (
-  <div class="card shadow">
+  <div className="card shadow">
     <div
-      class="card-header"
+      className="card-header"
       id={`heading${index}`}
       style={{ backgroundColor: "white" }}
     >
       <h6
-        class="my-3 ml-3"
+        className="my-3 ml-3"
         data-toggle="collapse"
         data-target={`#collapse${index}`}
         aria-expanded="true"
@@ -22,11 +23,11 @@ const Accordion = ({ title, description, parent, index }) => (
 
     <div
       id={`collapse${index}`}
-      class="collapse"
+      className="collapse"
       aria-labelledby={`heading${index}`}
       data-parent={`#${parent}`}
     >
-      <div class="card-body">
+      <div className="card-body">
         <p className="text-center">{description}</p>
         <div className="row justify-content-center my-4">
           <Link
