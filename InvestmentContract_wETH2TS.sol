@@ -54,13 +54,13 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     uint public balance;
     
     constructor 
-    (RebalancingSetIssuanceModule _RebalancingSetIssuanceModuleContract, 
+    ( 
     WETH _WETHContract, 
     ethhivol _ethhivolContract, 
     address _TransferProxyContract,
     address _ETH2WETHContract) 
     public {
-        RebalancingSetIssuanceModuleContract = _RebalancingSetIssuanceModuleContract;
+        
         WETHContract = _WETHContract;
         ethhivolContract = _ethhivolContract;
         TransferProxyContract = _TransferProxyContract;
@@ -68,6 +68,9 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
         approveTransferProxy(2^256-1); // by default approving the TransferProxyContract for highest possible value in solidity
     }
     
+    function setRebalancingSetIssuanceModule(RebalancingSetIssuanceModule _RebalancingSetIssuanceModuleContract) public onlyOwner {
+        RebalancingSetIssuanceModuleContract = _RebalancingSetIssuanceModuleContract;
+    }
     
     // functions in relation to the oracle call
     modifier onlyETH2WETH() {
@@ -139,7 +142,7 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     // please note this will round down the result to the nearest integer and hence there is a risk of loosing upto 0.099 WETH (really small amount in USD); this amount will be transferred into a reserve contract
     // this function will then look if the TSQty callback has been done and then initiate the investment function
     // else it will be change the state that the factor is ready
-    function gettingtheFactor() external {
+    function gettingtheFactor() nonReentrant external {
         uint investment_amount = WETHContract.balanceOf(address(this)); // the contract checks the balance of WETH that it has; it will be zero right before this
         factor = (SafeMath.div(investment_amount, factorDenominator));
 
@@ -152,7 +155,9 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     
     function letsInvest() internal {
         uint Qty2Buy = SafeMath.mul(factor, TSQty);
-        RebalancingSetIssuanceModuleContract.issueRebalancingSet(address(0x8Ddc86DbA7ad728012eFc460b8A168Aba60B403B), Qty2Buy, true);
+        // RebalancingSetIssuanceModuleContract.issueRebalancingSet(address(0x8Ddc86DbA7ad728012eFc460b8A168Aba60B403B), Qty2Buy, true);  // for mainnet
+        RebalancingSetIssuanceModuleContract.issueRebalancingSet(address(ethhivolContract), Qty2Buy, true); // for Kovan
+        
         uint mintedUnits = ethhivolContract.balanceOf(address(this));
         ethhivolContract.transfer(address(0x19627796b318E27C333530aD67c464Cfc37596ec), mintedUnits);
         
@@ -168,9 +173,9 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     
     
     // this is the fallback function which is reverting any ETH sent by mistake to this contract
-    function () external payable {
-        revert();
-    }
+    // function () external payable {
+    //     revert();
+    // }
     
     
     // functions in relation to managing the ETH held by this contract

@@ -1,7 +1,38 @@
 [
 	{
+		"constant": false,
 		"inputs": [
 			{
+				"internalType": "contract InvestmentContract_wETH2TSv2",
+				"name": "_InvestmentContract_wETH2TSv2Contract",
+				"type": "address"
+			}
+		],
+		"name": "setInvestmentContract_wETH2TSv2",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract WETH9",
 				"name": "_WETH9Contract",
 				"type": "address"
 			}
@@ -20,11 +51,13 @@
 		"inputs": [
 			{
 				"indexed": true,
+				"internalType": "address",
 				"name": "dst",
 				"type": "address"
 			},
 			{
 				"indexed": false,
+				"internalType": "uint256",
 				"name": "wad",
 				"type": "uint256"
 			}
@@ -35,9 +68,40 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "InvestmentContract_wETH2TSv2Contract",
+		"outputs": [
+			{
+				"internalType": "contract InvestmentContract_wETH2TSv2",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "WETH9Contract",
 		"outputs": [
 			{
+				"internalType": "contract WETH9",
 				"name": "",
 				"type": "address"
 			}
