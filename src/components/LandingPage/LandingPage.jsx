@@ -12,7 +12,7 @@ const LandingPage = () => (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
         <a className="navbar-brand">
-          <h2>DeFi Strategies</h2>
+          <h2>DeFi Baskets</h2>
         </a>
         <Link to="/dashboard" className="btn btn-primary shadow ml-auto">
           Get Started
