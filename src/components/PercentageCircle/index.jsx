@@ -3,8 +3,8 @@ import "../../App.css";
 
 const DEFAULT_VALUE = 0;
 const DEFAULT_COLOR = "#5540BF";
-const DEFAULT_MINVOL = "#F14A5C";
-const DEFAULT_SMA20 = "#11112F";
+// const DEFAULT_MINVOL = "#F14A5C";
+// const DEFAULT_SMA20 = "#11112F";
 const DEFAULT_MAX_VALUE = 100;
 
 export default props => {
