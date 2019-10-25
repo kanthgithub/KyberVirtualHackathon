@@ -1,26 +1,25 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
+import React from "react";
+import Container from "react-bootstrap/Container";
 
-import NavigationBar from './Navbar';
-import WhyUseDeFiBaskets from  './WhyUseDeFiBaskets';
-import HowItWorks from './HowItWorks';
-import AvailableBaskets from './AvailableBaskets';
-import Row from 'react-bootstrap/Row';
+import WhyUseDeFiBaskets from "./WhyUseDeFiBaskets";
+import HowItWorks from "./HowItWorks";
+import AvailableBaskets from "./AvailableBaskets";
+import Row from "react-bootstrap/Row";
+import Hero from "./Hero";
 
 const LandingPage = () => (
-  <Container>
-    <NavigationBar />
-    <hr />
-    <WhyUseDeFiBaskets />
-    <hr />
-    <HowItWorks />
-    <hr />
-    <AvailableBaskets />
-    <hr />
-    <Row className="justify-content-md-center">
-      <a href = "https://google.com"> FAQ</a>
-    </Row>
-  </Container>
+  <div>
+    <Hero />
+    <div className="container">
+      <WhyUseDeFiBaskets />
+      <HowItWorks />
+      <AvailableBaskets />
+    </div>
+    <footer>
+      <h4 className="pt-4">DefiBaskets</h4>
+      <p className="pb-4 text-muted">All Rights Reserved</p>
+    </footer>
+  </div>
 );
 
 export default LandingPage;
