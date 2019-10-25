@@ -1,44 +1,51 @@
 {
-  "contractName": "ERC20",
+  "contractName": "Compound",
   "abi": [
     {
-      "anonymous": false,
+      "constant": false,
       "inputs": [
         {
-          "indexed": true,
           "internalType": "address",
-          "name": "_owner",
+          "name": "spender",
           "type": "address"
         },
         {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_spender",
-          "type": "address"
-        },
-        {
-          "indexed": false,
           "internalType": "uint256",
-          "name": "_value",
+          "name": "amount",
           "type": "uint256"
         }
       ],
-      "name": "Approval",
-      "type": "event"
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
-      "constant": true,
-      "inputs": [],
-      "name": "totalSupply",
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "mintAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "supply",
+          "name": "",
           "type": "uint256"
         }
       ],
       "payable": false,
-      "stateMutability": "view",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -87,107 +94,9 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_value",
-          "type": "uint256"
-        }
-      ],
-      "name": "transferFrom",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "success",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_value",
-          "type": "uint256"
-        }
-      ],
-      "name": "approve",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "success",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_owner",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_spender",
-          "type": "address"
-        }
-      ],
-      "name": "allowance",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "remaining",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "decimals",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "digits",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"supply\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"digits\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"remaining\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/node/app/truffle_solc_5/contracts/Invest2CDAI.sol\":\"ERC20\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/node/app/truffle_solc_5/contracts/Invest2CDAI.sol\":{\"keccak256\":\"0xf31ac5164fd6874936f61c78a4814dfbc04025e1ae86da33fe1ec70040c48298\",\"urls\":[\"bzz-raw://ac84cccc9ceff812a0daf3be41241f973c8c5bd592057c06ac540a30ac15e9bf\",\"dweb:/ipfs/QmeRHWKZE3MD4PKgVbgjg76KDvVBFSHVNL9ZfVwHhN8Pbt\"]},\"/home/node/app/truffle_solc_5/contracts/Ownable.sol\":{\"keccak256\":\"0x2469bced6ce3fd6426b056af1f6ba04a4a066d036fbf3921e5474dd16c1417c1\",\"urls\":[\"bzz-raw://9242fe4524066265dd147b7957ce3f6e7eaa6add175888e165027fc76265a943\",\"dweb:/ipfs/QmQ53qMXA2GRHVgLHESrrqCNipTaKocusZ1w8KvB9ENYyg\"]},\"/home/node/app/truffle_solc_5/contracts/SafeMath.sol\":{\"keccak256\":\"0xd99a5754fa44d4a034233365b7db40521b9298981cbfdadfda83aa0a536eff82\",\"urls\":[\"bzz-raw://18059b84b5f562d73c5d56abf5b7c86c2197906d534f6a8efbf40fe43a200818\",\"dweb:/ipfs/Qmceqq4pR9MfzhcZ9wthXF3FBbcoio9HHRse6YXG5fgndY\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"mintAmount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/node/app/truffle_solc_5/contracts/Invest2CDAI.sol\":\"Compound\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/node/app/truffle_solc_5/contracts/Invest2CDAI.sol\":{\"keccak256\":\"0xf31ac5164fd6874936f61c78a4814dfbc04025e1ae86da33fe1ec70040c48298\",\"urls\":[\"bzz-raw://ac84cccc9ceff812a0daf3be41241f973c8c5bd592057c06ac540a30ac15e9bf\",\"dweb:/ipfs/QmeRHWKZE3MD4PKgVbgjg76KDvVBFSHVNL9ZfVwHhN8Pbt\"]},\"/home/node/app/truffle_solc_5/contracts/Ownable.sol\":{\"keccak256\":\"0x2469bced6ce3fd6426b056af1f6ba04a4a066d036fbf3921e5474dd16c1417c1\",\"urls\":[\"bzz-raw://9242fe4524066265dd147b7957ce3f6e7eaa6add175888e165027fc76265a943\",\"dweb:/ipfs/QmQ53qMXA2GRHVgLHESrrqCNipTaKocusZ1w8KvB9ENYyg\"]},\"/home/node/app/truffle_solc_5/contracts/SafeMath.sol\":{\"keccak256\":\"0xd99a5754fa44d4a034233365b7db40521b9298981cbfdadfda83aa0a536eff82\",\"urls\":[\"bzz-raw://18059b84b5f562d73c5d56abf5b7c86c2197906d534f6a8efbf40fe43a200818\",\"dweb:/ipfs/Qmceqq4pR9MfzhcZ9wthXF3FBbcoio9HHRse6YXG5fgndY\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
@@ -9972,7 +9881,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.16",
-  "updatedAt": "2019-10-25T10:35:50.324Z",
+  "updatedAt": "2019-10-25T10:35:50.312Z",
   "devdoc": {
     "methods": {}
   },
