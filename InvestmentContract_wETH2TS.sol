@@ -1,17 +1,9 @@
 pragma solidity ^0.5.0;
 
-// we are creating the interface from the WETH Contract so as to call the approve function to approve 
-interface WETH {
-   function approve(address guy, uint wad) external returns (bool);
-   function balanceOf(address src) external view returns (uint);
-   function transfer(address dst, uint wad) external returns (bool);
-}
-
+import "./wrappedETH.sol";
 
 // we are creating an interface of RebalancingSetIssuanceModule to call the issuance contract
 interface RebalancingSetIssuanceModule {
-    // function balanceOf(address src) external view returns (uint);
-    // function transfer(address dst, uint256 amount) external returns (bool success);
     function issueRebalancingSet(address _rebalancingSetAddress, uint256 _rebalancingSetQuantity, bool _keepChangeInVault) external;
 }
 
@@ -36,7 +28,7 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     
     // setting important contracts that are used below
     RebalancingSetIssuanceModule public RebalancingSetIssuanceModuleContract;  // for the purpose of setting up the address of the depoloyed RebalancingSetIssuanceModule contract
-    WETH public WETHContract;  // for the purpose of setting up the address of the depoloyed WETH contract
+    WETH9 public WETH9Contract;  // for the purpose of setting up the address of the depoloyed WETH contract
     ethhivol public ethhivolContract;  // this is where the investment is being made and then we need to transfer out the tokens too;
     address public TransferProxyContract; 
     
@@ -53,33 +45,45 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     // variables in relation to ETH held by the contract
     uint public balance;
     
-    constructor 
-    ( 
-    WETH _WETHContract, 
-    ethhivol _ethhivolContract, 
-    address _TransferProxyContract,
-    address _ETH2WETHContract) 
-    public {
-        
-        WETHContract = _WETHContract;
-        ethhivolContract = _ethhivolContract;
-        TransferProxyContract = _TransferProxyContract;
-        ETH2WETH = _ETH2WETHContract;
-        approveTransferProxy(2^256-1); // by default approving the TransferProxyContract for highest possible value in solidity
-    }
-    
-    function setRebalancingSetIssuanceModule(RebalancingSetIssuanceModule _RebalancingSetIssuanceModuleContract) public onlyOwner {
+    function setRebalancingSetIssuanceModuleContract (RebalancingSetIssuanceModule _RebalancingSetIssuanceModuleContract) public onlyOwner {
         RebalancingSetIssuanceModuleContract = _RebalancingSetIssuanceModuleContract;
     }
     
+    function setWETH9Contract (WETH9 _WETH9Contract) onlyOwner public {
+        WETH9Contract = _WETH9Contract;
+    }
+    
+    function setethhivolContract (ethhivol _ethhivolContract) public onlyOwner {
+        ethhivolContract = _ethhivolContract;
+    }
+    
+    function setTransferProxyContract (address _TransferProxyContract) public onlyOwner {
+        TransferProxyContract = _TransferProxyContract;
+    }
+    
+    function setETH2WETHContract (address _ETH2WETHContract) public onlyOwner {
+        ETH2WETH = _ETH2WETHContract;
+    }
+    
+    function approveTransferProxyforHighest() public onlyOwner {
+        WETH9Contract.approve(address(TransferProxyContract), ((2^256)-1));
+    }
+    
+    // the Transfer Proxy Contract is provided by the TokenSet guys which moves the WETH to the relvant set contract and hence needs to be approved
+    // this function will called whenever WETH is received with the WETH received and after investment recalled to bring down the approval to zero so that there is no missue
+    function approveTransferProxy(uint _howmuchtoApprove) public onlyOwner {
+        require(WETH9Contract.approve(address(TransferProxyContract), _howmuchtoApprove));
+    }
+    
+    
     // functions in relation to the oracle call
     modifier onlyETH2WETH() {
-    require(msg.sender == ETH2WETH);
+    require(msg.sender == address(ETH2WETH));
     _;
     }
     
     // this function is called by the ETH2WETH contract as soon as it receives the ETH to save time, cause the oracle reply takes time
-    function updateqty() onlyETH2WETH payable public {
+    function updateqty() external onlyETH2WETH {
         TSQty = 0; // reseting the qty to be zero first whenever new ETH is received by the other contract
         if (provable_getPrice("URL") > address(this).balance) {
         } else {
@@ -129,11 +133,7 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     }
     
     
-    // the Transfer Proxy Contract is provided by the TokenSet guys which moves the WETH to the relvant set contract and hence needs to be approved
-    // this function will called whenever WETH is received with the WETH received and after investment recalled to bring down the approval to zero so that there is no missue
-    function approveTransferProxy(uint _howmuchtoApprove) internal {
-        require(WETHContract.approve(address(TransferProxyContract), _howmuchtoApprove));
-    }
+    
      
     
     // this function will be called by the ETH2WETH contract as soon as it transfers the WETH
@@ -143,7 +143,7 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
     // this function will then look if the TSQty callback has been done and then initiate the investment function
     // else it will be change the state that the factor is ready
     function gettingtheFactor() nonReentrant external {
-        uint investment_amount = WETHContract.balanceOf(address(this)); // the contract checks the balance of WETH that it has; it will be zero right before this
+        uint investment_amount = WETH9Contract.balanceOf(address(this)); // the contract checks the balance of WETH that it has; it will be zero right before this
         factor = (SafeMath.div(investment_amount, factorDenominator));
 
         if (isTQtyReady) {
@@ -162,10 +162,13 @@ contract InvestmentContract_wETH2TS is Ownable, ReentrancyGuard, usingProvable {
         ethhivolContract.transfer(address(0x19627796b318E27C333530aD67c464Cfc37596ec), mintedUnits);
         
         // sending the residual WETH to reserve address
-        uint residual_amount = WETHContract.balanceOf(address(this));
-        WETHContract.transfer(address(0x19627796b318E27C333530aD67c464Cfc37596ec), residual_amount);
+        uint residual_amount = WETH9Contract.balanceOf(address(this));
+        WETH9Contract.transfer(address(0x19627796b318E27C333530aD67c464Cfc37596ec), residual_amount);
         
         // resetting the important bool flags back to false
+        TSQty = 0;
+        factor = 0;
+        Qty2Buy = 0;
         isFactorReady = false;
         isTQtyReady = false;
     }
