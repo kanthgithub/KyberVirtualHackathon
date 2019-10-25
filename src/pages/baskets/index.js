@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PercentageCircle from "../../components/PercentageCircle";
+import BuyButton from "../../components/BuyButton";
 
 const Baskets = () => {
   return (
@@ -72,9 +73,7 @@ const Baskets = () => {
               </div>
               <div className="row justify-content-center my-4">
                 <div className="col-12 col-md-12 col-lg-12 text-center ">
-                  <button className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 ">
-                    Buy Basket
-                  </button>
+                  <BuyButton name="Hedger" />
                 </div>
                 <div className="my-4">
                   <button className="btn btn-outline-primary shadow rounded-pill px-4 py-2">
