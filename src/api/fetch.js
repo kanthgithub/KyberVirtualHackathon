@@ -1,7 +1,5 @@
 export const fetchTokensSetsAPI = async () => {
-  const res = await fetch(
-    "https://api.tokensets.com/public/v1/rebalancing_sets"
-  );
+  const res = await fetch("https://sleepy-shelf-37331.herokuapp.com/tokensets");
   const { rebalancing_sets } = await res.json();
   return rebalancing_sets;
 };
