@@ -5,8 +5,6 @@ import { ConnectedRouter as Router } from "connected-react-router";
 import autobind from "react-autobind";
 import { connect } from "react-redux";
 
-import HomePage from "./components/HomePage";
-
 import "./App.css";
 
 import Home from "./pages/home";

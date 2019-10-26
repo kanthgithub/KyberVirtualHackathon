@@ -1,11 +1,11 @@
 import React from 'react';
-import { Spinner } from 'reactstrap';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Loading = () => (
   <div className="container loading">
     <div className="row">
       <div className="col-md-12 text-center">
-        <Spinner color="primary" />
+        <Spinner animation="grow" variant="primary" />
       </div>
     </div>
   </div>

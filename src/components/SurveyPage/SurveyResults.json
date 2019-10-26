@@ -1,0 +1,188 @@
+{
+    "conservative": {
+        "beginner": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        },
+        "expert": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        },
+        "advanced": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        }
+    },
+    "moderate": {
+        "beginner":{
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        },
+        "expert": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        },
+        "advanced": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        }
+    },
+    "aggressive": {
+        "beginner":{
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        },
+        "expert": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        },
+        "advanced": {
+            "shortTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "mediumTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            },
+            "longTerm": {
+                "bull": "lender",
+                "bear": "lender",
+                "flat": "lender",
+                "notSure": "lender"
+            }
+        }
+    }
+}
