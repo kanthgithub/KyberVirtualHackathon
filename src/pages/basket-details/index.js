@@ -1,5 +1,7 @@
 import React from "react";
 
-const BasketDetails = () => <h1>BasketDetails</h1>;
+import Baskets from '../../components/Baskets';
+
+const BasketDetails = () => <Baskets />;
 
 export default BasketDetails;

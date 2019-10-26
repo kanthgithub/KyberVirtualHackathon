@@ -1,4 +1,4 @@
-[
+const surveyQuestions = [
     {
         "questionNumber": 1,
         "question": "What is your investing style?",
@@ -65,3 +65,5 @@
         ]
     }
 ]
+
+export default surveyQuestions;

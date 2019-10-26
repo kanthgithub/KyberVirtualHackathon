@@ -10,8 +10,7 @@ import "./App.css";
 import Home from "./pages/home";
 import Dashboard from "./pages/dashboard";
 import Baskets from "./pages/baskets";
-import BasketDetails from "./pages/basket-details";
-import GetStarted from "./pages/get-started";
+import BasketsPage from './components/Baskets';
 import Analytics from "./pages/analytics";
 import Survey from "./pages/survey";
 
@@ -38,10 +37,9 @@ class App extends PureComponent {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/get-started" component={GetStarted} />
           <Route exact path="/survey" component={Survey} />
           <Route exact path="/baskets" component={Baskets} />
-          <Route exact path="/baskets/:id" component={BasketDetails} />
+          <Route exact path="/baskets/:id" component={BasketsPage} />
           <Route exact path="/analytics" component={Analytics} />
         </Switch>
       </Router>
