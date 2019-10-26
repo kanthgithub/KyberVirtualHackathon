@@ -11,7 +11,7 @@ const NavigationBar = () => (
     >
       <Nav className="mr-auto">
         <Nav.Link href="/how-it-works">How it works</Nav.Link>
-        <Nav.Link href="/explore-baskets">Explore Baskets</Nav.Link>
+        <Nav.Link href="/baskets">Explore Baskets</Nav.Link>
         <Nav.Link href="/contact-us">Contact Us</Nav.Link>
       </Nav>
     </Navbar>

@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import autobind from 'react-autobind';
 
 import SurveyPageView from './SurveyPageView';
-import surveyList from './SurveyQuestions';
-import surveyResponse from './SurveyResults';
+import surveyList from '../../constants/SurveyQuestions'
+import surveyResponse from '../../constants/SurveyResults';
 
 class SurveyPageContainer extends PureComponent {
     constructor(props) {

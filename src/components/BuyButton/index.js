@@ -1,5 +1,7 @@
 import React from "react";
 import { Modal, ModalBody } from "reactstrap";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 import "../../App.css";
 
@@ -11,7 +13,7 @@ class BuyButton extends React.Component {
   };
   renderModal() {
     const { open } = this.state;
-    const { name } = this.props;
+    const { name, isOrderable } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
         <ModalBody>
@@ -24,9 +26,28 @@ class BuyButton extends React.Component {
             </div>
           </div>
           <div className="my-4 row justify-content-center">
-            <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
-              Buy
-            </button>{" "}
+          {
+            isOrderable ? (
+              <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
+                Buy
+              </button>
+              ) : (
+                <OverlayTrigger
+                  placement="top"
+                  key="top"
+                  overlay={
+                    <Tooltip>
+                      Coming soon
+                    </Tooltip>
+                  }
+                >
+                <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
+                  Buy
+                </button>
+                </OverlayTrigger>
+              )
+          }
+            {" "}
             <button
               className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
               onClick={this.toggle}
@@ -39,13 +60,14 @@ class BuyButton extends React.Component {
     );
   }
   render() {
+    const { isOrderable } = this.props;
     return (
       <div>
         <button
           className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2"
           onClick={() => this.setState({ open: true })}
         >
-          Buy Basket
+          {isOrderable? 'Buy': 'Coming Soon'}
         </button>
         {this.renderModal()}
       </div>
