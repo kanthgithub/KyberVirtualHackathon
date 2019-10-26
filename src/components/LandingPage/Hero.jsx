@@ -1,9 +1,10 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
+
 import NavigationBar from "./Navbar";
 import "../../App.css";
-import { Link } from "react-router-dom";
 import heroimg from "../../assets/hero.svg";
+
 const Hero = () => (
   <div
     className="hero-image"
@@ -19,7 +20,7 @@ const Hero = () => (
           <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
             <h1 className="text-light">Defi Baskets</h1>
             <p class="lead text-center text-md-left text-light mb-6 mb-lg-8">
-              Allocate yout capital across multiple DeFi protocols based on your
+              Allocate your capital across multiple DeFi protocols based on your
               investment goals.
             </p>
             <div class="d-flex">
@@ -34,7 +35,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="col-12 col-md-6">
-            <img src={heroimg} />
+            <img src={heroimg} alt="Welcome to DeFi Baskets" />
           </div>
         </div>
       </div>

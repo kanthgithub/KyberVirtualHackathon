@@ -1,7 +1,7 @@
 import React from "react";
-import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import { Modal, ModalBody } from "reactstrap";
+
 import "../../App.css";
-// import "./index.module.css";
 
 class BuyButton extends React.Component {
   state = { open: false };
