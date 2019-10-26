@@ -107,3 +107,45 @@ footer {
   background-color: #f9f9f9;
   text-align: center;
 }
+
+.buycontainer {
+  position: relative !important;
+  text-align: center !important;
+}
+
+.buycontents {
+  display: inline-flex !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.buytext {
+  font-size: 22px !important;
+  color: #1d144f !important;
+}
+
+.buycontents input {
+  border-top: none;
+  border-right: none;
+  border-bottom: 3px solid rgb(43, 177, 96);
+  border-left: none;
+  border-image: initial;
+  color: rgb(43, 177, 96);
+  max-width: 65%;
+  overflow: hidden;
+  text-align: left;
+  width: 70px;
+  font-size: 48px;
+}
+
+.buycontents input:focus {
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

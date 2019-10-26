@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import NavigationBar from "./Navbar";
 import "../../App.css";
 import { Link } from "react-router-dom";
-
+import heroimg from "../../assets/hero.svg";
 const Hero = () => (
   <div
     className="hero-image"
@@ -33,7 +33,9 @@ const Hero = () => (
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-6"></div>
+          <div className="col-12 col-md-6">
+            <img src={heroimg} />
+          </div>
         </div>
       </div>
     </div>
