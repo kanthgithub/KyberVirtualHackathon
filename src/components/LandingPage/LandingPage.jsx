@@ -1,10 +1,8 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 
 import WhyUseDeFiBaskets from "./WhyUseDeFiBaskets";
 import HowItWorks from "./HowItWorks";
 import AvailableBaskets from "./AvailableBaskets";
-import Row from "react-bootstrap/Row";
 import Hero from "./Hero";
 
 const LandingPage = () => (

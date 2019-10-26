@@ -2,9 +2,11 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
 import SaveTime from "../../assets/save-time.png";
 import SaveGas from "../../assets/save-gas.png";
 import NonCustodial from "../../assets/non-custodial.png";
+
 const WhyUseDeFiBaskets = () => (
   <Container style={{ marginBottom: "200px" }}>
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
@@ -17,6 +19,7 @@ const WhyUseDeFiBaskets = () => (
             src={SaveTime}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
             width="30px"
+            alt="Save Time"
           />
           <h4>Save Time</h4>
         </div>
@@ -32,6 +35,7 @@ const WhyUseDeFiBaskets = () => (
             src={SaveGas}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
             width="30px"
+            alt="Save Gas"
           />
           <h4>Save Gas</h4>
         </div>
@@ -53,6 +57,7 @@ const WhyUseDeFiBaskets = () => (
             src={NonCustodial}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
             width="30px"
+            alt="Non Custodial"
           />
           <h4>Non-Custodial</h4>
         </div>

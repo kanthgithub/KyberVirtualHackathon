@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
 import One from "../../assets/one.png";
 import Two from "../../assets/two.png";
 import Three from "../../assets/three.png";
@@ -18,6 +19,7 @@ const HowItWorks = () => (
             src={One}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
             width="100px"
+            alt="1"
           />
         </Row>
         <Row className="justify-content-md-center">PICK A BASKET</Row>
@@ -28,6 +30,7 @@ const HowItWorks = () => (
             src={Two}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
             width="90px"
+            alt="2"
           />
         </Row>
         <Row className="justify-content-md-center">SEND INVESTMENT AMOUNT</Row>
@@ -38,6 +41,7 @@ const HowItWorks = () => (
             src={Three}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
             width="100px"
+            alt="3"
           />
         </Row>
         <Row className="justify-content-md-center">

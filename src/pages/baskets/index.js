@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Link } from "react-router-dom";
+
 import PercentageCircle from "../../components/PercentageCircle";
 import BuyButton from "../../components/BuyButton";
 
