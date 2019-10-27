@@ -1,4 +1,4 @@
-# DeFi Baskets [defibaskets.com]
+# DeFi Zap [DeFiZap.com]
 
 The following code can be run locally by running the following two commands.
 
