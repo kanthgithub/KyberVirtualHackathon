@@ -79,12 +79,11 @@ class BuyButton extends React.Component {
         this.setState({ showLoader: false });
       });
     console.log(tx);
-    // this.toggle();
   };
 
   renderModal() {
     const { open } = this.state;
-    const { name, isOrderable } = this.props;
+    const { name } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
         <ModalBody>
@@ -103,11 +102,21 @@ class BuyButton extends React.Component {
               </div>
             </div>
             <div className="my-4 row justify-content-center">
-              <input
+              <OverlayTrigger
+                placement="top"
+                key="top"
+                overlay={
+                  <Tooltip>
+                    Coming soon
+                  </Tooltip>
+                }
+              >
+                <input
                 type="submit"
                 className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
                 value="Buy"
               />
+              </OverlayTrigger>
               <button
                 className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
                 onClick={this.toggle}
@@ -116,41 +125,7 @@ class BuyButton extends React.Component {
               </button>
               {this.state.showLoader ? <Loading /> : null}
             </div>
-<<<<<<< HEAD
-          </div>
-          <div className="my-4 row justify-content-center">
-          {
-            isOrderable ? (
-              <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
-                Buy
-              </button>
-              ) : (
-                <OverlayTrigger
-                  placement="top"
-                  key="top"
-                  overlay={
-                    <Tooltip>
-                      Coming soon
-                    </Tooltip>
-                  }
-                >
-                <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
-                  Buy
-                </button>
-                </OverlayTrigger>
-              )
-          }
-            {" "}
-            <button
-              className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
-              onClick={this.toggle}
-            >
-              Cancel
-            </button>
-          </div>
-=======
           </form>
->>>>>>> ac0ff23abdf52b17d758a2864745953894ccb434
         </ModalBody>
       </Modal>
     );
