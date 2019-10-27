@@ -5,7 +5,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import { Link } from "react-router-dom";
 import isEmpty from 'lodash/isEmpty';
 
-import NavigationBar from '../LandingPage/Navbar'
+import NavigationBar from '../Navbar';
 import styles from './SurveyPageView.module.css';
 import '../../App.css';
 
