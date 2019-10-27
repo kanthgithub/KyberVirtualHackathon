@@ -29,6 +29,7 @@ class SurveyPageContainer extends PureComponent {
         this.setState({
             questionNumber: 1,
             answer: '',
+            surveyComplete: false
         });
     };
 

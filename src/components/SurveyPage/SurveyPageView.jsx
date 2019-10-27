@@ -84,7 +84,7 @@ const SurveyPageView = ({ ...props }) => {
                               <ol type="A"  style={{ color: "white" }}>
                                   {item.options.map(option => {
                                       return (
-                                          <li className={styles.buttonspacing}>
+                                          <li key={option.key} className={styles.buttonspacing}>
                                               <Button variant="outline-light" size="lg" onClick={() => onAnswer(option.key)}>
                                                   {option.value}
                                               </Button>
