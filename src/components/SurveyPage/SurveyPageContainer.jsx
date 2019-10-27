@@ -13,6 +13,7 @@ class SurveyPageContainer extends PureComponent {
             answers: ['conservative','beginner','shortTerm','bull'],
             answer: '',
             isLoading: false,
+            surveyComplete: false,
         };
         autobind(this);
     };
@@ -38,7 +39,7 @@ class SurveyPageContainer extends PureComponent {
     };
 
     submitResults = () => {
-        this.setState({ isLoading: true });
+        this.setState({ isLoading: true, surveyComplete: true });
         const result = this.onCompletion();
         setTimeout(() => {
            this.setState({ isLoading: false, answer: result })
@@ -46,7 +47,7 @@ class SurveyPageContainer extends PureComponent {
     };
 
     render() {
-        const { questionNumber, isLoading, answer } = this.state;
+        const { questionNumber, isLoading, answer, surveyComplete } = this.state;
         return (
             <SurveyPageView
                 questionNumber={questionNumber}
@@ -57,6 +58,7 @@ class SurveyPageContainer extends PureComponent {
                 reDoSurvey={this.reDoSurvey}
                 submitResults={this.submitResults}
                 answer={answer}
+                surveyComplete={surveyComplete}
             />
         );
     }

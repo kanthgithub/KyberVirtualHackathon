@@ -22,8 +22,8 @@ const BasketsView = ({ ...props }) => {
             marginBottom: "100px"
             }}
           >
-            <NavBar />
           <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
+            <NavBar />
             <div className={styles.cardContainer}>
             <section className="pb-5 pt-md-12">
             <div className="container">
