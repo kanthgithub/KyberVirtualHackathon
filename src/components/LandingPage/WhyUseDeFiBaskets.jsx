@@ -24,8 +24,8 @@ const WhyUseDeFiBaskets = () => (
           <h4>Save Time</h4>
         </div>
         <h6>
-          Zaps spread your capital across various DeFi protocols in one
-          transaction, bypassing many manual steps.
+        Zap is a smart contract that auto-spreads incoming deposits across multiple 
+        DeFi protocols in one transaction
         </h6>
       </Col>
 
