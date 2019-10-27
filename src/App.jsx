@@ -47,7 +47,7 @@ class App extends PureComponent {
   }
 }
 
-const mapStateToProps = () => {};
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
   dispatch

@@ -2,7 +2,7 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
-import Link from 'react-router-dom/Link';
+import { Link } from "react-router-dom";
 import isEmpty from 'lodash/isEmpty';
 
 import NavigationBar from '../LandingPage/Navbar'

@@ -22,7 +22,7 @@ const HowItWorks = () => (
             alt="1"
           />
         </Row>
-        <Row className="justify-content-md-center">PICK A BASKET</Row>
+        <Row className="justify-content-md-center">PICK A ZAP</Row>
       </Col>
       <Col>
         <Row className="justify-content-md-center mb-3">
