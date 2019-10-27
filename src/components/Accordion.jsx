@@ -31,7 +31,7 @@ const Accordion = ({ title, description, parent, index }) => (
         <p className="text-center">{description}</p>
         <div className="row justify-content-center my-4">
           <Link
-            to="/baskets"
+            to="/zaps"
             className="btn btn-dark shadow rounded-pill px-4 py-2"
           >
             Show me the basket

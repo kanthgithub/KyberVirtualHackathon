@@ -2,10 +2,10 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
-import Link from 'react-router-dom/Link';
+import { Link } from "react-router-dom";
 import isEmpty from 'lodash/isEmpty';
 
-import NavigationBar from '../LandingPage/Navbar'
+import NavigationBar from '../Navbar';
 import styles from './SurveyPageView.module.css';
 import '../../App.css';
 
@@ -48,13 +48,13 @@ const SurveyPageView = ({ ...props }) => {
             isEmpty(answer) ? null : (
                 <>
                     <br /> < br/>
-                    <h4 style={{ color: "white" }}>We calculated the best strategy for you is
-                    {' '}
-                    <Link
-                        to={`/baskets/${answer}`}
-                    >
-                        {answer}
-                    </Link>
+                    <h4 style={{ color: "white" }}>
+                        Based on your answer, the best strategy for you is {' '}
+                        <Link
+                            to={`/zaps/${answer}`}
+                        >
+                            {answer}
+                        </Link>
                     </h4>
                 </>
             )

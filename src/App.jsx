@@ -9,7 +9,7 @@ import "./App.css";
 
 import Home from "./pages/home";
 import Dashboard from "./pages/dashboard";
-import Baskets from "./pages/baskets";
+import Baskets from "./pages/zaps";
 import BasketsPage from './components/Baskets';
 import Analytics from "./pages/analytics";
 import Survey from "./pages/survey";
@@ -38,8 +38,8 @@ class App extends PureComponent {
           <Route exact path="/" component={Home} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/survey" component={Survey} />
-          <Route exact path="/baskets" component={Baskets} />
-          <Route exact path="/baskets/:id" component={BasketsPage} />
+          <Route exact path="/zaps" component={Baskets} />
+          <Route exact path="/zaps/:id" component={BasketsPage} />
           <Route exact path="/analytics" component={Analytics} />
         </Switch>
       </Router>
@@ -47,7 +47,7 @@ class App extends PureComponent {
   }
 }
 
-const mapStateToProps = () => {};
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
   dispatch

@@ -10,7 +10,7 @@ import NonCustodial from "../../assets/non-custodial.png";
 const WhyUseDeFiBaskets = () => (
   <Container style={{ marginBottom: "200px" }}>
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
-      <h2>WHY USE DEFI BASKETS?</h2>
+      <h2>WHY USE DEFI ZAP?</h2>
     </Row>
     <Row>
       <Col>
@@ -24,7 +24,7 @@ const WhyUseDeFiBaskets = () => (
           <h4>Save Time</h4>
         </div>
         <h6>
-          Baskets spread your capital across various DeFi protocols in one
+          Zaps spread your capital across various DeFi protocols in one
           transaction, bypassing many manual steps.
         </h6>
       </Col>

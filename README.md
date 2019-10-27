@@ -1,4 +1,4 @@
-# DeFi Zap [DeFiZap.com]
+# [DeFi Zap](https://defizap.com)
 
 The following code can be run locally by running the following two commands.
 
@@ -7,4 +7,4 @@ The following code can be run locally by running the following two commands.
 
 on the root level of the directory.
 
-**IMPORTANT**: You will require [redux-devtools](https://github.com/zalmoxisus/redux-devtools-extension) extension in your browser to be able to run the codebase locally.
+The website live on on [DefiZap.com](https://defizap.com)

@@ -3,11 +3,11 @@ const Baskets = {
         "name": "Lender",
         "isOrderable": true,
         "components": [{
-            "name": "ETHMINVOL",
-            "percent": 10
-        }, {
             "name": "cDai",
             "percent": 90
+        }, {
+            "name": "2xLONG-ETH",
+            "percent": 10
         }]
     },
     "bullSharpe": {
@@ -17,9 +17,9 @@ const Baskets = {
             "name": "cDai",
             "percent": 90
         }, {
-            "name": "Long-term2xBZX",
+            "name": "ETHMINVOL",
             "percent": 10
-        }]
+        }] 
     },
     "bearSharpe": {
         "name": "Bear Sharpe",

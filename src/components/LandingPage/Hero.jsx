@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NavigationBar from "./Navbar";
+import NavigationBar from "../Navbar";
 import "../../App.css";
 import heroimg from "../../assets/hero.svg";
 
@@ -18,15 +18,14 @@ const Hero = () => (
       <div className="container-fluid">
         <div className="row mt-5">
           <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
-            <h1 className="text-light">Defi Baskets</h1>
-            <p class="lead text-center text-md-left text-light mb-6 mb-lg-8">
-              Allocate your capital across multiple DeFi protocols based on your
-              investment goals.
+            <h1 className="text-light">Defi Zap</h1>
+            <p className="lead text-center text-md-left text-light mb-6 mb-lg-8">
+              Get instant exposure across multiple DeFi protocols based on your investment goals.
             </p>
-            <div class="d-flex">
-              <div class="text-center text-md-left">
+            <div className="d-flex">
+              <div className="text-center text-md-left">
                 <Link
-                  class="btn btn-light shadow lift mr-1 my-2 py-3 font20 px-4"
+                  className="btn btn-light shadow lift mr-1 my-2 py-3 font20 px-4"
                   to="/survey"
                 >
                   Get Started
@@ -35,7 +34,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="col-12 col-md-6">
-            <img src={heroimg} alt="Welcome to DeFi Baskets" />
+            <img src={heroimg} alt="Welcome to Defi Zap" />
           </div>
         </div>
       </div>
