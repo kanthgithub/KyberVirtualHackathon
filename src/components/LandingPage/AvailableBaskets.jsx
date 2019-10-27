@@ -8,7 +8,7 @@ import PercentageCircle from "../PercentageCircle";
 const AvailableBaskets = () => (
   <Container>
     <Row className="justify-content-md-center" style={{ marginBottom: "80px" }}>
-      <h2>AVAILABLE BASKETS</h2>
+      <h2>AVAILABLE ZAPS</h2>
     </Row>
     <Row>
       <div className="col-12 col-md-4 col-lg-4">
@@ -32,7 +32,7 @@ const AvailableBaskets = () => (
             <div className="row justify-content-center my-4">
               <div className="col-12 col-md-12 col-lg-12 text-center ">
                 <button className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 ">
-                  Buy Basket
+                  Buy Zap
                 </button>
               </div>
             </div>
@@ -60,7 +60,7 @@ const AvailableBaskets = () => (
             <div className="row justify-content-center my-4">
               <div className="col-12 col-md-12 col-lg-12 text-center ">
                 <button className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 ">
-                  Buy Basket
+                  Buy Zap
                 </button>
               </div>
             </div>
@@ -88,7 +88,7 @@ const AvailableBaskets = () => (
             <div className="row justify-content-center my-4">
               <div className="col-12 col-md-12 col-lg-12 text-center ">
                 <button className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 ">
-                  Buy Basket
+                  Buy Zap
                 </button>
               </div>
             </div>
@@ -97,12 +97,12 @@ const AvailableBaskets = () => (
       </div>
       <div className="container">
         <div className="row justify-content-center my-4">
-          <div className="col-12 col-md-12 col-lg-12 text-center ">
+          <div className="col-12 col-md-12 col-lg-12 text-center">
             <Link
-              to="/baskets"
+              to="/zaps"
               className="font20 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
             >
-              View All Baskets
+              View All Zaps
             </Link>
           </div>
         </div>

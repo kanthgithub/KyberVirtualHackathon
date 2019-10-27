@@ -48,13 +48,13 @@ const SurveyPageView = ({ ...props }) => {
             isEmpty(answer) ? null : (
                 <>
                     <br /> < br/>
-                    <h4 style={{ color: "white" }}>We calculated the best strategy for you is
-                    {' '}
-                    <Link
-                        to={`/baskets/${answer}`}
-                    >
-                        {answer}
-                    </Link>
+                    <h4 style={{ color: "white" }}>
+                        Based on your answer, the best strategy for you is {' '}
+                        <Link
+                            to={`/zaps/${answer}`}
+                        >
+                            {answer}
+                        </Link>
                     </h4>
                 </>
             )

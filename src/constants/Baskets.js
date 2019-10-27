@@ -3,7 +3,7 @@ const Baskets = {
         "name": "Lender",
         "isOrderable": true,
         "components": [{
-            "name": "ETHMINVOL",
+            "name": "Long-term2xBZX",
             "percent": 10
         }, {
             "name": "cDai",
@@ -17,7 +17,7 @@ const Baskets = {
             "name": "cDai",
             "percent": 90
         }, {
-            "name": "Long-term2xBZX",
+            "name": "ETHMINVOL",
             "percent": 10
         }]
     },

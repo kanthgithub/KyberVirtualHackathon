@@ -18,10 +18,9 @@ const Hero = () => (
       <div className="container-fluid">
         <div className="row mt-5">
           <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
-            <h1 className="text-light">Defi Baskets</h1>
+            <h1 className="text-light">Defi Zap</h1>
             <p class="lead text-center text-md-left text-light mb-6 mb-lg-8">
-              Allocate your capital across multiple DeFi protocols based on your
-              investment goals.
+              Get instant exposure across multiple DeFi protocols based on your investment goals.
             </p>
             <div class="d-flex">
               <div class="text-center text-md-left">
@@ -35,7 +34,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="col-12 col-md-6">
-            <img src={heroimg} alt="Welcome to DeFi Baskets" />
+            <img src={heroimg} alt="Welcome to Defi Zap" />
           </div>
         </div>
       </div>

@@ -19,13 +19,13 @@ class Baskets extends PureComponent {
           <nav className="navbar navbar-expand-lg navbar-light bg-white">
             <div className="container">
               <a href="/" className="navbar-brand">
-                <h2>DeFi Baskets</h2>
+                <h2>Defi Zap</h2>
               </a>
             </div>
           </nav>
           <section className="pt-5 pb-5 pt-md-12">
             <div className="container">
-              <h1 className="display-3 text-center">Baskets</h1>
+              <h1 className="display-3 text-center">Zaps</h1>
               <p className="text-center text-muted col-12">
                 Allocate your money across{" "}
                 <span className="text-dark">
@@ -298,7 +298,7 @@ class Baskets extends PureComponent {
                   <div className="row justify-content-center my-4">
                     <div className="col-12 col-md-12 col-lg-12 text-center ">
                       <button className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 ">
-                        Buy Basket
+                        Buy Zap
                       </button>
                     </div>
                     <div className="my-4">
