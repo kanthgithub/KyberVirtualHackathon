@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, ModalBody } from "reactstrap";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 import "../../App.css";
 import web3 from "../../web3/web3";
@@ -10,7 +10,7 @@ import { CONTRACT_ADDRESS_KOVAN } from "../../web3/address";
 import Loading from "../Loading";
 
 class BuyButton extends React.Component {
-  state = { open: false, value: null, account: null, showLoader: false };
+  state = { open: false, value: "", account: null, showLoader: false };
   componentDidMount() {
     this.initialize();
   }
@@ -82,7 +82,7 @@ class BuyButton extends React.Component {
   };
 
   renderModal() {
-    const { open } = this.state;
+    const { open, value } = this.state;
     const { name } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
@@ -94,9 +94,17 @@ class BuyButton extends React.Component {
                 <p className="buytext pt-4 mr-2">INVEST</p>
                 <input
                   min="0"
-                  value={this.state.value}
+                  value={value}
                   onChange={this.handleChange}
                   placeholder="0.0"
+                  required
+                  style={
+                    value && value.length > 3
+                      ? {
+                          width: `${70 + value.length * 10}px`
+                        }
+                      : {}
+                  }
                 />
                 <p className="buytext pt-4 ml-2">ETH</p>
               </div>
@@ -105,24 +113,20 @@ class BuyButton extends React.Component {
               <OverlayTrigger
                 placement="top"
                 key="top"
-                overlay={
-                  <Tooltip>
-                    Coming soon
-                  </Tooltip>
-                }
+                overlay={<Tooltip>Coming soon</Tooltip>}
               >
                 <input
-                type="submit"
-                className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
-                value="Buy"
-              />
+                  type="submit"
+                  className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
+                  value="Buy"
+                />
               </OverlayTrigger>
-              <button
+              <div
                 className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
                 onClick={this.toggle}
               >
                 Cancel
-              </button>
+              </div>
               {this.state.showLoader ? <Loading /> : null}
             </div>
           </form>
@@ -138,7 +142,7 @@ class BuyButton extends React.Component {
           className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2"
           onClick={() => this.setState({ open: true })}
         >
-          {isOrderable? 'Buy': 'Coming Soon'}
+          {isOrderable ? "Buy" : "Coming Soon"}
         </button>
         {this.renderModal()}
       </div>

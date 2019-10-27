@@ -12,43 +12,48 @@ const HowItWorks = () => (
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
       <h2>HOW IT WORKS?</h2>
     </Row>
-    <Row className="my-5">
-      <Col>
-        <Row className="justify-content-md-center mb-1">
-          <img
-            src={One}
-            className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-            width="100px"
-            alt="1"
-          />
-        </Row>
-        <Row className="justify-content-md-center">PICK A ZAP</Row>
+    <Row className="justify-content-md-center text-center  mb-3">
+      <Col className="mb-1">
+        <img
+          src={One}
+          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+          width="100px"
+          alt="1"
+        />
       </Col>
       <Col>
-        <Row className="justify-content-md-center mb-3">
-          <img
-            src={Two}
-            className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-            width="90px"
-            alt="2"
-          />
-        </Row>
-        <Row className="justify-content-md-center">SEND INVESTMENT AMOUNT</Row>
+        <img
+          src={Two}
+          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+          width="90px"
+          alt="2"
+        />
       </Col>
       <Col>
-        <Row className="justify-content-md-center mb-1">
-          <img
-            src={Three}
-            className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-            width="100px"
-            alt="3"
-          />
-        </Row>
-        <Row className="justify-content-md-center">
-          RECEIVE ALLOCATED TOKENS
-        </Row>
+        <img
+          src={Three}
+          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+          width="100px"
+          alt="3"
+        />
       </Col>
     </Row>
+    <Row className="justify-content-md-center text-center ">
+      <Col>PICK A ZAP</Col>
+      <Col>SEND INVESTMENT AMOUNT</Col>
+      <Col>RECEIVE ALLOCATED TOKENS</Col>
+    </Row>
+    <div className="row justify-content-center my-5">
+      <iframe
+        title="video"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/L3wKzyIN1yk"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </Container>
 );
 
