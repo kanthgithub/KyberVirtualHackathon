@@ -3,6 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { routerMiddleware } from 'connected-react-router';
 import rootReducer from '../reducers';
+import DevTools from '../components/ReduxDevTools';
 
 const configureStore = (initialState, history) => {
   const middlewares = [thunk, routerMiddleware(history)];
@@ -11,8 +12,8 @@ const configureStore = (initialState, history) => {
   const isDev = process.env.NODE_ENV !== 'production';
   if (isDev) {
     // allow devs to use their own plugged in browser redux dev tool instead of the builtin component
-    const DevTools = lazy(() => import('../components/ReduxDevTools'));
-    const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : DevTools.instrument();
+    const devTools = DevTools();
+    const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : devTools.instrument();
     storeEnhancers.push(devToolsEnhancer);
   }
 
