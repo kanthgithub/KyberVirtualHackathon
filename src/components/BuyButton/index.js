@@ -116,8 +116,6 @@ class BuyButton extends React.Component {
               </button>
               {this.state.showLoader ? <Loading /> : null}
             </div>
-<<<<<<< HEAD
-          </div>
           <div className="my-4 row justify-content-center">
           {
             isOrderable ? (
@@ -148,9 +146,7 @@ class BuyButton extends React.Component {
               Cancel
             </button>
           </div>
-=======
           </form>
->>>>>>> ac0ff23abdf52b17d758a2864745953894ccb434
         </ModalBody>
       </Modal>
     );
