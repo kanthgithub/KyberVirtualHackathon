@@ -103,11 +103,21 @@ class BuyButton extends React.Component {
               </div>
             </div>
             <div className="my-4 row justify-content-center">
-              <input
+              <OverlayTrigger
+                placement="top"
+                key="top"
+                overlay={
+                  <Tooltip>
+                    Coming soon
+                  </Tooltip>
+                }
+              >
+                <input
                 type="submit"
                 className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
                 value="Buy"
               />
+              </OverlayTrigger>
               <button
                 className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
                 onClick={this.toggle}
@@ -116,36 +126,6 @@ class BuyButton extends React.Component {
               </button>
               {this.state.showLoader ? <Loading /> : null}
             </div>
-          <div className="my-4 row justify-content-center">
-          {
-            isOrderable ? (
-              <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
-                Buy
-              </button>
-              ) : (
-                <OverlayTrigger
-                  placement="top"
-                  key="top"
-                  overlay={
-                    <Tooltip>
-                      Coming soon
-                    </Tooltip>
-                  }
-                >
-                <button className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 ">
-                  Buy
-                </button>
-                </OverlayTrigger>
-              )
-          }
-            {" "}
-            <button
-              className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
-              onClick={this.toggle}
-            >
-              Cancel
-            </button>
-          </div>
           </form>
         </ModalBody>
       </Modal>
