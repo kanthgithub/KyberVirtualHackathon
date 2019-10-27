@@ -1,4 +1,4 @@
-# DefiZap [defizap.com]
+# [DeFi Zap](https://defizap.com)
 
 The following code can be run locally by running the following two commands.
 
@@ -7,4 +7,4 @@ The following code can be run locally by running the following two commands.
 
 on the root level of the directory.
 
-The code is currently live on [DefiZap.com](https://defizap.com)
+The website live on on [DefiZap.com](https://defizap.com)
