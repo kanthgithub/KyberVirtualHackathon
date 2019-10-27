@@ -79,12 +79,11 @@ class BuyButton extends React.Component {
         this.setState({ showLoader: false });
       });
     console.log(tx);
-    // this.toggle();
   };
 
   renderModal() {
     const { open } = this.state;
-    const { name, isOrderable } = this.props;
+    const { name } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
         <ModalBody>

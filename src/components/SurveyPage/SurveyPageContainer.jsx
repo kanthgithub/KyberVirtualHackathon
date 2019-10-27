@@ -10,7 +10,9 @@ class SurveyPageContainer extends PureComponent {
         super(props);
         this.state = {
             questionNumber: 1,
-            answers: [],
+            answers: ['conservative','beginner','shortTerm','bull'],
+            answer: '',
+            isLoading: false,
         };
         autobind(this);
     };
@@ -22,20 +24,39 @@ class SurveyPageContainer extends PureComponent {
         });
     };
 
+    reDoSurvey = () => {
+        this.setState({
+            questionNumber: 1,
+            answer: '',
+        });
+    };
+
     onCompletion = () => {
         const {answers} = this.state;
         const strategy = surveyResponse[answers[0]][answers[1]][answers[2]][answers[3]];
         return strategy;
-    }
+    };
+
+    submitResults = () => {
+        this.setState({ isLoading: true });
+        const result = this.onCompletion();
+        setTimeout(() => {
+           this.setState({ isLoading: false, answer: result })
+         } , 1500);
+    };
 
     render() {
-        const { questionNumber } = this.state;
+        const { questionNumber, isLoading, answer } = this.state;
         return (
             <SurveyPageView
                 questionNumber={questionNumber}
+                isLoading={isLoading}
                 onAnswer={this.onAnswer}
                 onCompletion={this.onCompletion}
                 surveyList={surveyList}
+                reDoSurvey={this.reDoSurvey}
+                submitResults={this.submitResults}
+                answer={answer}
             />
         );
     }
