@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-import styles from './NavigationBar.module.css';
+import styles from "./NavigationBar.module.css";
 
 const NavigationBar = () => (
   <div className="pt-3">
@@ -15,25 +15,19 @@ const NavigationBar = () => (
       <Nav className="mr-auto">
         <Navbar.Brand href="/">DeFi Zap</Navbar.Brand>
         <Navbar.Text>
-          <a
-            className={styles.anchorSpacing}
-            href='/survey'
-          >
+          <a className={styles.anchorSpacing} href="/survey">
             Get Started
           </a>
         </Navbar.Text>
         <Navbar.Text>
-          <a
-            href="/zaps"
-            className={styles.anchorSpacing}
-          >
+          <a href="/zaps" className={styles.anchorSpacing}>
             Explore Zaps
           </a>
         </Navbar.Text>
         <Navbar.Text>
           <a
             className={styles.anchorSpacing}
-            href='https://defitutorials.com/'
+            href="https://defitutorials.com/"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -42,7 +36,7 @@ const NavigationBar = () => (
         </Navbar.Text>
         <Navbar.Text>
           <a
-            href='https://defitutorials.com/#about'
+            href="https://defitutorials.com/#about"
             rel="noopener noreferrer"
             target="_blank"
             className={styles.anchorSpacing}

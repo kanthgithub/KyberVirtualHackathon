@@ -18,9 +18,13 @@ const Hero = () => (
       <div className="container-fluid">
         <div className="row mt-5">
           <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
-            <h1 className="text-light">Defi Zap</h1>
+            <div className="d-flex">
+              <h1 className="text-light">Defi Zap</h1>
+              <button className="btn btn-dark shadow beta-btn">BETA</button>
+            </div>
             <p className="lead text-center text-md-left text-light mb-6 mb-lg-8">
-              Get instant exposure across multiple DeFi protocols based on your investment goals.
+              Get instant exposure across multiple DeFi protocols based on your
+              investment goals.
             </p>
             <div className="d-flex">
               <div className="text-center text-md-left">
