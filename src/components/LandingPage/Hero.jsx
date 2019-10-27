@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NavigationBar from "./Navbar";
+import NavigationBar from "../Navbar";
 import "../../App.css";
 import heroimg from "../../assets/hero.svg";
 
