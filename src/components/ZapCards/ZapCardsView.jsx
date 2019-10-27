@@ -20,7 +20,7 @@ const ZapCardsView = props => {
             </div>
             <div className="col-12 col-md-6 col-lg-12 justify-content-center d-flex my-4">
               {components.map(({ name, percent }) => (
-                <div>
+                <div key={name}>
                   <PercentageCircle percentage={percent} color="#1314ad" />
                   <h6 className="text-center mt-3">{name}</h6>
                 </div>

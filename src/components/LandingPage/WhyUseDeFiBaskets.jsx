@@ -8,7 +8,7 @@ import SaveGas from "../../assets/save-gas.png";
 import NonCustodial from "../../assets/non-custodial.png";
 
 const WhyUseDeFiBaskets = () => (
-  <Container style={{ marginBottom: "200px" }}>
+  <Container>
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
       <h2>WHY USE DEFI ZAP?</h2>
     </Row>

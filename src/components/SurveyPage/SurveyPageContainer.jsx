@@ -10,7 +10,7 @@ class SurveyPageContainer extends PureComponent {
         super(props);
         this.state = {
             questionNumber: 1,
-            answers: ['conservative','beginner','shortTerm','bull'],
+            answers: [],
             answer: '',
             isLoading: false,
             surveyComplete: false,
