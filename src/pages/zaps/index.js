@@ -6,9 +6,7 @@ import ZapListContainer from "../../components/ZapList/ZapListContainer";
 class Baskets extends PureComponent {
     constructor(props) {
       super(props);
-      this.state = {
-          id: '',
-      };
+      this.state = {};
       autobind(this);
     };
 

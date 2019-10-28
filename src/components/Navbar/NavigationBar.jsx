@@ -36,7 +36,7 @@ const NavigationBar = () => (
         </Navbar.Text>
         <Navbar.Text>
           <a
-            href="https://defitutorials.com/#about"
+            href="https://t.me/defizap"
             rel="noopener noreferrer"
             target="_blank"
             className={styles.anchorSpacing}
