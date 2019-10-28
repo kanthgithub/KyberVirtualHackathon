@@ -29,15 +29,14 @@ class BuyButton extends React.Component {
           "Error connecting to MetaMask! Please try reloading the page..."
       });
     }
-    const getGas = async () => {
-      const res = await fetch("https://ethgasstation.info/json/ethgasAPI.json");
-      let response = await res.json();
-      let avgGasGwei = (response.average / 10) * 1000000000;
-      console.log("the Gas from the gas module2 is " + avgGasGwei);
-      this.setState({ gasValue: avgGasGwei });
-    };
+  }
 
-    getGas();
+  async getGas() {
+    const res = await fetch("https://ethgasstation.info/json/ethgasAPI.json");
+    let response = await res.json();
+    let avgGasGwei = (response.average / 10) * 1000000000;
+    console.log("the Gas from the gas module2 is " + avgGasGwei);
+    this.setState({ gasValue: avgGasGwei });
   }
 
   handleChange = event => {
@@ -50,6 +49,7 @@ class BuyButton extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    await this.getGas();
     const valueToInvest = this.state.value;
     const contract = new web3.eth.Contract(
       CONTRACT_ABI,
@@ -110,19 +110,13 @@ class BuyButton extends React.Component {
               </div>
             </div>
             <div className="my-4 row justify-content-center">
-              <OverlayTrigger
-                placement="top"
-                key="top"
-                overlay={<Tooltip>Coming soon</Tooltip>}
-              >
-                <input
-                  type="submit"
-                  className="font20 mx-3 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
-                  value="Buy"
-                />
-              </OverlayTrigger>
+              <input
+                type="submit"
+                className="font20 mx-3 btn btn-dark btn-large shadow px-4 py-2 "
+                value="Buy"
+              />
               <div
-                className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 "
+                className="font20 btn btn-outline-dark btn-large shadow px-4 py-2 "
                 onClick={this.toggle}
               >
                 Cancel
@@ -139,8 +133,9 @@ class BuyButton extends React.Component {
     return (
       <div>
         <button
-          className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2"
+          className="font20 btn btn-outline-dark btn-large shadow px-4 py-2"
           onClick={() => this.setState({ open: true })}
+          disabled={!isOrderable}
         >
           {isOrderable ? "Buy" : "Coming Soon"}
         </button>

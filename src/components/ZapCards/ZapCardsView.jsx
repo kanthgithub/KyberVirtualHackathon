@@ -4,6 +4,7 @@ import isEmpty from "lodash/isEmpty";
 import PercentageCircle from "../PercentageCircle";
 
 import "../../App.css";
+import BuyButton from "../BuyButton";
 
 const ZapCardsView = props => {
   const {
@@ -29,9 +30,7 @@ const ZapCardsView = props => {
           </div>
           <div className="row justify-content-center my-4">
             <div className="col-12 col-md-12 col-lg-12 text-center ">
-              <button className="font20 btn btn-outline-dark btn-large shadow rounded-pill px-4 py-2 ">
-                {isOrderable ? "Buy Zap" : "Coming Soon"}
-              </button>
+              <BuyButton name={name} isOrderable={isOrderable} />
             </div>
           </div>
         </div>

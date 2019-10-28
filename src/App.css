@@ -93,7 +93,7 @@ body {
 }
 
 .hero-image {
-  background-image: url("../src/assets/background.svg");
+  background-image: url("../src/assets/background.png");
 
   height: 30%;
   background-position: center;
