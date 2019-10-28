@@ -72,7 +72,7 @@ const WhyUseDeFiBaskets = () => (
           always maintain full-control of your assets.
           <br />
           <a
-            href="https://google.com"
+            href="https://github.com/DeFiStrategies/KyberVirtualHackathon/tree/master/SmartContracts"
             rel="noopener noreferrer"
             target="_blank"
           >
