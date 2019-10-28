@@ -20,7 +20,7 @@ class SurveyPageContainer extends PureComponent {
 
     onAnswer = (answer) => {
         this.setState({
-            answers: [ ...this.state.answers, answer],
+            answers: [...this.state.answers, answer],
             questionNumber: this.state.questionNumber + 1,
         });
     };
@@ -28,22 +28,25 @@ class SurveyPageContainer extends PureComponent {
     reDoSurvey = () => {
         this.setState({
             questionNumber: 1,
+            answers: [],
             answer: '',
+            isLoading: false,
+            surveyComplete: false,
         });
     };
 
     onCompletion = () => {
-        const {answers} = this.state;
+        const { answers } = this.state;
         const strategy = surveyResponse[answers[0]][answers[1]][answers[2]][answers[3]];
         return strategy;
     };
 
     submitResults = () => {
-        this.setState({ isLoading: true, surveyComplete: true });
+        this.setState({ isLoading: true, surveyComplete: false });
         const result = this.onCompletion();
         setTimeout(() => {
-           this.setState({ isLoading: false, answer: result })
-         } , 1500);
+            this.setState({ isLoading: false, surveyComplete: true, answer: result })
+        }, 1500);
     };
 
     render() {
@@ -57,8 +60,8 @@ class SurveyPageContainer extends PureComponent {
                 surveyList={surveyList}
                 reDoSurvey={this.reDoSurvey}
                 submitResults={this.submitResults}
-                answer={answer}
                 surveyComplete={surveyComplete}
+                answer={answer}
             />
         );
     }
