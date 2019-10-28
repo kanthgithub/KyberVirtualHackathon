@@ -19,167 +19,158 @@ export const MIN_ABI = [
 // Contract ABI
 export const CONTRACT_ABI = [
   {
-    constant: true,
-    inputs: [],
-    name: "cDAIAllocation",
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "cDAIAllocation",
+    "outputs": [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: "owner",
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
       {
-        internalType: "address payable",
-        name: "",
-        type: "address"
+        "name": "",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: "balance",
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "balance",
+    "outputs": [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: "Invest2FulcrumContract",
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "Invest2FulcrumContract",
+    "outputs": [
       {
-        internalType: "contract Invest2Fulcrum",
-        name: "",
-        type: "address"
+        "name": "",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [
+    "constant": false,
+    "inputs": [
       {
-        internalType: "address payable",
-        name: "newOwner",
-        type: "address"
+        "name": "newOwner",
+        "type": "address"
       }
     ],
-    name: "transferOwnership",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: "Invest2cDAIContract",
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "Invest2cDAIContract",
+    "outputs": [
       {
-        internalType: "contract Invest2cDAI",
-        name: "",
-        type: "address"
+        "name": "",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: "view",
-    type: "function"
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "constructor"
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
-    payable: true,
-    stateMutability: "payable",
-    type: "fallback"
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "fallback"
   },
   {
-    constant: false,
-    inputs: [],
-    name: "toggleContractActive",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
+    "constant": false,
+    "inputs": [],
+    "name": "toggleContractActive",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [
+    "constant": false,
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "_numberPercentageValue",
-        type: "uint256"
+        "name": "_numberPercentageValue",
+        "type": "uint256"
       }
     ],
-    name: "change_cDAIAllocation",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
+    "name": "change_cDAIAllocation",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [],
-    name: "SafeNotSorryZapInvestment",
-    outputs: [
+    "constant": false,
+    "inputs": [],
+    "name": "SafeNotSorryZapInvestment",
+    "outputs": [
       {
-        internalType: "bool",
-        name: "",
-        type: "bool"
+        "name": "",
+        "type": "bool"
       }
     ],
-    payable: true,
-    stateMutability: "payable",
-    type: "function"
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [],
-    name: "depositETH",
-    outputs: [
+    "constant": false,
+    "inputs": [],
+    "name": "depositETH",
+    "outputs": [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256"
+        "name": "",
+        "type": "uint256"
       }
     ],
-    payable: true,
-    stateMutability: "payable",
-    type: "function"
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [],
-    name: "withdraw",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
+    "constant": false,
+    "inputs": [],
+    "name": "withdraw",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
 ];
