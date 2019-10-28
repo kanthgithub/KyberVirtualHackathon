@@ -25,7 +25,7 @@ const SurveyPageView = ({ ...props }) => {
                                 onClick={reDoSurvey}
                                 className={styles.buttonspacing}
                                 size="lg"
-                                style={{ color: "white", fontSize: 20, height: 50 }}
+                                style={{ color: "white", fontSize: 20, height: 50, margin: 5 }}
                             >
                                 Start Over
                         </Button>
@@ -33,7 +33,7 @@ const SurveyPageView = ({ ...props }) => {
                                 href="/zaps"
                                 variant="outline-light"
                                 size="lg"
-                                style={{ color: "white", fontSize: 20, height: 50 }}
+                                style={{ color: "white", fontSize: 20, height: 50, margin: 5 }}
                             >
                                 Explore all Zaps
                         </Button>
