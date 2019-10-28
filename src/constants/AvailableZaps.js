@@ -1,4 +1,4 @@
-export const AVAILABLE_ZAPS = {
+const AVAILABLE_ZAPS = {
   bullSharpe: {
     name: "Bull Sharpe",
     isOrderable: false,
@@ -43,3 +43,5 @@ export const AVAILABLE_ZAPS = {
     ]
   }
 };
+
+export default AVAILABLE_ZAPS;

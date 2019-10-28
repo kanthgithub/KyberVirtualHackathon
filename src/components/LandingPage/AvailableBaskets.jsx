@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import { AVAILABLE_ZAPS } from "../../constants/AvailableZaps";
+import AvailableZaps from "../../constants/AvailableZaps";
 import ZapCardsView from "../ZapCards/ZapCardsView";
 
 const AvailableBaskets = () => (
@@ -11,7 +11,7 @@ const AvailableBaskets = () => (
       <h2>AVAILABLE ZAPS</h2>
     </Row>
     <Row>
-      {Object.values(AVAILABLE_ZAPS).map((zap, i) => (
+      {Object.values(AvailableZaps).map((zap, i) => (
         <div key={i} className="col-12 col-md-4 col-lg-4">
           <ZapCardsView basketData={zap} />
         </div>

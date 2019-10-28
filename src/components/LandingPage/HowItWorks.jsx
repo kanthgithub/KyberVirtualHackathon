@@ -8,7 +8,7 @@ import Two from "../../assets/two.png";
 import Three from "../../assets/three.png";
 
 const HowItWorks = () => (
-  <Container style={{ marginBottom: "200px" }}>
+  <Container>
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
       <h2>HOW IT WORKS?</h2>
     </Row>
@@ -49,10 +49,10 @@ const HowItWorks = () => (
         width="560"
         height="315"
         src="https://www.youtube.com/embed/L3wKzyIN1yk"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+        allowFullScreen
+      />
     </div>
   </Container>
 );

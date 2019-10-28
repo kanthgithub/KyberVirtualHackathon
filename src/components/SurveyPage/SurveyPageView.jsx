@@ -10,47 +10,104 @@ import styles from './SurveyPageView.module.css';
 import '../../App.css';
 
 const SurveyPageView = ({ ...props }) => {
-    const { questionNumber, onAnswer, surveyList, reDoSurvey,
-                submitResults, isLoading, answer } = props;
-    
+    const { questionNumber, onAnswer, surveyList, reDoSurvey, surveyComplete,
+        submitResults, isLoading, answer } = props;
+
+    const surveyCompleted = () => (
+        <>
+            <NavigationBar />
+            <div key={questionNumber} className={styles.containerPadding}>
+                <Container>
+                    {
+                        surveyComplete ? (<>
+                            <Button
+                                variant="outline-light"
+                                onClick={reDoSurvey}
+                                className={styles.buttonspacing}
+                                size="lg"
+                                style={{ color: "white", fontSize: 20, height: 50, margin: 5 }}
+                            >
+                                Start Over
+                        </Button>
+                            <Button
+                                href="/zaps"
+                                variant="outline-light"
+                                size="lg"
+                                style={{ color: "white", fontSize: 20, height: 50, margin: 5 }}
+                            >
+                                Explore all Zaps
+                        </Button>
+                        </>) : (
+                                <Button
+                                    variant="outline-light"
+                                    onClick={submitResults}
+                                    className={styles.buttonspacing}
+                                    size="lg"
+                                >
+                                    Get Results
+                    </Button>
+                            )
+                    }
+                    {
+                        isLoading ? (
+                            <>
+                                <Spinner animation="grow" variant="light" />
+                                <Spinner animation="grow" variant="light" />
+                                <Spinner animation="grow" variant="light" />
+                                <Spinner animation="grow" variant="light" />
+                                <Spinner animation="grow" variant="light" />
+                            </>
+                        ) : (generateResult())
+                    }
+                </Container>
+            </div>
+        </>
+    );
+
     const questions = () => {
         const questions = surveyList.map(item => {
             return (
-                  <>
-                  <NavigationBar />
-                  <div key={questionNumber} className={styles.containerPadding}>
-                      <Container key={questionNumber}>
-                              <h4 style={{ color: "white" }}>
-                                  {item.question}
-                              </h4>
-                              <br />
-                              <ol>
-                                  {item.options.map(option => {
-                                      return (
-                                          <li className={styles.buttonspacing}>
-                                              <Button variant="outline-light" onClick={() => onAnswer(option.key)}>
-                                                  {option.value}
-                                              </Button>
-                                          </li>
-                                      );
-                                  })}
-                              </ol>
-                      </Container>        
-                  </div>
-                  </>
+                <>
+                <NavigationBar />
+                <div key={questionNumber} className={styles.containerPadding}>
+                    <Container key={questionNumber}>
+                        {questionNumber === 1 ? (
+                            <><h4 style={{ color: "white" }}>Answer a few multiple choice questions to see which Zap might fit your needs:</h4><br /></>
+                        ) : null}
+                        <h4 style={{ color: "white" }}> {questionNumber} . {item.question} </h4> <br />
+                        <ol type="A" style={{ color: "white" }}>
+                            {item.options.map(option => {
+                                return (
+                                    <li className={styles.buttonspacing}>
+                                        <Button variant="outline-light" size="lg" onClick={() => onAnswer(option.key)}>
+                                            {option.value}
+                                        </Button>
+                                    </li>
+                                );
+                            })}
+                        </ol>
+                        <br />
+                        <br />
+                        <h5 style={{ color: "white", fontSize: 15 }}>DISCLOSURE: THIS IS NOT INVESTMENT ADVICE. DO NOT MAKE INVESTMENT DECISIONS SOLELY BASED ON</h5>
+                        <h5 style={{ color: "white", fontSize: 15 }}>RESULTS GENERATED BY THIS TOOL. THIS PROJECT IS IN BETA. USE AT YOUR OWN DISCRETION.</h5>
+                    </Container>
+                </div>
+                </>
             );
         });
         return questions[questionNumber - 1];
     };
 
     const generateResult = () => {
-        return(
+        return (
             isEmpty(answer) ? null : (
                 <>
-                    <br /> < br/>
+                    <br /> < br />
                     <h4 style={{ color: "white" }}>
-                        Based on your answer, the best strategy for you is {' '}
+                        Based on your investment profile, <br />
+                        you might find this Zap useful: <br />
                         <Link
+                            styles={{ textDecoration: 'none', color: 'white' }}
                             to={`/zaps/${answer}`}
                         >
                             {answer}
@@ -63,54 +120,17 @@ const SurveyPageView = ({ ...props }) => {
 
     const questionaire = (questionNumber) => {
         return (
-                <div
-                    className="hero-image"
-                    style={{
+            <div
+                className="hero-image"
+                style={{
                     height: "1000px",
                     marginBottom: "100px"
-                    }}
-                >
-                    <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
-                    {
-                        surveyList.length >= questionNumber ? questions() :
-                        (
-                            <>
-                                <NavigationBar/>
-                                <div key={questionNumber} className={styles.containerPadding}>
-                                    <Container>
-                                        <Button
-                                            variant="outline-light"
-                                            onClick={reDoSurvey}
-                                            className={styles.buttonspacing}
-                                        >
-                                            Redo the Survey
-                                        </Button>
-                                        {' '}
-                                        <Button
-                                            variant="outline-light"
-                                            onClick={submitResults}
-                                            className={styles.buttonspacing}
-                                        >
-                                            Get Results
-                                        </Button>
-                                        {
-                                            isLoading ? (
-                                                <>
-                                                    <Spinner animation="grow" variant="light" />
-                                                    <Spinner animation="grow" variant="light" />
-                                                    <Spinner animation="grow" variant="light" />
-                                                    <Spinner animation="grow" variant="light" />
-                                                    <Spinner animation="grow" variant="light" />
-                                                </>
-                                            ) : (generateResult())
-                                        }
-                                    </Container>
-                                </div>
-                            </>
-                        )
-                    }
-                    </div>
+                }}
+            >
+                <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
+                    {surveyList.length >= questionNumber ? questions() : surveyCompleted()}
                 </div>
+            </div>
         );
     };
 

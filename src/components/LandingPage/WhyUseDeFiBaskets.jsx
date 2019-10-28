@@ -8,7 +8,7 @@ import SaveGas from "../../assets/save-gas.png";
 import NonCustodial from "../../assets/non-custodial.png";
 
 const WhyUseDeFiBaskets = () => (
-  <Container style={{ marginBottom: "200px" }}>
+  <Container>
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
       <h2>WHY USE DEFI ZAP?</h2>
     </Row>
@@ -24,8 +24,8 @@ const WhyUseDeFiBaskets = () => (
           <h4>Save Time</h4>
         </div>
         <h6>
-          Zaps spread your capital across various DeFi protocols in one
-          transaction, bypassing many manual steps.
+        Zap is a smart contract that auto-spreads incoming deposits across multiple 
+        DeFi protocols in one transaction
         </h6>
       </Col>
 

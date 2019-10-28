@@ -20,7 +20,7 @@ const Hero = () => (
           <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
             <div className="d-flex">
               <h1 className="text-light">Defi Zap</h1>
-              <button className="btn btn-dark shadow beta-btn">BETA</button>
+              <button disabled className="btn btn-dark shadow beta-btn">BETA</button>
             </div>
             <p className="lead text-center text-md-left text-light mb-6 mb-lg-8">
               Get instant exposure across multiple DeFi protocols based on your

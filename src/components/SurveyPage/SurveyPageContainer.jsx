@@ -10,16 +10,17 @@ class SurveyPageContainer extends PureComponent {
         super(props);
         this.state = {
             questionNumber: 1,
-            answers: ['conservative','beginner','shortTerm','bull'],
+            answers: [],
             answer: '',
             isLoading: false,
+            surveyComplete: false,
         };
         autobind(this);
     };
 
     onAnswer = (answer) => {
         this.setState({
-            answers: [ ...this.state.answers, answer],
+            answers: [...this.state.answers, answer],
             questionNumber: this.state.questionNumber + 1,
         });
     };
@@ -27,26 +28,29 @@ class SurveyPageContainer extends PureComponent {
     reDoSurvey = () => {
         this.setState({
             questionNumber: 1,
+            answers: [],
             answer: '',
+            isLoading: false,
+            surveyComplete: false,
         });
     };
 
     onCompletion = () => {
-        const {answers} = this.state;
+        const { answers } = this.state;
         const strategy = surveyResponse[answers[0]][answers[1]][answers[2]][answers[3]];
         return strategy;
     };
 
     submitResults = () => {
-        this.setState({ isLoading: true });
+        this.setState({ isLoading: true, surveyComplete: false });
         const result = this.onCompletion();
         setTimeout(() => {
-           this.setState({ isLoading: false, answer: result })
-         } , 1500);
+            this.setState({ isLoading: false, surveyComplete: true, answer: result })
+        }, 1500);
     };
 
     render() {
-        const { questionNumber, isLoading, answer } = this.state;
+        const { questionNumber, isLoading, answer, surveyComplete } = this.state;
         return (
             <SurveyPageView
                 questionNumber={questionNumber}
@@ -56,6 +60,7 @@ class SurveyPageContainer extends PureComponent {
                 surveyList={surveyList}
                 reDoSurvey={this.reDoSurvey}
                 submitResults={this.submitResults}
+                surveyComplete={surveyComplete}
                 answer={answer}
             />
         );
