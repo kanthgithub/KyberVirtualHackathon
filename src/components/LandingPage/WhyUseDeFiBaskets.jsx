@@ -61,7 +61,7 @@ const WhyUseDeFiBaskets = () => (
       Access all your favorite DeFi protocols and save up to 40% on transaction fees.
       <br />
       <a
-              href="https://defitutorials.substack.com/p/get-instant-exposure-across-multiple-defi-protocols-with-defi-zap"
+              href="https://defitutorials.substack.com/p/get-instant-exposure-across-multiple"
               rel="noopener noreferrer"
               target="_blank"
             >
