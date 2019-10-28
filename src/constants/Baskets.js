@@ -6,7 +6,7 @@ const Baskets = {
             "name": "cDai",
             "percent": 90
         }, {
-            "name": "2xLONG-ETH",
+            "name": "dLETH2x",
             "percent": 10
         }]
     },
@@ -28,7 +28,7 @@ const Baskets = {
             "name": "cDai",
             "percent": 90
         }, {
-            "name": "SHORT1xBZX",
+            "name": "dSETH1x",
             "percent": 10
         }]
     },
@@ -129,7 +129,7 @@ const Baskets = {
             "name": "ETH26EMA",
             "percent": 25
         }, {
-            "name": "2XLONG-ETH",
+            "name": "dLETH2x",
             "percent": 25
         }]
     },
@@ -157,7 +157,7 @@ const Baskets = {
             "name": "ETHMINVOL",
             "percent": 40
         }, {
-            "name": "2XLONG-ETH",
+            "name": "dLETH2x",
             "percent": 10
         }]
     },
@@ -186,7 +186,7 @@ const Baskets = {
             "percent": 25
         }]
     },
-    "acitveBear": {
+    "activeBear": {
         "name": "Active Bear",
         "isOrderable": false,
         "components": [{
@@ -196,7 +196,7 @@ const Baskets = {
             "name": "ETH12EMA",
             "percent": 25
         }, {
-            "name": "2XSHORTH-ETH",
+            "name": "dSETH2x",
             "percent": 25
         }]
     },
@@ -243,7 +243,7 @@ const Baskets = {
             "name": "ETH12EMA",
             "percent": 25
         }, {
-            "name": "2xLONG-ETH",
+            "name": "dLETH2x",
             "percent": 25
         }]
     },
@@ -254,7 +254,7 @@ const Baskets = {
             "name": "ETHMINVOL",
             "percent": 25
         }, {
-            "name": "2xLONG-ETH",
+            "name": "dLETH2x",
             "percent": 75
         }]
     },

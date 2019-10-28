@@ -56,7 +56,9 @@ class BuyButton extends React.Component {
       CONTRACT_ADDRESS_KOVAN
     );
     this.setState({ showLoader: true });
-    const tx = await contract.methods
+    let tx;
+    try {
+      tx = await contract.methods
       .SafeNotSorryZapInvestment()
       .send({
         from: this.state.account,
@@ -78,6 +80,9 @@ class BuyButton extends React.Component {
         alert(error);
         this.setState({ showLoader: false });
       });
+    } catch(error) {
+      console.log(error);
+    }
     console.log(tx);
   };
 

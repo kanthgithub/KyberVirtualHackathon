@@ -66,8 +66,10 @@ const ZapFullView = ({ ...props }) => {
                 <div className="col-12 col-md-12 col-lg-12 text-center">
                   {isOrderable ? null : (
                     <>
+                      <h4 style={{ color: 'black'}}>
                       This Zap is still under development. In the meantime,
                       check out our <a href="/zaps/lender"> Lender</a> Zap.
+                      </h4>
                     </>
                   )}
                 </div>

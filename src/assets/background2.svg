@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1435px" height="783px" viewBox="0 0 1435 783" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>BAGROUND</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="2.54922327%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#4762E2" offset="0%"></stop>
+            <stop stop-color="#2611C9" offset="100%"></stop>
+        </linearGradient>
+        <path d="M515.715739,334.991028 L130.715739,1001.83059 C637.562173,1365.28015 1168.30864,1375.33363 1722.95515,1031.99103 L1310.72706,793.991028 L515.715739,334.991028 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Blue-Customer-Service-Page-Copy" transform="translate(-5.000000, 0.000000)">
+            <g id="Fill-5" transform="translate(-334.000000, -604.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Mask-Copy-2" fill="url(#linearGradient-1)" transform="translate(926.835445, 808.581699) rotate(-30.000000) translate(-926.835445, -808.581699) " xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>
