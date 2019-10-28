@@ -2,12 +2,12 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
-import { Link } from "react-router-dom";
 import isEmpty from 'lodash/isEmpty';
 
 import NavigationBar from '../Navbar';
 import styles from './SurveyPageView.module.css';
-import '../../App.css';
+import ZapFullView from "../Baskets/ZapFullView";
+import Baskets from '../../constants/Baskets';
 
 const SurveyPageView = ({ ...props }) => {
     const { questionNumber, onAnswer, surveyList, reDoSurvey, surveyComplete,
@@ -45,12 +45,12 @@ const SurveyPageView = ({ ...props }) => {
                                     size="lg"
                                 >
                                     Get Results
-                    </Button>
-                            )
+                                </Button>)
                     }
                     {
                         isLoading ? (
                             <>
+                                <br />
                                 <Spinner animation="grow" variant="light" />
                                 <Spinner animation="grow" variant="light" />
                                 <Spinner animation="grow" variant="light" />
@@ -78,7 +78,7 @@ const SurveyPageView = ({ ...props }) => {
                         <ol type="A" style={{ color: "white" }}>
                             {item.options.map(option => {
                                 return (
-                                    <li className={styles.buttonspacing}>
+                                    <li key={option.value} className={styles.buttonspacing}>
                                         <Button variant="outline-light" size="lg" onClick={() => onAnswer(option.key)}>
                                             {option.value}
                                         </Button>
@@ -102,16 +102,14 @@ const SurveyPageView = ({ ...props }) => {
         return (
             isEmpty(answer) ? null : (
                 <>
-                    <br /> < br />
-                    <h4 style={{ color: "white" }}>
-                        Based on your investment profile, <br />
-                        you might find this Zap useful: <br />
-                        <Link
-                            styles={{ textDecoration: 'none', color: 'white' }}
-                            to={`/zaps/${answer}`}
-                        >
-                            {answer}
-                        </Link>
+                <br /> < br />
+                <h4 style={{ color: "white" }}>
+                    Based on your investment profile, you might find this Zap useful: <br />
+                    <ZapFullView
+                        name={Baskets[answer].name}
+                        components={Baskets[answer].components}
+                        isOrderable={Baskets[answer].isOrderable}
+                    />
                     </h4>
                 </>
             )

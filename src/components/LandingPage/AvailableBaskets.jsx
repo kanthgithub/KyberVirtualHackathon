@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Button from 'react-bootstrap/Button';
+
 import AvailableZaps from "../../constants/AvailableZaps";
 import ZapCardsView from "../ZapCards/ZapCardsView";
 
@@ -21,12 +22,9 @@ const AvailableBaskets = () => (
       <div className="container">
         <div className="row justify-content-center my-4">
           <div className="col-12 col-md-12 col-lg-12 text-center">
-            <Link
-              to="/zaps"
-              className="font20 btn btn-dark btn-large shadow rounded-pill px-4 py-2 "
-            >
+            <Button variant="outline-dark" href='/zaps' size="lg">
               View All Zaps
-            </Link>
+            </Button>
           </div>
         </div>
       </div>
