@@ -1,7 +1,5 @@
 import React from "react";
 import { Modal, ModalBody } from "reactstrap";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 
 import "../../App.css";
 import web3 from "../../web3/web3";

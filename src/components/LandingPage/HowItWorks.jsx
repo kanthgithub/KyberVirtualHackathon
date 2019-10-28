@@ -48,7 +48,7 @@ const HowItWorks = () => (
         title="video"
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/L3wKzyIN1yk"
+        src="https://www.youtube.com/embed/6kgaF3G8EVw"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
