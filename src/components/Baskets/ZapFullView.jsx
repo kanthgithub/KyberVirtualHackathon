@@ -11,7 +11,7 @@ import '../../App.css';
 const ZapFullView = ({ ...props }) => {
     const { name, components, isOrderable } = props;
 
-        return (
+    return (
             <div className={styles.cardContainer}>
             <section className="pb-5 pt-md-12">
             <div className="container">
@@ -49,6 +49,16 @@ const ZapFullView = ({ ...props }) => {
                           View Analytics
                         </button>
                       </OverlayTrigger>
+                    </div>
+                  </div>
+                  <div className="row justify-content-center my-4">
+                    <div className="col-12 col-md-12 col-lg-12 text-center">
+                      {isOrderable ? null: (
+                        <>
+                        This Zap is still under development. In the meantime,
+                        check out our <a href='/zaps/lender'> Lender</a> Zap.
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
