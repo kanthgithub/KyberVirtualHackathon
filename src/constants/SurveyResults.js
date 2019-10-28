@@ -117,7 +117,7 @@ const surveyResults = {
             },
             "longTerm": {
                 "bull": "hedgedBull",
-                "bear": "passiveBear",
+                "bear": "moderateFlat",
                 "flat": "moderateFlat",
                 "notSure": "moderateFlat"
             }
