@@ -11,7 +11,7 @@ const Baskets = {
         }]
     },
     "bullSharpe": {
-        "name": "Bull Sharpe",
+        "name": "Conservative Bull",
         "isOrderable": false,
         "components": [{
             "name": "cDai",
@@ -22,7 +22,7 @@ const Baskets = {
         }] 
     },
     "bearSharpe": {
-        "name": "Bear Sharpe",
+        "name": "Conservative Bear",
         'isOrderable': false,
         "components": [{
             "name": "cDai",

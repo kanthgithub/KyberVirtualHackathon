@@ -24,7 +24,7 @@ export default Baskets;
       //     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       //       <div className="container">
       //         <a href="/" className="navbar-brand">
-      //           <h2>Defi Zap</h2>
+      //           <h2>DeFi Zap</h2>
       //         </a>
       //       </div>
       //     </nav>

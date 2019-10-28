@@ -19,7 +19,7 @@ const Hero = () => (
         <div className="row mt-5">
           <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
             <div className="d-flex">
-              <h1 className="text-light">Defi Zap</h1>
+              <h1 className="text-light">DeFi Zap</h1>
               <button disabled className="btn btn-dark shadow beta-btn">BETA</button>
             </div>
             <p className="lead text-center text-md-left text-light mb-6 mb-lg-8">
@@ -38,7 +38,7 @@ const Hero = () => (
             </div>
           </div>
           <div className="col-12 col-md-6">
-            <img src={heroimg} alt="Welcome to Defi Zap" />
+            <img src={heroimg} alt="Welcome to DeFi Zap" />
           </div>
         </div>
       </div>

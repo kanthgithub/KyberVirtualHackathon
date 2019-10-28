@@ -3,9 +3,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import SaveTime from "../../assets/save-time.png";
-import SaveGas from "../../assets/save-gas.png";
-import NonCustodial from "../../assets/non-custodial.png";
+import SaveTime from "../../assets/save-time.svg";
+import SaveGas from "../../assets/save-gas.svg";
+import NonCustodial from "../../assets/non-custodial.svg";
 
 const WhyUseDeFiBaskets = () => (
   <Container>
@@ -14,13 +14,15 @@ const WhyUseDeFiBaskets = () => (
     </Row>
     <Row>
       <Col>
-        <div className="d-flex mb-4">
+      <div className="d-flex mb-4">
           <img
             src={SaveTime}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-            width="30px"
+            width="195px"
             alt="Save Time"
           />
+        </div>
+        <div className="d-flex mb-4">
           <h4>Save Time</h4>
         </div>
         <h6>
@@ -30,13 +32,15 @@ const WhyUseDeFiBaskets = () => (
       </Col>
 
       <Col>
-        <div className="d-flex mb-4">
+      <div className="d-flex mb-4">
           <img
             src={SaveGas}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-            width="30px"
-            alt="Save Gas"
+            width="170px"
+            alt="Save Time"
           />
+        </div>
+        <div className="d-flex mb-4">
           <h4>Save Gas</h4>
         </div>
         <h6>
@@ -52,13 +56,15 @@ const WhyUseDeFiBaskets = () => (
         </h6>
       </Col>
       <Col>
-        <div className="d-flex mb-4">
+      <div className="d-flex mb-4">
           <img
             src={NonCustodial}
             className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-            width="30px"
-            alt="Non Custodial"
+            width="125px"
+            alt="Save Time"
           />
+        </div>
+        <div className="d-flex mb-4">
           <h4>Non-Custodial</h4>
         </div>
         <h6>
