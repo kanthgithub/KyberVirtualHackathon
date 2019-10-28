@@ -104,8 +104,7 @@ const SurveyPageView = ({ ...props }) => {
                 <>
                 <br /> < br />
                 <h4 style={{ color: "white" }}>
-                    Based on your investment profile, <br />
-                    you might find this Zap useful: <br />
+                    Based on your investment profile, you might find this Zap useful: <br />
                     <ZapFullView
                         name={Baskets[answer].name}
                         components={Baskets[answer].components}
