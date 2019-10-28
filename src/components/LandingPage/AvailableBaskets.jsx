@@ -8,7 +8,7 @@ import ZapCardsView from "../ZapCards/ZapCardsView";
 
 const AvailableBaskets = () => (
   <Container>
-    <Row className="justify-content-md-center" style={{ marginBottom: "80px" }}>
+    <Row className="justify-content-md-center" style={{ marginBottom: "60px" }}>
       <h2>AVAILABLE ZAPS</h2>
     </Row>
     <Row>
@@ -17,10 +17,8 @@ const AvailableBaskets = () => (
           <ZapCardsView basketData={zap} />
         </div>
       ))}
-    </Row>
-    <Row>
       <div className="container">
-        <div className="row justify-content-center my-4">
+      <div className="row justify-content-center my-4">
           <div className="col-12 col-md-12 col-lg-12 text-center">
             <Button variant="outline-dark" href='/zaps' size="lg">
               View All Zaps
@@ -29,6 +27,7 @@ const AvailableBaskets = () => (
         </div>
       </div>
     </Row>
+    <br />
   </Container>
 );
 

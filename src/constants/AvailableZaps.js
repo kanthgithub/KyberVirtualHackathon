@@ -1,6 +1,6 @@
 const AVAILABLE_ZAPS = {
   bullSharpe: {
-    name: "Bull Sharpe",
+    name: "Conservative Bull",
     isOrderable: false,
     color: "",
     components: [
@@ -23,13 +23,13 @@ const AVAILABLE_ZAPS = {
         percent: 90
       },
       {
-        name: "2xLONG-ETH",
+        name: "dLETH2x",
         percent: 10
       }
     ]
   },
   bearSharpe: {
-    name: "Bear Sharpe",
+    name: "Conservative Bear",
     isOrderable: false,
     components: [
       {
@@ -37,7 +37,7 @@ const AVAILABLE_ZAPS = {
         percent: 65
       },
       {
-        name: "SHORT1xBZX",
+        name: "dSETH1x",
         percent: 35
       }
     ]
