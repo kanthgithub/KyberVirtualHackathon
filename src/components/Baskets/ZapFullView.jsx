@@ -19,14 +19,14 @@ const ZapFullView = ({ ...props }) => {
                 <div className="card-body">
                   <div className="row justify-content-center">
                     <div className="col-12 col-md-8 col-lg-8">
-                      <h1 className="text-center my-3 hedger">{name}</h1>
-                      <h4 className="text-center my-3">Auto allocate your deposit to</h4>
+                      <h1 className="text-center my-3 hedger" style={{ color: 'black' }}>{name}</h1>
+                      <h4 className="text-center my-3" style={{ color: 'black' }}>Auto allocate your deposit to</h4>
                     </div>
                     <div className="col-12 col-md-6 col-lg-12 justify-content-center d-flex my-4">
                       {components.map(item => (
-                          <div>
+                          <div key={item.name}>
                             <PercentageCircle percentage={item.percent} color="#5540bf" />
-                            <h6 className="text-center mt-3">{item.name}</h6>
+                            <h6 className="text-center mt-3" style={{ color: 'black' }}>{item.name}</h6>
                           </div>
                       ))}
                     </div>
