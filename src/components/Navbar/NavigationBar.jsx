@@ -36,7 +36,7 @@ const NavigationBar = () => (
         </Navbar.Text>
         <Navbar.Text>
           <a href="/faq" className={styles.anchorSpacing}>
-            FAQs
+            FAQ
           </a>
         </Navbar.Text>
         <Navbar.Text>
