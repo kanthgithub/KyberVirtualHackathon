@@ -14,8 +14,11 @@ const LandingPage = () => (
       <AvailableBaskets />
     </div>
     <footer>
-      <h4 className="pt-4">DeFi Zap</h4>
-      <p className="pb-4 text-muted">All Rights Reserved</p>
+      <a href='/faq'>
+        <p className="pt-1">Still have questions?  Head over to our FAQ section to get more information.</p>
+      </a>
+      <h4 className="pt-1">DeFi Zap</h4>
+      <p className="pb-1 text-muted">All Rights Reserved</p>
     </footer>
   </div>
 );

@@ -35,6 +35,11 @@ const NavigationBar = () => (
           </a>
         </Navbar.Text>
         <Navbar.Text>
+          <a href="/faq" className={styles.anchorSpacing}>
+            FAQs
+          </a>
+        </Navbar.Text>
+        <Navbar.Text>
           <a
             href="https://t.me/defizap"
             rel="noopener noreferrer"

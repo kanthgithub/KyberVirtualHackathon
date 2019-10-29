@@ -13,6 +13,7 @@ import Baskets from "./pages/zaps";
 import BasketsPage from './components/Baskets';
 import Analytics from "./pages/analytics";
 import Survey from "./pages/survey";
+import Faq from './components/Faq';
 
 class App extends PureComponent {
   static propTypes = {
@@ -41,6 +42,7 @@ class App extends PureComponent {
           <Route exact path="/zaps" component={Baskets} />
           <Route exact path="/zaps/:id" component={BasketsPage} />
           <Route exact path="/analytics" component={Analytics} />
+          <Route exact path='/faq' component={Faq} />
         </Switch>
       </Router>
     );
