@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import kyberlogo from "../../assets/kyber-logo.png";
 
 import styles from "./NavigationBar.module.css";
 
@@ -9,8 +10,8 @@ const NavigationBar = () => (
     <Navbar
       className="navbar-dark"
       expand="sm"
-      style={{ background: "transparent" }}
-      // fixed="top"  // Not sure if I wanna do this. This needs some revisiting.
+      style={{ background: "red" }}
+    // fixed="top"  // Not sure if I wanna do this. This needs some revisiting.
     >
       <Nav className="mr-auto">
         <Navbar.Brand href="/">DeFi Zap <sup>Beta</sup></Navbar.Brand>
@@ -49,9 +50,15 @@ const NavigationBar = () => (
             Telegram
           </a>
         </Navbar.Text>
+        <Navbar.Text style={{ float: "right" }}>
+          <sup>powered by</ sup>
+          <img src={kyberlogo} style={{ width: "150px", height: "50px" }} alt="Kyber Logo" />
+        </Navbar.Text>
+
+
       </Nav>
     </Navbar>
-  </div>
+  </div >
 );
 
 export default NavigationBar;
