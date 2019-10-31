@@ -2,17 +2,38 @@ import React from "react";
 
 import PercentageCircle from "../PercentageCircle";
 import BuyButton from "../BuyButton";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import ModalBody from 'react-bootstrap/ModalBody';
 
 import styles from "./Baskets.module.css";
 import "../../App.css";
 
 const ZapFullView = ({ ...props }) => {
   const { name, components, isOrderable } = props;
+  let viewModal = false;
+  
+  const loadTutorial = () => {
+    viewModal = !viewModal;
+  };
 
+  const hideModal = () => {
+    viewModal = false;
+  };
+  // TODO: Working on the modal for the video.
   return (
     <div className={styles.cardContainer}>
+      <Modal show={viewModal} onHide={hideModal}>
+        <iframe
+          title="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/6kgaF3G8EVw"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </Modal>
       <section className="pb-5 pt-md-12">
         <div className="container">
           <div className="card shadow" style={{ backgroundColor: "#ffffff" }}>
@@ -51,15 +72,12 @@ const ZapFullView = ({ ...props }) => {
                   <BuyButton name={name} isOrderable={isOrderable} />
                 </div>
                 <div className="my-4">
-                  <OverlayTrigger
-                    placement="right"
-                    key="right"
-                    overlay={<Tooltip>Coming soon</Tooltip>}
-                  >
-                    <button className="btn btn-outline-primary shadow px-4 py-2">
-                      View Analytics
-                    </button>
-                  </OverlayTrigger>
+                  {
+                    isOrderable? (
+                      <Button onClick={loadTutorial} variant="outline-info">
+                        View Tutorial
+                      </Button>) : null
+                  }
                 </div>
               </div>
               <div className="row justify-content-center my-4">

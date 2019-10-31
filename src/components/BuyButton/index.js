@@ -1,5 +1,6 @@
 import React from "react";
-import { Modal, ModalBody } from "reactstrap";
+import { Modal, ModalBody } from "reactstrap";  // TODO: We need to eliminate the usage of reactstrap entirely, feels redunandant now.
+import Button from 'react-bootstrap/Button';
 
 import "../../App.css";
 import web3 from "../../web3/web3";
@@ -135,13 +136,13 @@ class BuyButton extends React.Component {
     const { isOrderable } = this.props;
     return (
       <div>
-        <button
-          className="font20 btn btn-outline-dark btn-large shadow px-4 py-2"
+        <Button
+          variant="outline-success"
           onClick={() => this.setState({ open: true })}
           disabled={!isOrderable}
         >
           {isOrderable ? "Buy" : "Coming Soon"}
-        </button>
+        </Button>
         {this.renderModal()}
       </div>
     );
