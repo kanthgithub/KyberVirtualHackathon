@@ -13,12 +13,12 @@ const AvailableBaskets = () => (
     </Row>
     <Row>
       {Object.values(AvailableZaps).map((zap, i) => (
-        <div key={i} className="col-12 col-md-4 col-lg-4">
+        <div key={i} className="col-md-6 col-lg-6">
           <ZapCardsView basketData={zap} />
         </div>
       ))}
       <div className="container">
-      <div className="row justify-content-center my-4">
+        <div className="row justify-content-center my-4">
           <div className="col-12 col-md-12 col-lg-12 text-center">
             <Button variant="outline-dark" href='/zaps' size="lg">
               View All Zaps

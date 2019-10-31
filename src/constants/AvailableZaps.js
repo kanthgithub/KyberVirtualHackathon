@@ -1,18 +1,15 @@
 const AVAILABLE_ZAPS = {
-  bullSharpe: {
-    name: "Conservative Bull",
-    isOrderable: false,
+  ETHMaximalist: {
+    name: "ETH Maximalist",
+    isOrderable: true,
     color: "",
-    components: [
-      {
-        name: "cDai",
-        percent: 70
-      },
-      {
-        name: "ETHMINVOL",
-        percent: 30
-      }
-    ]
+    components: [{
+      name: "dLETH2x",
+      percent: 50
+    }, {
+      name: "dsWBTC",
+      percent: 50
+    }]
   },
   lender: {
     name: "Lender",
@@ -28,20 +25,6 @@ const AVAILABLE_ZAPS = {
       }
     ]
   },
-  bearSharpe: {
-    name: "Conservative Bear",
-    isOrderable: false,
-    components: [
-      {
-        name: "cDai",
-        percent: 65
-      },
-      {
-        name: "dSETH1x",
-        percent: 35
-      }
-    ]
-  }
 };
 
 export default AVAILABLE_ZAPS;
