@@ -85,8 +85,8 @@ class ZapFullView extends Component {
                     {this.state.isOrderable ? null : (
                       <>
                         <h4 style={{ color: 'black' }}>
-                          This Zap is still under development. In the meantime,
-                        check out our <a href="/zaps/lender"> Lender</a> Zap.
+                          This Zap is still under development.</h4>
+                        <h4 style={{ color: 'black' }}> In the meantime, check out our <a href="/zaps/lender"> Lender</a> Zap or <a href="zaps/ETHMaximalist"> ETH Maximalist</a> Zap.
                         </h4>
                       </>
                     )}
