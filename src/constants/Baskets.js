@@ -1,5 +1,6 @@
 const Baskets = {
     "lender": {
+        "id": "lender",
         "name": "Lender",
         "isOrderable": true,
         "components": [{
@@ -28,6 +29,7 @@ const Baskets = {
         }
     },
     "ETHMaximalist": {
+        "id": 'ETHMaximalist',
         "name": "ETH Maximalist",
         "isOrderable": true,
         "components": [{
@@ -52,6 +54,7 @@ const Baskets = {
         }
     },
     "bullSharpe": {
+        "id": "bullSharpe",
         "name": "Conservative Bull",
         "isOrderable": false,
         "components": [{
@@ -63,6 +66,7 @@ const Baskets = {
         }]
     },
     "bearSharpe": {
+        "id": "bearSharpe",
         "name": "Conservative Bear",
         "isOrderable": false,
         "components": [{
@@ -74,6 +78,7 @@ const Baskets = {
         }]
     },
     "moderateBull": {
+        "id": "moderateBull",
         "name": "Moderate Bull",
         "isOrderable": false,
         "components": [{
@@ -88,6 +93,7 @@ const Baskets = {
         }]
     },
     "moderate": {
+        "id": "moderate",
         "name": "Moderate",
         "isOrderable": false,
         "components": [{
@@ -102,6 +108,7 @@ const Baskets = {
         }]
     },
     "moderateBear": {
+        "id": "moderateBear",
         "name": "Moderate Bear",
         "isOrderable": false,
         "components": [{
@@ -116,6 +123,7 @@ const Baskets = {
         }]
     },
     "longTermBull": {
+        "id": "longTermBull",
         "name": "Long Term Bull",
         "isOrderable": false,
         "components": [{
@@ -130,6 +138,7 @@ const Baskets = {
         }]
     },
     "shortTermBear": {
+        "id": "shortTermBear",
         "name": "Short Term Bear",
         "isOrderable": false,
         "components": [{
@@ -144,6 +153,7 @@ const Baskets = {
         }]
     },
     "shortTermFlat": {
+        "id": "shortTermFlat",
         "name": "Short Term Flat",
         "isOrderable": false,
         "components": [{
@@ -158,6 +168,7 @@ const Baskets = {
         }]
     },
     "moderateDiversified": {
+        "id": "moderateDiversified",
         "name": "Moderate Diversified",
         "isOrderable": false,
         "components": [{
@@ -175,6 +186,7 @@ const Baskets = {
         }]
     },
     "moderateFlat": {
+        "id": "moderateFlat",
         "name": "Moderate Flat",
         "isOrderable": false,
         "components": [{
@@ -189,6 +201,7 @@ const Baskets = {
         }]
     },
     "hedgedBull": {
+        "id": "hedgedBull",
         "name": "Hedge Bull",
         "isOrderable": false,
         "components": [{
@@ -203,6 +216,7 @@ const Baskets = {
         }]
     },
     "beginnerBull": {
+        "id": "beginnerBull",
         "name": "Beginner Bull",
         "isOrderable": false,
         "components": [{
@@ -214,6 +228,7 @@ const Baskets = {
         }]
     },
     "beginnerBear": {
+        "id": "beginnerBear",
         "name": "Beginner Bear",
         "isOrderable": false,
         "components": [{
@@ -228,6 +243,7 @@ const Baskets = {
         }]
     },
     "activeBear": {
+        "id": "activeBear",
         "name": "Active Bear",
         "isOrderable": false,
         "components": [{
@@ -242,6 +258,7 @@ const Baskets = {
         }]
     },
     "activeBull": {
+        "id": "activeBull",
         "name": "Active Bull",
         "isOrderable": false,
         "components": [{
@@ -253,6 +270,7 @@ const Baskets = {
         }]
     },
     "flatLands": {
+        "id": "flatLands",
         "name": "Flat Lands",
         "isOrderable": false,
         "components": [{
@@ -264,6 +282,7 @@ const Baskets = {
         }]
     },
     "shortTermBull": {
+        "id": "shortTermBull",
         "name": "Short Term Bull",
         "isOrderable": false,
         "components": [{
@@ -275,6 +294,7 @@ const Baskets = {
         }]
     },
     "riskyBear": {
+        "id": "riskyBear",
         "name": "Risky Bear",
         "isOrderable": false,
         "components": [{
@@ -289,6 +309,7 @@ const Baskets = {
         }]
     },
     "riskyBull": {
+        "id": "riskyBull",
         "name": "Risky Bull",
         "isOrderable": false,
         "components": [{

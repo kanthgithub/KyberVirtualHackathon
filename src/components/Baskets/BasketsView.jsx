@@ -7,7 +7,7 @@ import NavBar from '../Navbar';
 import '../../App.css';
 
 const BasketsView = ({ ...props }) => {
-    const { basketData: { name, components, isOrderable, description} } = props;
+    const { basketData: { name, components, isOrderable, description, id } } = props;
 
     if(!isEmpty(props.basketData)) {
         return (
@@ -25,6 +25,7 @@ const BasketsView = ({ ...props }) => {
               components={components}
               isOrderable={isOrderable}
               description={description}
+              id={id}
             />
           </div>
           </div>
