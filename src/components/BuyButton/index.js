@@ -131,6 +131,7 @@ class BuyButton extends React.Component {
       </Modal>
     );
   }
+  
   render() {
     const { isOrderable } = this.props;
     return (

@@ -1,28 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NavigationBar from "../Navbar";
 import "../../App.css";
 import heroimg from "../../assets/hero.svg";
 
 const Hero = () => (
-  <div
-    className="hero-image"
-    style={{
-      height: "1000px",
-      marginBottom: "100px"
-    }}
-  >
-    <div className="container" style={{ paddingTop: "150px" }}>
-      <NavigationBar />
       <div className="container-fluid">
         <div className="row mt-5">
-          <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
+          <div className="col-12 col-md-6">
             <div className="d-flex">
-              <h1 className="text-light">DeFi Zap</h1>
-              <button disabled className="btn btn-dark shadow beta-btn">BETA</button>
+              <h1>DeFi Zap</h1><h5><sup>Beta</sup></h5>
             </div>
-            <p className="lead text-center text-md-left text-light mb-6 mb-lg-8">
+            <p className="lead text-center text-md-left mb-6 mb-lg-8">
               Get instant exposure across multiple DeFi protocols based on your
               investment goals.
             </p>
@@ -37,13 +26,11 @@ const Hero = () => (
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="container-fluid">
             <img src={heroimg} alt="Welcome to DeFi Zap" />
           </div>
         </div>
       </div>
-    </div>
-  </div>
 );
 
 export default Hero;

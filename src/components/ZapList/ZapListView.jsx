@@ -4,18 +4,10 @@ import NavBar from '../Navbar';
 import Zaps from '../../constants/Baskets';
 
 import '../../App.css';
-import styles from './ZapList.module.css';
 
 const ZapListView = ({ ...props }) => {
         return (
-          <div
-            className="hero-image"
-            style={{
-            height: "1000px",
-            marginBottom: "100px"
-            }}
-          >
-          <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
+          <div>
             <NavBar />
             {Object.values(Zaps).map(zap => (
                 <ZapFullView
@@ -48,7 +40,6 @@ const ZapListView = ({ ...props }) => {
             </div>
             <br />
             <br />
-          </div>
           </div>
       );
 };

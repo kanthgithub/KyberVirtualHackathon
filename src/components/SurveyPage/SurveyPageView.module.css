@@ -3,6 +3,8 @@
     margin: 10px;
 }
 
-.containerPadding {
-    padding-top: 2em;
+.background {
+    /* background: #070b34;
+    background: -webkit-linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  */
 }
