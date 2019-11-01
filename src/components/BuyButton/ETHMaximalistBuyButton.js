@@ -1,14 +1,14 @@
 import React from "react";
-import { Modal, ModalBody } from "reactstrap";  // TODO: We need to eliminate the usage of reactstrap entirely, feels redunandant now.
-import Button from 'react-bootstrap/Button';
+import { Modal, ModalBody } from "reactstrap";
 
 import "../../App.css";
 import web3 from "../../web3/web3";
-import { CONTRACT_ABI } from "../../web3/abi";
-import { LENDER_CONTRACT_ADDRESS } from "../../web3/address";
+// import { CONTRACT_ABI } from "../../web3/abi";
+import { ETHMAXIMALIST_ABI } from "../../web3/EthMaximalistABI";
+import { ETHMAXIMALIST_CONTRACT_ADDRESS } from "../../web3/address";
 import Loading from "../Loading";
 
-class BuyButton extends React.Component {
+class ETHMAXIMALISTBuyButton extends React.Component {
   state = { open: false, value: "", account: null, showLoader: false };
   componentDidMount() {
     this.initialize();
@@ -51,23 +51,23 @@ class BuyButton extends React.Component {
     await this.getGas();
     const valueToInvest = this.state.value;
     const contract = new web3.eth.Contract(
-      CONTRACT_ABI,
-      LENDER_CONTRACT_ADDRESS
+      ETHMAXIMALIST_ABI,
+      ETHMAXIMALIST_CONTRACT_ADDRESS
     );
     this.setState({ showLoader: true });
     let tx;
     try {
       tx = await contract.methods
-        .SafeNotSorryZapInvestment()
+        .ETHMaximalistZAP()
         .send({
           from: this.state.account,
           value: web3.utils.toWei(valueToInvest, "ether"),
-          gas: 4500000,
+          gas: 5000000,
           gasPrice: String(this.state.gasValue)
         })
         .on("receipt", receipt => {
           console.log(
-            "the tx hash of the SafeNotSorryZapInvestment function is",
+            "the tx hash of the ETHMaximalistZAP function is",
             receipt["transactionHash"]
           );
           this.setState({
@@ -136,17 +136,17 @@ class BuyButton extends React.Component {
     const { isOrderable } = this.props;
     return (
       <div>
-        <Button
-          variant="outline-success"
+        <button
+          className="font20 btn btn-outline-dark btn-large shadow px-4 py-2"
           onClick={() => this.setState({ open: true })}
           disabled={!isOrderable}
         >
           {isOrderable ? "Buy" : "Coming Soon"}
-        </Button>
+        </button>
         {this.renderModal()}
       </div>
     );
   }
 }
 
-export default BuyButton;
+export default ETHMAXIMALISTBuyButton;

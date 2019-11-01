@@ -10,6 +10,17 @@ const Baskets = {
             "percent": 10
         }]
     },
+    "ETHMaximalist": {
+        "name": "ETH Maximalist",
+        "isOrderable": true,
+        "components": [{
+            "name": "dLETH2x",
+            "percent": 50
+        }, {
+            "name": "dsWBTC",
+            "percent": 50
+        }]
+    },
     "bullSharpe": {
         "name": "Conservative Bull",
         "isOrderable": false,
@@ -257,7 +268,7 @@ const Baskets = {
             "name": "dLETH2x",
             "percent": 75
         }]
-    },
+    }
 };
 
 export default Baskets;
