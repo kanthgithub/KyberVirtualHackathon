@@ -1,13 +1,14 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';  // Super important because all our Bootstrap CSS comes from here.
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux';
-import Loading from './components/Loading';
 
+import App from './App';
 import configureStore from './store';
 import './index.css';
-import App from './App';
+import Loading from './components/Loading';
 
 const basename = process.env.REACT_APP_ROUTER_BASENAME || '';
 const history = createBrowserHistory({ basename });

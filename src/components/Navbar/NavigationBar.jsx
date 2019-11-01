@@ -7,7 +7,7 @@ import kyberlogo from "../../assets/kyber-logo.png";
 import styles from "./NavigationBar.module.css";
 
 const NavigationBar = () => (
-  <div className="pt-3">
+  <div className="pt-1 pb-2">
     <Navbar expand="md">
       <Navbar.Brand href="/">DeFi Zap <sup>Beta</sup></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -52,8 +52,7 @@ const NavigationBar = () => (
         <Navbar.Text className={styles.logoPadding}>
             <sup>powered by</sup>
             <img src={kyberlogo} style={{ 
-                width: "70px",
-                // height: "5%"
+                width: "70px"
               }}
               alt="Kyber Logo" />
         </Navbar.Text>
