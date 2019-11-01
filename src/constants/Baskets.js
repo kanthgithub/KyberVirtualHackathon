@@ -25,7 +25,8 @@ const Baskets = {
             }, {
                 "text": "Compound.",
                 "hyperlink": 'https://defitutorials.substack.com/p/earn-passive-income-with-compound'
-            }]
+            }],
+            "tutorialLink": 'https://defitutorials.substack.com/p/lender-zap-walk-through-tutorial'
         }
     },
     "ETHMaximalist": {
@@ -50,7 +51,8 @@ const Baskets = {
             "textLink": [{
                 "text": "Check out this tutorial we made to help you use Fulcrum.",
                 "hyperlink": 'https://defitutorials.substack.com/p/margin-trading-with-fulcrum'
-            }]
+            }],
+            "tutorialLink": 'https://defitutorials.substack.com/p/eth-maximalist-zap-walk-through-tutorial'
         }
     },
     "bullSharpe": {
