@@ -13,7 +13,7 @@ const NavigationBar = () => (
       // fixed="top"  // Not sure if I wanna do this. This needs some revisiting.
     >
       <Nav className="mr-auto">
-        <Navbar.Brand href="/">DeFi Zap <sup>Beta</sup></Navbar.Brand>
+        <Navbar.Brand href="/">DeFiZap <sup>Beta</sup></Navbar.Brand>
         <Navbar.Text>
           <a className={styles.anchorSpacing} href="/survey">
             Get Started

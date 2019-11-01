@@ -1,4 +1,4 @@
-# [DeFi Zap](https://defizap.com)
+# [DeFiZap](https://defizap.com)
 
 The following code can be run locally by running the following two commands.
 

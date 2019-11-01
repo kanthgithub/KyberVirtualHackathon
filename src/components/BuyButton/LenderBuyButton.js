@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, ModalBody } from "reactstrap";  // TODO: We need to eliminate the usage of reactstrap entirely, feels redunandant now.
+import { Modal, ModalBody } from "reactstrap";
 import Button from 'react-bootstrap/Button';
 
 import "../../App.css";
@@ -8,7 +8,7 @@ import { CONTRACT_ABI } from "../../web3/abi";
 import { LENDER_CONTRACT_ADDRESS } from "../../web3/address";
 import Loading from "../Loading";
 
-class BuyButton extends React.Component {
+class LenderBuyButton extends React.Component {
   state = { open: false, value: "", account: null, showLoader: false };
   componentDidMount() {
     this.initialize();
@@ -87,7 +87,7 @@ class BuyButton extends React.Component {
 
   renderModal() {
     const { open, value } = this.state;
-    const { name } = this.props;
+    const { name, isOrderable } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
         <ModalBody>
@@ -136,17 +136,31 @@ class BuyButton extends React.Component {
     const { isOrderable } = this.props;
     return (
       <div>
-        <Button
-          variant="outline-success"
-          onClick={() => this.setState({ open: true })}
-          disabled={!isOrderable}
-        >
-          {isOrderable ? "Buy" : "Coming Soon"}
-        </Button>
+        {
+          isOrderable ? (
+            <Button
+              onClick={() => this.setState({ open: true })}
+              disabled={!isOrderable}
+              variant='outline-success'
+              size='lg'
+            >
+            Buy
+            </Button>
+          ): (
+            <Button
+              onClick={() => this.setState({ open: true })}
+              disabled={!isOrderable}
+              variant='outline-success'
+              size='lg'
+            >
+            Coming Soon
+            </Button>
+          )
+        }
         {this.renderModal()}
       </div>
     );
   }
 }
 
-export default BuyButton;
+export default LenderBuyButton;
