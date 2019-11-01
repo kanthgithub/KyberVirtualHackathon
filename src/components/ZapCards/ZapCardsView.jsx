@@ -4,14 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 import PercentageCircle from "../PercentageCircle";
 import "../../App.css";
-import BuyButton from "../BuyButton";
-import LenderBuyButton from "../BuyButton/LenderBuyButton";
-import ETHMAXIMALISTBuyButton from "../BuyButton/ETHMaximalistBuyButton";
-
 
 const ZapCardsView = props => {
   const {
-    basketData: { name, components, isOrderable, id }
+    basketData: { name, components, id }
   } = props;
 
   if (!isEmpty(props.basketData)) {
@@ -36,7 +32,7 @@ const ZapCardsView = props => {
               <Button
                 href={`/zaps/${id}`}
                 size='lg'
-                variant="primary"
+                variant="outline-primary"
               >
                 More Info
               </Button>

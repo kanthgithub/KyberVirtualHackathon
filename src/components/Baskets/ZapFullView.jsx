@@ -74,8 +74,8 @@ class ZapFullView extends Component {
                       isOrderable ? (
                         <>
                         <Button
-                          data-toggle="collapse" data-target="#collapseExample"
-                          variant="outline-info"
+                          data-toggle="collapse" data-target={`#${this.props.id}`}
+                          variant="outline-primary"
                           size='lg'
                         >
                           More info
@@ -101,34 +101,34 @@ class ZapFullView extends Component {
                 </div>
                 <>
                       {isOrderable ? (
-                        <div className="collapse" id="collapseExample">
-                        <Card.Body>
-                          {
-                            <>
-                              <h3>{description.textQuestion}</h3>
-                              {description.textAnswer.map(answer => {
-                                return (
-                                  <p key={answer}>{answer}</p>
-                                );
-                              })}
-                              {
-                              description.textLink.map((linkData, i) => {
-                                return (
-                                    <>
-                                    <a href={linkData.hyperlink}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      {linkData.text}
-                                    </a>
-                                    {' '} {i === (description.textLink.length -1) ? '' : 'and'} {' '}
-                                    </>
-                                )
-                              })
-                              }
-                            </>
-                          }
-                        </Card.Body>
+                        <div className="collapse" id={`${this.props.id}`}>
+                          <Card.Body>
+                            {
+                              <>
+                                <h3>{description.textQuestion}</h3>
+                                {description.textAnswer.map(answer => {
+                                  return (
+                                    <p key={answer}>{answer}</p>
+                                  );
+                                })}
+                                {
+                                description.textLink.map((linkData, i) => {
+                                  return (
+                                      <>
+                                      <a href={linkData.hyperlink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {linkData.text}
+                                      </a>
+                                      {' '} {i === (description.textLink.length -1) ? '' : 'and'} {' '}
+                                      </>
+                                  )
+                                })
+                                }
+                              </>
+                            }
+                          </Card.Body>
                         </div>
                       ): (<div className="row justify-content-center my-4">
                       <div className="col-12 col-md-12 col-lg-12 text-center">
