@@ -26,8 +26,8 @@ const Hero = () => (
               </div>
             </div>
           </div>
-          <div className="container-fluid">
-            <img src={heroimg} alt="Welcome to DeFi Zap" />
+          <div className="col-12 col-md-6">
+            <img src={heroimg} alt="Welcome to DeFiZap" />
           </div>
         </div>
       </div>

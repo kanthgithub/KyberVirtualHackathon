@@ -10,7 +10,7 @@ import NonCustodial from "../../assets/non-custodial.svg";
 const WhyUseDeFiBaskets = () => (
   <Container>
     <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
-      <h2>WHY USE DEFI ZAP?</h2>
+      <h2>WHY USE DEFIZAP?</h2>
     </Row>
       <Row className="justify-content-md-center text-center ">
           <Col>

@@ -2,20 +2,24 @@ import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
+import styles from './Faq.module.css';
 import AccordionToggle from "react-bootstrap/AccordionToggle";
+
+const HeaderButton = ({ ...props}) => (
+  <Button variant="outline-link" onClick={props.onClick}>{props.children}</Button>
+);
 
 const FaqView = ({ ...props }) => {
     const { defaultActiveKey } = props;
     return (
       <Container>
         <Accordion defaultActiveKey={defaultActiveKey}>
-        <Card border="primary">
-          <AccordionToggle eventKey="0">
-            <Card.Header >
-                What is a Zap?
-            </Card.Header>
+        <Card className={styles.cardStyle}>
+          <AccordionToggle as={HeaderButton} eventKey="0">
+            <h4>What is a Zap?</h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
@@ -25,11 +29,11 @@ const FaqView = ({ ...props }) => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card border="primary">
-          <AccordionToggle eventKey="1">
-            <Card.Header >
+        <Card className={styles.cardStyle}>
+          <AccordionToggle as={HeaderButton} eventKey="1">
+<h4>
                 Can I change my assets and allocations?
-            </Card.Header>
+</h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="1">
             <Card.Body>
@@ -38,11 +42,11 @@ const FaqView = ({ ...props }) => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card border="primary">
-          <AccordionToggle eventKey="2">
-            <Card.Header >
+        <Card className={styles.cardStyle}>
+          <AccordionToggle as={HeaderButton} eventKey="2">
+<h4>
                 Where can I view my purchased assets?
-            </Card.Header>
+</h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="2">
             <Card.Body>
@@ -57,27 +61,27 @@ const FaqView = ({ ...props }) => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card border="primary">
-          <AccordionToggle eventKey="3">
-            <Card.Header >
+        <Card className={styles.cardStyle}>
+          <AccordionToggle as={HeaderButton} eventKey="3">
+<h4>
                 How much does this cost?
-            </Card.Header>
+</h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="3">
             <Card.Body>
-            <p>DeFi Zap does not charge any fees for investing through Zaps and all smart contract code is open sourced. Furthermore, accessing DeFi protocols through Zaps costs less than individually transacting on each one to accomplish the same result. For example, going from ETH to cDai on Compound and ETH to LONG2xBZX on Fulcrum will end up costing you ~$5-$6 in transaction fees. Lender's Zap helps you accomplish ETH to cDai + LONG2xBZX in one transaction, for ~$0.86-$1.76.</p>
+            <p>DeFiZap does not charge any fees for investing through Zaps and all smart contract code is open sourced. Furthermore, accessing DeFi protocols through Zaps costs less than individually transacting on each one to accomplish the same result. For example, going from ETH to cDai on Compound and ETH to LONG2xBZX on Fulcrum will end up costing you ~$5-$6 in transaction fees. Lender's Zap helps you accomplish ETH to cDai + LONG2xBZX in one transaction, for ~$0.86-$1.76.</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card border="primary">
-          <AccordionToggle eventKey="4">
-            <Card.Header >
-                What’s next for DeFi Zap?
-            </Card.Header>
+        <Card className={styles.cardStyle}>
+          <AccordionToggle as={HeaderButton} eventKey="4">
+<h4>
+                What’s next for DeFiZap?
+</h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="4">
             <Card.Body>
-            <p>-Launch a simple DeFi Zap Dashboard UI.</p>
+            <p>-Launch a simple DeFiZap Dashboard UI.</p>
 
             <p>-We are starting with ETH only deposits but will soon integrate Wyre to enable deploying capital into DeFi straight from your bank account.</p>
 

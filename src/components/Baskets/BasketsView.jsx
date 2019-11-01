@@ -5,7 +5,7 @@ import ZapFullView from './ZapFullView';
 import NavBar from '../Navbar';
 
 const BasketsView = ({ ...props }) => {
-    const { basketData: { name, components, isOrderable} } = props;
+    const { basketData: { name, components, isOrderable, description, id } } = props;
 
     if(!isEmpty(props.basketData)) {
         return (
@@ -15,6 +15,8 @@ const BasketsView = ({ ...props }) => {
               name={name}
               components={components}
               isOrderable={isOrderable}
+              description={description}
+              id={id}
             />
           </div>
       );

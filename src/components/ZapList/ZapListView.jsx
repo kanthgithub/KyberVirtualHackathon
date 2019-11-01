@@ -14,6 +14,8 @@ const ZapListView = ({ ...props }) => {
                     name={zap.name}
                     components={zap.components}
                     isOrderable={zap.isOrderable}
+                    description={zap.description}
+                    id={zap.id}
                 />
             ))}
             <div className="container">

@@ -1,14 +1,13 @@
 import React from "react";
 import isEmpty from "lodash/isEmpty";
+import Button from 'react-bootstrap/Button';
 
 import PercentageCircle from "../PercentageCircle";
-
 import "../../App.css";
-import BuyButton from "../BuyButton";
 
 const ZapCardsView = props => {
   const {
-    basketData: { name, components, isOrderable }
+    basketData: { name, components, id }
   } = props;
 
   if (!isEmpty(props.basketData)) {
@@ -30,7 +29,13 @@ const ZapCardsView = props => {
           </div>
           <div className="row justify-content-center my-4">
             <div className="col-12 col-md-12 col-lg-12 text-center ">
-              <BuyButton name={name} isOrderable={isOrderable} />
+              <Button
+                href={`/zaps/${id}`}
+                size='lg'
+                variant="outline-primary"
+              >
+                More Info
+              </Button>
             </div>
           </div>
         </div>

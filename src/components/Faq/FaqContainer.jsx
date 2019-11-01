@@ -17,7 +17,7 @@ class FaqContainer extends PureComponent {
                     <NavBar />
                     <br />
                     <FaqView defaultActiveKey='0'/>
-                </>
+            </>
         );
     }
 }
