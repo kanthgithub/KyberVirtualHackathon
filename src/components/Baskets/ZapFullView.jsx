@@ -3,13 +3,8 @@ import Button from 'react-bootstrap/Button';
 import autobind from 'react-autobind';
 import PercentageCircle from "../PercentageCircle";
 
-// import BuyButton from "../BuyButton";
 import LenderBuyButton from "../BuyButton/LenderBuyButton";
 import ETHMAXIMALISTBuyButton from "../BuyButton/ETHMaximalistBuyButton";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-
-
 import styles from "./Baskets.module.css";
 import "../../App.css";
 
@@ -68,7 +63,6 @@ class ZapFullView extends Component {
                 <div className="row justify-content-center my-4">
                   <div className="col-12 col-md-12 col-lg-12 text-center ">
                     {(name === "ETH Maximalist") ? (<ETHMAXIMALISTBuyButton name={name} isOrderable={isOrderable} />) : (<LenderBuyButton name={name} isOrderable={isOrderable} />)}
-                    {/* <LenderBuyButton name={name} isOrderable={isOrderable} /> */}
                   </div>
                   <div className="my-4">
                     {
@@ -77,6 +71,7 @@ class ZapFullView extends Component {
                           href='https://www.youtube.com/watch?v=6kgaF3G8EVw'
                           variant="outline-info"
                           target="_blank"
+                          size='lg'
                         >
                           View Tutorial
                       </Button>) : null}

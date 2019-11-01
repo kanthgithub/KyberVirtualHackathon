@@ -1,8 +1,8 @@
 import React from "react";
 import isEmpty from "lodash/isEmpty";
+import Button from 'react-bootstrap/Button';
 
 import PercentageCircle from "../PercentageCircle";
-
 import "../../App.css";
 import BuyButton from "../BuyButton";
 import LenderBuyButton from "../BuyButton/LenderBuyButton";
@@ -11,7 +11,7 @@ import ETHMAXIMALISTBuyButton from "../BuyButton/ETHMaximalistBuyButton";
 
 const ZapCardsView = props => {
   const {
-    basketData: { name, components, isOrderable }
+    basketData: { name, components, isOrderable, id }
   } = props;
 
   if (!isEmpty(props.basketData)) {
@@ -33,7 +33,13 @@ const ZapCardsView = props => {
           </div>
           <div className="row justify-content-center my-4">
             <div className="col-12 col-md-12 col-lg-12 text-center ">
-              {(name === "ETH Maximalist") ? (<ETHMAXIMALISTBuyButton name={name} isOrderable={isOrderable} />) : (<LenderBuyButton name={name} isOrderable={isOrderable} />)}
+              <Button
+                href={`/zaps/${id}`}
+                size='lg'
+                variant="primary"
+              >
+                More Info
+              </Button>
             </div>
           </div>
         </div>

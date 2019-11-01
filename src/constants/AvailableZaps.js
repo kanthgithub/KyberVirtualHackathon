@@ -1,5 +1,6 @@
 const AVAILABLE_ZAPS = {
   ETHMaximalist: {
+    id: "ETHMaximalist",
     name: "ETH Maximalist",
     isOrderable: true,
     color: "",
@@ -12,6 +13,7 @@ const AVAILABLE_ZAPS = {
     }]
   },
   lender: {
+    id: "lender",
     name: "Lender",
     isOrderable: true,
     components: [

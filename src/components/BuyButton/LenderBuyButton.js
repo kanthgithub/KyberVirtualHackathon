@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, ModalBody } from "reactstrap";
+import Button from 'react-bootstrap/Button';
 
 import "../../App.css";
 import web3 from "../../web3/web3";
@@ -135,13 +136,14 @@ class LenderBuyButton extends React.Component {
     const { isOrderable } = this.props;
     return (
       <div>
-        <button
-          className="font20 btn btn-outline-dark btn-large shadow px-4 py-2"
+        <Button
           onClick={() => this.setState({ open: true })}
           disabled={!isOrderable}
+          variant='outline-success'
+          size='lg'
         >
-          {isOrderable ? "Buy" : "Coming Soon"}
-        </button>
+        Buy
+        </Button>
         {this.renderModal()}
       </div>
     );
