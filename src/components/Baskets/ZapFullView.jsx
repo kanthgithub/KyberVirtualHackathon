@@ -1,39 +1,16 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
 
 import PercentageCircle from "../PercentageCircle";
 import BuyButton from "../BuyButton";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import ModalBody from 'react-bootstrap/ModalBody';
-
 import styles from "./Baskets.module.css";
 import "../../App.css";
 
 const ZapFullView = ({ ...props }) => {
   const { name, components, isOrderable } = props;
-  let viewModal = false;
-  
-  const loadTutorial = () => {
-    viewModal = !viewModal;
-  };
 
-  const hideModal = () => {
-    viewModal = false;
-  };
-  // TODO: Working on the modal for the video.
   return (
     <div className={styles.cardContainer}>
-      <Modal show={viewModal} onHide={hideModal}>
-        <iframe
-          title="video"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/6kgaF3G8EVw"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </Modal>
       <section className="pb-5 pt-md-12">
         <div className="container">
           <div className="card shadow" style={{ backgroundColor: "#ffffff" }}>
@@ -74,7 +51,11 @@ const ZapFullView = ({ ...props }) => {
                 <div className="my-4">
                   {
                     isOrderable? (
-                      <Button onClick={loadTutorial} variant="outline-info">
+                      <Button
+                        href='https://www.youtube.com/watch?v=6kgaF3G8EVw'
+                        variant="outline-info"
+                        target="_blank"
+                      >
                         View Tutorial
                       </Button>) : null
                   }

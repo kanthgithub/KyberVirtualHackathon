@@ -20,7 +20,7 @@ const LandingPage = () => (
       <FAQView />
     </div>
     <footer>
-      <h4 className="pt-1">DeFi Zap</h4>
+      <h4 className="pt-1">DeFiZap</h4>
       <p className="pb-1 text-muted">All Rights Reserved</p>
     </footer>
   </div>

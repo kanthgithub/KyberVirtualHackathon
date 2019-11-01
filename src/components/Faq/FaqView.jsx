@@ -65,19 +65,19 @@ const FaqView = ({ ...props }) => {
           </AccordionToggle>
           <Accordion.Collapse eventKey="3">
             <Card.Body>
-            <p>DeFi Zap does not charge any fees for investing through Zaps and all smart contract code is open sourced. Furthermore, accessing DeFi protocols through Zaps costs less than individually transacting on each one to accomplish the same result. For example, going from ETH to cDai on Compound and ETH to LONG2xBZX on Fulcrum will end up costing you ~$5-$6 in transaction fees. Lender's Zap helps you accomplish ETH to cDai + LONG2xBZX in one transaction, for ~$0.86-$1.76.</p>
+            <p>DeFiZap does not charge any fees for investing through Zaps and all smart contract code is open sourced. Furthermore, accessing DeFi protocols through Zaps costs less than individually transacting on each one to accomplish the same result. For example, going from ETH to cDai on Compound and ETH to LONG2xBZX on Fulcrum will end up costing you ~$5-$6 in transaction fees. Lender's Zap helps you accomplish ETH to cDai + LONG2xBZX in one transaction, for ~$0.86-$1.76.</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
         <Card border="primary">
           <AccordionToggle eventKey="4">
             <Card.Header >
-                What’s next for DeFi Zap?
+                What’s next for DeFiZap?
             </Card.Header>
           </AccordionToggle>
           <Accordion.Collapse eventKey="4">
             <Card.Body>
-            <p>-Launch a simple DeFi Zap Dashboard UI.</p>
+            <p>-Launch a simple DeFiZap Dashboard UI.</p>
 
             <p>-We are starting with ETH only deposits but will soon integrate Wyre to enable deploying capital into DeFi straight from your bank account.</p>
 
