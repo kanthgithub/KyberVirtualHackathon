@@ -5,6 +5,9 @@ import PercentageCircle from "../PercentageCircle";
 
 import "../../App.css";
 import BuyButton from "../BuyButton";
+import LenderBuyButton from "../BuyButton/LenderBuyButton";
+import ETHMAXIMALISTBuyButton from "../BuyButton/ETHMaximalistBuyButton";
+
 
 const ZapCardsView = props => {
   const {
@@ -30,7 +33,7 @@ const ZapCardsView = props => {
           </div>
           <div className="row justify-content-center my-4">
             <div className="col-12 col-md-12 col-lg-12 text-center ">
-              <BuyButton name={name} isOrderable={isOrderable} />
+              {(name === "ETH Maximalist") ? (<ETHMAXIMALISTBuyButton name={name} isOrderable={isOrderable} />) : (<LenderBuyButton name={name} isOrderable={isOrderable} />)}
             </div>
           </div>
         </div>
