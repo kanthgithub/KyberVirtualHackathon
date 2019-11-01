@@ -7,7 +7,7 @@ import { CONTRACT_ABI } from "../../web3/abi";
 import { LENDER_CONTRACT_ADDRESS } from "../../web3/address";
 import Loading from "../Loading";
 
-class BuyButton extends React.Component {
+class LenderBuyButton extends React.Component {
   state = { open: false, value: "", account: null, showLoader: false };
   componentDidMount() {
     this.initialize();
@@ -148,4 +148,4 @@ class BuyButton extends React.Component {
   }
 }
 
-export default BuyButton;
+export default LenderBuyButton;
