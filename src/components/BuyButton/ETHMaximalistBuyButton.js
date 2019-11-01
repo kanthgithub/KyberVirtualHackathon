@@ -8,7 +8,7 @@ import { ETHMAXIMALIST_ABI } from "../../web3/EthMaximalistABI";
 import { ETHMAXIMALIST_CONTRACT_ADDRESS } from "../../web3/address";
 import Loading from "../Loading";
 
-class ETHMAXIMALIST_BuyButton extends React.Component {
+class ETHMAXIMALISTBuyButton extends React.Component {
   state = { open: false, value: "", account: null, showLoader: false };
   componentDidMount() {
     this.initialize();
@@ -149,4 +149,4 @@ class ETHMAXIMALIST_BuyButton extends React.Component {
   }
 }
 
-export default ETHMAXIMALIST_BuyButton;
+export default ETHMAXIMALISTBuyButton;

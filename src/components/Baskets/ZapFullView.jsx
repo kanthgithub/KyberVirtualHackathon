@@ -4,7 +4,7 @@ import autobind from 'react-autobind';
 import PercentageCircle from "../PercentageCircle";
 import BuyButton from "../BuyButton";
 import LenderBuyButton from "../BuyButton/LenderBuyButton";
-import ETHMaximalist_BuyButton from "../BuyButton/ETHMaximalistBuyButton";
+import ETHMAXIMALISTBuyButton from "../BuyButton/ETHMaximalistBuyButton";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
@@ -65,7 +65,8 @@ class ZapFullView extends Component {
                 </div>
                 <div className="row justify-content-center my-4">
                   <div className="col-12 col-md-12 col-lg-12 text-center ">
-                    <LenderBuyButton name={name} isOrderable={isOrderable} />
+                    {(name === "ETH Maximalist") ? (<ETHMAXIMALISTBuyButton name={name} isOrderable={isOrderable} />) : (<LenderBuyButton name={name} isOrderable={isOrderable} />)}
+                    {/* <LenderBuyButton name={name} isOrderable={isOrderable} /> */}
                   </div>
                   <div className="my-4">
                     <OverlayTrigger
