@@ -24,13 +24,13 @@ class ZapFullView extends Component {
         'textLink': [{
           'text': '',
           'hyperLink': ''
-        }]
+        }],
+        'tutorialLink': ''
       }: this.props.description,
       toggleInfo: false,
     };
     autobind(this);
   }
-
 
   render() {
     let name = this.state.name;
@@ -90,7 +90,7 @@ class ZapFullView extends Component {
                         <>
                         <br />
                         <Button
-                          href='https://www.youtube.com/watch?v=6kgaF3G8EVw'
+                          href={description.tutorialLink}
                           variant="outline-info"
                           target="_blank"
                           size='lg'
