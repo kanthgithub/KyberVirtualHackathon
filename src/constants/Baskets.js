@@ -19,7 +19,8 @@ const Baskets = {
         }, {
             "name": "dsWBTC",
             "percent": 50
-        }]
+        }],
+        "description": "ETH Maximalist Zap to add text: What does this Zap do? Your deposit is automatically split between bZx Perpetual Short WBTC (dsWBTC) and bZx Perpetual Long ETH-DAI 2x(dLETH2x). For example, if you send 1 ETH to ETHMaximalist.DeFiZap.eth or buy from our website, 0.5 of your ETH will go towards opening a Perpetual (without expiration) BTC Short position on Fulcrum exchange while 0.5 will be used to open a Perpetual ETH Long with 2x leverage. This means you will have exposure to 1 ETH (0.5X2) and 0.5 ETH’s worth of WBTC Short position. After sending your ETH, you will immediately receive allocated tokens (dsWBTC+dLETH2x) which track your trade positions. Once you receive these tokens you can visit Fulcrum.Trade to view your ROI and close positions. <a href='https://defitutorials.substack.com/p/margin-trading-with-fulcrum'>Check out this tutorial we made</a> to help you use Fulcrum. Soon you will be able to manage your positions and assets directly from DeFiZap Dashboard."
     },
     "bullSharpe": {
         "name": "Conservative Bull",
