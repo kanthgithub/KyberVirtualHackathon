@@ -76,6 +76,7 @@ class ZapFullView extends Component {
                         <Button
                           data-toggle="collapse" data-target="#collapseExample"
                           variant="outline-info"
+                          size='lg'
                         >
                           More info
                         </Button>
@@ -100,14 +101,14 @@ class ZapFullView extends Component {
                 </div>
                 <>
                       {isOrderable ? (
-                        <div class="collapse" id="collapseExample">
+                        <div className="collapse" id="collapseExample">
                         <Card.Body>
                           {
                             <>
                               <h3>{description.textQuestion}</h3>
                               {description.textAnswer.map(answer => {
                                 return (
-                                  <p>{answer}</p>
+                                  <p key={answer}>{answer}</p>
                                 );
                               })}
                               {

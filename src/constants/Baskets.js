@@ -22,7 +22,7 @@ const Baskets = {
                 "text": "Check out this tutorial we made to help you use Fulcrum",
                 "hyperlink": 'https://defitutorials.substack.com/p/margin-trading-with-fulcrum'
             }, {
-                "text": "Compound",
+                "text": "Compound.",
                 "hyperlink": 'https://defitutorials.substack.com/p/earn-passive-income-with-compound'
             }]
         }
@@ -46,7 +46,7 @@ const Baskets = {
                 "Soon you will be able to manage your positions and assets directly from DeFiZap Dashboard."
             ],
             "textLink": [{
-                "text": "Check out this tutorial we made to help you use Fulcrum",
+                "text": "Check out this tutorial we made to help you use Fulcrum.",
                 "hyperlink": 'https://defitutorials.substack.com/p/margin-trading-with-fulcrum'
             }]
         }
