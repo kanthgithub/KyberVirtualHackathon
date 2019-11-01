@@ -24,7 +24,7 @@ class FaqContainer extends PureComponent {
                 <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
                     <NavBar />
                     <br />
-                    <FaqView defaultActiveKey='0'/>
+                    <FaqView style={{ color:'red' }} defaultActiveKey='0'/>
                 </div>
             </div>
         );

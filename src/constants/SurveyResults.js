@@ -166,13 +166,13 @@ const surveyResults = {
         },
         "advanced": {
             "shortTerm": {
-                "bull": "shortTermBull",
+                "bull": "ETHMaximalist",
                 "bear": "riskyBear",
                 "flat": "flatLands",
                 "notSure": "lender"
             },
             "mediumTerm": {
-                "bull": "riskyBull",
+                "bull": "ETHMaximalist",
                 "bear": "riskyBear",
                 "flat": "flatLands",
                 "notSure": "lender"

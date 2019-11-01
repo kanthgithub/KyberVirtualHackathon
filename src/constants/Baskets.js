@@ -8,7 +8,24 @@ const Baskets = {
         }, {
             "name": "dLETH2x",
             "percent": 10
-        }]
+        }],
+        "description": 
+        {
+            "textQuestion": "What does this Zap do?",
+            "textAnswer": [
+                "Lender Zap allocates incoming deposits 90% to cDai and 10% to dLETH2x.",
+                "Therefore, if you send 1 ETH to this Lender.DeFiZap.eth, or buy from our website, 0.9 of your worth will go towards investing in Compound.Finance while 0.1 of your ETH will be used to open a Perpetual ETH Long with 2x leverage.",
+                "Lender's Zap is interesting because, within a year, the interest generated from cDai could completely cover your margin trade purchase. Think of it as trading with your future interest earned.",
+                "After sending your ETH, you will immediately receive allocated tokens (cDAI+dLETH2x) which track your DAI lending balance + margin trade position. Once you receive these tokens you can visit Compound.Finance to view/withdraw interest earned and Fulcrum.Trade to view your ROI/close position on dLETH2x."
+            ],
+            "textLink": [{
+                "text": "Check out this tutorial we made to help you use Fulcrum",
+                "hyperlink": 'https://defitutorials.substack.com/p/margin-trading-with-fulcrum'
+            }, {
+                "text": "Compound",
+                "hyperlink": 'https://defitutorials.substack.com/p/earn-passive-income-with-compound'
+            }]
+        }
     },
     "ETHMaximalist": {
         "name": "ETH Maximalist",
@@ -20,7 +37,19 @@ const Baskets = {
             "name": "dsWBTC",
             "percent": 50
         }],
-        "description": "ETH Maximalist Zap to add text: What does this Zap do? Your deposit is automatically split between bZx Perpetual Short WBTC (dsWBTC) and bZx Perpetual Long ETH-DAI 2x(dLETH2x). For example, if you send 1 ETH to ETHMaximalist.DeFiZap.eth or buy from our website, 0.5 of your ETH will go towards opening a Perpetual (without expiration) BTC Short position on Fulcrum exchange while 0.5 will be used to open a Perpetual ETH Long with 2x leverage. This means you will have exposure to 1 ETH (0.5X2) and 0.5 ETH’s worth of WBTC Short position. After sending your ETH, you will immediately receive allocated tokens (dsWBTC+dLETH2x) which track your trade positions. Once you receive these tokens you can visit Fulcrum.Trade to view your ROI and close positions. <a href='https://defitutorials.substack.com/p/margin-trading-with-fulcrum'>Check out this tutorial we made</a> to help you use Fulcrum. Soon you will be able to manage your positions and assets directly from DeFiZap Dashboard."
+        "description": 
+        {
+            "textQuestion": "What does this Zap do?",
+            "textAnswer": [
+                "Your deposit is automatically split between bZx Perpetual Short WBTC (dsWBTC) and bZx Perpetual Long ETH-DAI 2x(dLETH2x).  For example, if you send 1 ETH to ETHMaximalist.DeFiZap.eth or buy from our website, 0.5 of your ETH will go towards opening a Perpetual (without expiration) BTC Short position on Fulcrum exchange while 0.5 will be used to open a Perpetual ETH Long with 2x leverage.",
+                "This means you will have exposure to 1 ETH (0.5X2) and 0.5 ETH’s worth of WBTC Short position. After sending your ETH, you will immediately receive allocated tokens (dsWBTC+dLETH2x) which track your trade positions.",
+                "Soon you will be able to manage your positions and assets directly from DeFiZap Dashboard."
+            ],
+            "textLink": [{
+                "text": "Check out this tutorial we made to help you use Fulcrum",
+                "hyperlink": 'https://defitutorials.substack.com/p/margin-trading-with-fulcrum'
+            }]
+        }
     },
     "bullSharpe": {
         "name": "Conservative Bull",

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import autobind from 'react-autobind';
 import PercentageCircle from "../PercentageCircle";
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import isEmpty from 'lodash/isEmpty';
 
 import LenderBuyButton from "../BuyButton/LenderBuyButton";
 import ETHMAXIMALISTBuyButton from "../BuyButton/ETHMaximalistBuyButton";
@@ -19,7 +18,14 @@ class ZapFullView extends Component {
       components: this.props.components,
       isOrderable: this.props.isOrderable,
       isETHMaximalist: false,
-      description: this.props.description,
+      description: isEmpty(this.props.description) ? {
+        'textQuestion': '',
+        'textAnswer': [''],
+        'textLink': [{
+          'text': '',
+          'hyperLink': ''
+        }]
+      }: this.props.description,
       toggleInfo: false,
     };
     autobind(this);
@@ -45,11 +51,8 @@ class ZapFullView extends Component {
                     >
                       {name}
                     </h1>
-                    <h4 className="text-center my-3" style={{ color: "black" }}>
-                      Auto allocate your deposit to
-                    </h4>
                   </div>
-                  <div className="col-12 col-md-6 col-lg-12 d-flex my-4" style={{ 'justify-content': 'space-evenly'}}>
+                  <div className="col-12 col-md-6 col-lg-12 d-flex my-4" style={{ justifyContent: 'space-evenly'}}>
                     {components.map(item => (
                       <div key={item.name}>
                         <PercentageCircle
@@ -66,14 +69,20 @@ class ZapFullView extends Component {
                     ))}
                   </div>
                 </div>
-                <div className="row my-4" style={{ 'justify-content': 'space-evenly'}}>
-                    <Button
-                      data-toggle="collapse" data-target="#collapseExample"
-                      variant="outline-info"
-                    >
-                      More info
-                    </Button>
-                    <br />
+                <div className="row my-4" style={{ justifyContent : 'space-evenly'}}>
+                    {
+                      isOrderable ? (
+                        <>
+                        <Button
+                          data-toggle="collapse" data-target="#collapseExample"
+                          variant="outline-info"
+                        >
+                          More info
+                        </Button>
+                        <br />
+                        </>
+                      ) : null
+                    }
                     {(name === "ETH Maximalist") ? (<ETHMAXIMALISTBuyButton name={name} isOrderable={isOrderable} />) : (<LenderBuyButton name={name} isOrderable={isOrderable} />)}
                     {
                       isOrderable ? (
@@ -90,22 +99,47 @@ class ZapFullView extends Component {
                       </>) : null}
                 </div>
                 <>
-                      <div class="collapse" id="collapseExample">
-                      <Card.Body >{description}</Card.Body>
-                      </div>
-                </>
-                    {this.state.isOrderable ? null : (
-                      <>
-                      <div className="row justify-content-center my-4">
-                        <div className="col-12 col-md-12 col-lg-12 text-center">
-                              <h4 style={{ color: 'black' }}>
-                                This Zap is still under development.</h4>
-                              <h4 style={{ color: 'black' }}> In the meantime, check out our <a href="/zaps/lender"> Lender</a> Zap or <a href="zaps/ETHMaximalist"> ETH Maximalist</a> Zap.
-                              </h4>
+                      {isOrderable ? (
+                        <div class="collapse" id="collapseExample">
+                        <Card.Body>
+                          {
+                            <>
+                              <h3>{description.textQuestion}</h3>
+                              {description.textAnswer.map(answer => {
+                                return (
+                                  <p>{answer}</p>
+                                );
+                              })}
+                              {
+                              description.textLink.map((linkData, i) => {
+                                return (
+                                    <>
+                                    <a href={linkData.hyperlink}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      {linkData.text}
+                                    </a>
+                                    {' '} {i === (description.textLink.length -1) ? '' : 'and'} {' '}
+                                    </>
+                                )
+                              })
+                              }
+                            </>
+                          }
+                        </Card.Body>
                         </div>
+                      ): (<div className="row justify-content-center my-4">
+                      <div className="col-12 col-md-12 col-lg-12 text-center">
+                            <h4 style={{ color: 'black' }}>
+                              This Zap is still under development.</h4>
+                            <h4 style={{ color: 'black' }}> In the meantime, check out our <a href="/zaps/lender"> Lender</a> Zap or <a href="zaps/ETHMaximalist"> ETH Maximalist</a> Zap.
+                            </h4>
                       </div>
-                      </>
-                    )}
+                    </div>) }
+                </>
+                    {this.state.isOrderable ? null : null
+                    }
               </div>
             </div>
           </div>
@@ -114,12 +148,5 @@ class ZapFullView extends Component {
     );
   }
 }
-
-
-// const ZapFullView = ({ ...props }) => {
-//   const { name, components, isOrderable } = props;
-
-
-// };
 
 export default ZapFullView;

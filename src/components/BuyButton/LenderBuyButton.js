@@ -87,7 +87,7 @@ class LenderBuyButton extends React.Component {
 
   renderModal() {
     const { open, value } = this.state;
-    const { name } = this.props;
+    const { name, isOrderable } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
         <ModalBody>
@@ -136,14 +136,27 @@ class LenderBuyButton extends React.Component {
     const { isOrderable } = this.props;
     return (
       <div>
-        <Button
-          onClick={() => this.setState({ open: true })}
-          disabled={!isOrderable}
-          variant='outline-success'
-          size='lg'
-        >
-        Buy
-        </Button>
+        {
+          isOrderable ? (
+            <Button
+              onClick={() => this.setState({ open: true })}
+              disabled={!isOrderable}
+              variant='outline-success'
+              size='lg'
+            >
+            Buy
+            </Button>
+          ): (
+            <Button
+              onClick={() => this.setState({ open: true })}
+              disabled={!isOrderable}
+              variant='outline-success'
+              size='lg'
+            >
+            Coming Soon
+            </Button>
+          )
+        }
         {this.renderModal()}
       </div>
     );
