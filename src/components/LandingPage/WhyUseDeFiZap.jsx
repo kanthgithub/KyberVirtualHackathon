@@ -7,9 +7,9 @@ import SaveTime from '../../assets/save-time.svg';
 import SaveGas from '../../assets/save-gas.svg';
 import NonCustodial from '../../assets/non-custodial.svg';
 
-const WhyUseDeFiBaskets = () => (
+const WhyUseDeFiZap = () => (
   <Container>
-    <Row className="justify-content-md-center" style={{ margin: '80px 0' }}>
+    <Row className="justify-content-md-center pt-5">
       <h2>WHY USE DEFIZAP?</h2>
     </Row>
     <Row className="justify-content-md-center text-center ">
@@ -90,4 +90,4 @@ const WhyUseDeFiBaskets = () => (
   </Container>
 );
 
-export default WhyUseDeFiBaskets;
+export default WhyUseDeFiZap;

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import autobind from 'react-autobind';
-import PercentageCircle from '../PercentageCircle';
 import isEmpty from 'lodash/isEmpty';
+import PercentageCircle from '../PercentageCircle';
 
 import LenderBuyButton from '../BuyButton/LenderBuyButton';
 import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
@@ -37,10 +37,10 @@ class ZapFullView extends Component {
   }
 
   render() {
-    let name = this.state.name;
-    let components = this.state.components;
-    let isOrderable = this.state.isOrderable;
-    const description = this.state.description;
+    const { name } = this.state;
+    const { components } = this.state;
+    const { isOrderable } = this.state;
+    const { description } = this.state;
     return (
       <div className={styles.cardContainer}>
         <section className="pb-5 pt-md-12">

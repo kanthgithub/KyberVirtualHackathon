@@ -1,17 +1,17 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import { Route, Switch } from "react-router-dom";
-import { ConnectedRouter as Router } from "connected-react-router";
-import autobind from "react-autobind";
-import { connect } from "react-redux";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter as Router } from 'connected-react-router';
+import autobind from 'react-autobind';
+import { connect } from 'react-redux';
 
-import "./App.css";
+import './App.css';
 
 import BasketsPage from './components/Baskets';
-import Survey from "./components/SurveyPage";
+import Survey from './components/SurveyPage';
 import Faq from './components/Faq';
-import ZapListContainer from "./components/ZapList/ZapListContainer";
-import LandingPage from "./components/LandingPage";
+import ZapListContainer from './components/ZapList/ZapListContainer';
+import LandingPage from './components/LandingPage';
 // import Analytics from "./pages/analytics";
 // import Dashboard from "./pages/dashboard";
 
@@ -42,7 +42,7 @@ class App extends PureComponent {
           <Route exact path="/survey" component={Survey} />
           <Route exact path="/zaps" component={ZapListContainer} />
           <Route exact path="/zaps/:id" component={BasketsPage} />
-          <Route exact path='/faq' component={Faq} />
+          <Route exact path="/faq" component={Faq} />
         </Switch>
       </Router>
     );

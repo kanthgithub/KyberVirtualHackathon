@@ -1,10 +1,10 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 
-import Card from "./Card";
-import "../App.css";
-import { fetchTokensSetsAPI, fetchEtherPriceAPI } from "../api/fetch";
-import DisplayCharts from "./DisplayCharts";
-import Loading from "./Loading";
+import Card from './Card';
+import '../App.css';
+import { fetchTokensSetsAPI, fetchEtherPriceAPI } from '../api/fetch';
+import DisplayCharts from './DisplayCharts';
+import Loading from './Loading';
 
 class Dashboard extends PureComponent {
   state = { marketprices: [], marketcaps: [], totalMarketCap: null };
@@ -17,62 +17,61 @@ class Dashboard extends PureComponent {
     const ethprice = await fetchEtherPriceAPI();
     const rebalancing_sets = await fetchTokensSetsAPI();
     if (rebalancing_sets !== null) {
-      const eth12emacoprice =
-        rebalancing_sets && rebalancing_sets[0]["price_usd"];
-      const eth26emacoprice = rebalancing_sets[1]["price_usd"];
-      const eth20smaco = rebalancing_sets[2]["price_usd"];
-      const eth50smaco = rebalancing_sets[3]["price_usd"];
-      const ethminvol = rebalancing_sets[4]["price_usd"];
-      const ethlovol = rebalancing_sets[6]["price_usd"];
-      const ethhivol = rebalancing_sets[8]["price_usd"];
+      const eth12emacoprice = rebalancing_sets && rebalancing_sets[0].price_usd;
+      const eth26emacoprice = rebalancing_sets[1].price_usd;
+      const eth20smaco = rebalancing_sets[2].price_usd;
+      const eth50smaco = rebalancing_sets[3].price_usd;
+      const ethminvol = rebalancing_sets[4].price_usd;
+      const ethlovol = rebalancing_sets[6].price_usd;
+      const ethhivol = rebalancing_sets[8].price_usd;
 
       const marketprices = [
-        { name: "ETH", price: ethprice },
-        { name: "ETH12EMA", price: eth12emacoprice },
-        { name: "ETH26EMA", price: eth26emacoprice },
-        { name: "ETH20SMACO", price: eth20smaco },
-        { name: "ETH50MACO", price: eth50smaco },
-        { name: "ETHMINVOL", price: ethminvol },
-        { name: "ETHLOVOL", price: ethlovol },
-        { name: "ETHHIVOL", price: ethhivol }
+        { name: 'ETH', price: ethprice },
+        { name: 'ETH12EMA', price: eth12emacoprice },
+        { name: 'ETH26EMA', price: eth26emacoprice },
+        { name: 'ETH20SMACO', price: eth20smaco },
+        { name: 'ETH50MACO', price: eth50smaco },
+        { name: 'ETHMINVOL', price: ethminvol },
+        { name: 'ETHLOVOL', price: ethlovol },
+        { name: 'ETHHIVOL', price: ethhivol }
       ];
 
-      const eth12emacomarket = rebalancing_sets[0]["market_cap"];
-      const eth26emacomarket = rebalancing_sets[1]["market_cap"];
-      const eth20smacomarket = rebalancing_sets[2]["market_cap"];
-      const eth50smacomarket = rebalancing_sets[3]["market_cap"];
-      const ethminvolmarket = rebalancing_sets[4]["market_cap"];
-      const ethlovolmarket = rebalancing_sets[6]["market_cap"];
-      const ethhivolmarket = rebalancing_sets[8]["market_cap"];
+      const eth12emacomarket = rebalancing_sets[0].market_cap;
+      const eth26emacomarket = rebalancing_sets[1].market_cap;
+      const eth20smacomarket = rebalancing_sets[2].market_cap;
+      const eth50smacomarket = rebalancing_sets[3].market_cap;
+      const ethminvolmarket = rebalancing_sets[4].market_cap;
+      const ethlovolmarket = rebalancing_sets[6].market_cap;
+      const ethhivolmarket = rebalancing_sets[8].market_cap;
 
       const marketcaps = [
         {
-          name: "ETH12EMA",
+          name: 'ETH12EMA',
           price: eth12emacomarket,
-          color: "rgb(255, 99, 132)"
+          color: 'rgb(255, 99, 132)'
         },
         {
-          name: "ETH26EMA",
+          name: 'ETH26EMA',
           price: eth26emacomarket,
-          color: "rgb(99, 99, 132)"
+          color: 'rgb(99, 99, 132)'
         },
         {
-          name: "ETH20SMACO",
+          name: 'ETH20SMACO',
           price: eth20smacomarket,
-          color: "rgb(255, 159, 64)"
+          color: 'rgb(255, 159, 64)'
         },
         {
-          name: "ETH50MACO",
+          name: 'ETH50MACO',
           price: eth50smacomarket,
-          color: "rgb(153, 102, 255)"
+          color: 'rgb(153, 102, 255)'
         },
         {
-          name: "ETHMINVOL",
+          name: 'ETHMINVOL',
           price: ethminvolmarket,
-          color: "rgb(255, 205, 86)"
+          color: 'rgb(255, 205, 86)'
         },
-        { name: "ETHLOVOL", price: ethlovolmarket, color: "rgb(2, 24, 190)" },
-        { name: "ETHHIVOL", price: ethhivolmarket, color: "rgb(38, 38, 38)" }
+        { name: 'ETHLOVOL', price: ethlovolmarket, color: 'rgb(2, 24, 190)' },
+        { name: 'ETHHIVOL', price: ethhivolmarket, color: 'rgb(38, 38, 38)' }
       ];
 
       const totalMarketCap = marketcaps.reduce(
@@ -85,7 +84,7 @@ class Dashboard extends PureComponent {
   }
 
   formatValue(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   render() {
@@ -95,8 +94,8 @@ class Dashboard extends PureComponent {
         <div className="container-fluid mb-5">
           <div
             style={{
-              padding: "1.5rem 0",
-              borderBottom: "1px solid #e3ebf6"
+              padding: '1.5rem 0',
+              borderBottom: '1px solid #e3ebf6'
             }}
             className="ml-5"
           >
@@ -104,8 +103,8 @@ class Dashboard extends PureComponent {
               <div className="col">
                 <h6
                   style={{
-                    letterSpacing: ".08em",
-                    color: "#95aac9"
+                    letterSpacing: '.08em',
+                    color: '#95aac9'
                   }}
                 >
                   OVERVIEW
@@ -124,9 +123,7 @@ class Dashboard extends PureComponent {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <div className="row">
-                {!marketprices.length && (
-                  <Loading />
-                )}
+                {!marketprices.length && <Loading />}
                 {marketprices &&
                   marketprices.map(({ name, price }) => (
                     <div key={name} className="col-12 col-xl-3">
@@ -139,7 +136,7 @@ class Dashboard extends PureComponent {
                 <div className="col-12 col-xl-8">
                   {totalMarketCap && (
                     <Card
-                      name={"Total Market Cap of ETH based TokenSets"}
+                      name="Total Market Cap of ETH based TokenSets"
                       price={this.formatValue(totalMarketCap)}
                     />
                   )}

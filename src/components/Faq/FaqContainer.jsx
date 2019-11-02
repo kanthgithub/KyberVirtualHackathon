@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import autobind from 'react-autobind';
+import Container from 'react-bootstrap/Container';
 
-import NavBar from '../Navbar';
+import NavigationBar from '../NavigationBar';
 import FaqView from './FaqView';
 
 class FaqContainer extends PureComponent {
@@ -13,11 +14,10 @@ class FaqContainer extends PureComponent {
 
   render() {
     return (
-      <>
-        <NavBar />
-        <br />
+      <Container>
+        <NavigationBar />
         <FaqView defaultActiveKey="0" />
-      </>
+      </Container>
     );
   }
 }

@@ -1,6 +1,6 @@
 {
     "extends": [
-      "eslint:recommended",
+      "airbnb",
       "plugin:react/recommended",
       "plugin:prettier/recommended"
     ],
@@ -22,6 +22,7 @@
         },
         "sourceType": "module"
     },
+    "parser": "babel-eslint",
     "rules": {
       "prettier/prettier": ["error", { "singleQuote": true }]
     },

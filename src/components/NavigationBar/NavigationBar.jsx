@@ -1,39 +1,48 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
 
 import kyberlogo from '../../assets/kyber-logo.png';
 
 import styles from './NavigationBar.module.css';
 
 const NavigationBar = () => (
-  <div className="pt-1 pb-2">
+  <div className="mt-1 mb-3">
     <Navbar expand="md">
       <Navbar.Brand href="/">
-        DeFi Zap <sup>Beta</sup>
+        DeFi Zap
+        <sup>Beta</sup>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Navbar.Text>
-            <a className={styles.anchorSpacing} href="/survey">
-              Get Started
-            </a>
-          </Navbar.Text>
-          <Navbar.Text>
-            <a href="/zaps" className={styles.anchorSpacing}>
-              Explore Zaps
-            </a>
-          </Navbar.Text>
-          <Navbar.Text>
-            <a
+            <Button
               className={styles.anchorSpacing}
-              href="https://defitutorials.com/"
-              rel="noopener noreferrer"
-              target="_blank"
+              variant="link"
+              href="/survey"
             >
-              Tutorials
-            </a>
+              Get Started
+            </Button>
+          </Navbar.Text>
+          <Navbar.Text>
+            <Button
+              className={styles.anchorSpacing}
+              variant="link"
+              href="/zaps"
+            >
+              Explore Zaps
+            </Button>
+          </Navbar.Text>
+          <Navbar.Text>
+            <Button
+              className={styles.anchorSpacing}
+              variant="link"
+              href="https://defitutorials.com/"
+            >
+              Explore Zaps
+            </Button>
           </Navbar.Text>
           <Navbar.Text>
             <a href="/faq" className={styles.anchorSpacing}>

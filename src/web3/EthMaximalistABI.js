@@ -1,4 +1,4 @@
-export const ETHMAXIMALIST_ABI = [
+const ETHMAXIMALIST_ABI = [
   {
     constant: false,
     inputs: [],
@@ -164,3 +164,5 @@ export const ETHMAXIMALIST_ABI = [
     type: 'fallback'
   }
 ];
+
+export default ETHMAXIMALIST_ABI;

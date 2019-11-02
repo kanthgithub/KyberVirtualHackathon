@@ -6,6 +6,7 @@ class LineChart extends React.Component {
     super(props);
     this.chartRef = React.createRef();
   }
+
   componentDidMount() {
     const { data, title, xLabel, yLabel } = this.props;
     this.myChart = new Chart(this.chartRef.current, {

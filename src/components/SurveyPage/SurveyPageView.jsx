@@ -1,130 +1,151 @@
-import React from "react";
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
 import isEmpty from 'lodash/isEmpty';
 
-import NavigationBar from '../Navbar';
+import NavigationBar from '../NavigationBar';
 import styles from './SurveyPageView.module.css';
-import ZapFullView from "../Baskets/ZapFullView";
+import ZapFullView from '../Baskets/ZapFullView';
 import Baskets from '../../constants/Baskets';
 
-const SurveyPageView = ({ ...props }) => {
-    const { questionNumber, onAnswer, surveyList, reDoSurvey, surveyComplete,
-        submitResults, isLoading, answer } = props;
+const SurveyPageView = props => {
+  const {
+    questionNumber,
+    onAnswer,
+    surveyList,
+    reDoSurvey,
+    surveyComplete,
+    submitResults,
+    isLoading,
+    answer
+  } = props;
 
-    const surveyCompleted = () => (
+  const surveyCompleted = () => (
+    <>
+      <div key={questionNumber}>
+        <Container>
+          <NavigationBar />
+          {surveyComplete ? (
+            <>
+              <Button
+                variant="outline-primary"
+                onClick={reDoSurvey}
+                className={styles.buttonspacing}
+                size="lg"
+              >
+                Start Over
+              </Button>
+              <Button href="/zaps" variant="outline-primary" size="lg">
+                Explore all Zaps
+              </Button>
+            </>
+          ) : (
+            <Button
+              variant="outline-primary"
+              onClick={submitResults}
+              className={styles.buttonspacing}
+              size="lg"
+            >
+              Get Results
+            </Button>
+          )}
+          {isLoading ? (
+            <>
+              <br />
+              <Spinner animation="grow" variant="light" />
+              <Spinner animation="grow" variant="light" />
+              <Spinner animation="grow" variant="light" />
+              <Spinner animation="grow" variant="light" />
+              <Spinner animation="grow" variant="light" />
+            </>
+          ) : (
+            generateResult()
+          )}
+        </Container>
+      </div>
+    </>
+  );
+
+  const questions = () => {
+    const questions = surveyList.map(item => {
+      return (
         <>
-            <div key={questionNumber}>
-                <Container>
-                <NavigationBar />
-                    {
-                        surveyComplete ? (<>
-                            <Button
-                                variant="outline-primary"
-                                onClick={reDoSurvey}
-                                className={styles.buttonspacing}
-                                size="lg"
-                            >
-                                Start Over
-                        </Button>
-                            <Button
-                                href="/zaps"
-                                variant="outline-primary"
-                                size="lg"
-                            >
-                                Explore all Zaps
-                        </Button>
-                        </>) : (
-                                <Button
-                                    variant="outline-primary"
-                                    onClick={submitResults}
-                                    className={styles.buttonspacing}
-                                    size="lg"
-                                >
-                                    Get Results
-                                </Button>)
-                    }
-                    {
-                        isLoading ? (
-                            <>
-                                <br />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                            </>
-                        ) : (generateResult())
-                    }
-                </Container>
-            </div>
+          <div key={questionNumber}>
+            <Container key={questionNumber}>
+              <NavigationBar />
+              {questionNumber === 1 ? (
+                <>
+                  <h4>
+                    Answer a few multiple choice questions to see which Zap
+                    might fit your needs:
+                  </h4>
+                  <br />
+                </>
+              ) : null}
+              <h4>{item.question}</h4>
+              <h5 style={{ fontSize: 15 }}>
+                Question {questionNumber} out of 4
+              </h5>
+              <ol type="A">
+                {item.options.map(option => {
+                  return (
+                    <li key={option.value} className={styles.buttonspacing}>
+                      <Button
+                        variant="outline-primary"
+                        size="lg"
+                        onClick={() => onAnswer(option.key)}
+                      >
+                        {option.value}
+                      </Button>
+                    </li>
+                  );
+                })}
+              </ol>
+              <br />
+              <h5 style={{ fontSize: 15 }}>
+                DISCLOSURE: THIS IS NOT INVESTMENT ADVICE. DO NOT MAKE
+                INVESTMENT DECISIONS SOLELY BASED ON
+              </h5>
+              <h5 style={{ fontSize: 15 }}>
+                RESULTS GENERATED BY THIS TOOL. THIS PROJECT IS IN BETA. USE AT
+                YOUR OWN DISCRETION.
+              </h5>
+            </Container>
+          </div>
         </>
+      );
+    });
+    return questions[questionNumber - 1];
+  };
+
+  const generateResult = () => {
+    return isEmpty(answer) ? null : (
+      <>
+        <br /> <br />
+        <h4>
+          Based on your investment profile, you might find this Zap useful:{' '}
+          <br />
+        </h4>
+        <ZapFullView
+          name={Baskets[answer].name}
+          components={Baskets[answer].components}
+          isOrderable={Baskets[answer].isOrderable}
+          description={Baskets[answer].description}
+        />
+      </>
     );
+  };
 
-    const questions = () => {
-        const questions = surveyList.map(item => {
-            return (
-                <>
-                <div key={questionNumber}>
-                    <Container key={questionNumber}>
-                    <NavigationBar />
-                        {questionNumber === 1 ? (
-                            <><h4 >Answer a few multiple choice questions to see which Zap might fit your needs:</h4><br /></>
-                        ) : null}
-                        <h4>{item.question}</h4>
-                        <h5 style={{ fontSize: 15 }}>Question {questionNumber} out of 4</h5>
-                        <ol type="A">
-                            {item.options.map(option => {
-                                return (
-                                    <li key={option.value} className={styles.buttonspacing}>
-                                        <Button variant="outline-primary" size="lg" onClick={() => onAnswer(option.key)}>
-                                            {option.value}
-                                        </Button>
-                                    </li>
-                                );
-                            })}
-                        </ol>
-                        <br />
-                        <h5 style={{ fontSize: 15 }}>DISCLOSURE: THIS IS NOT INVESTMENT ADVICE. DO NOT MAKE INVESTMENT DECISIONS SOLELY BASED ON</h5>
-                        <h5 style={{ fontSize: 15 }}>RESULTS GENERATED BY THIS TOOL. THIS PROJECT IS IN BETA. USE AT YOUR OWN DISCRETION.</h5>
-                    </Container>
-                </div>
-                </>
-            );
-        });
-        return questions[questionNumber - 1];
-    };
+  const questionaire = questionNumber => {
+    return (
+      <div className={styles.background}>
+        {surveyList.length >= questionNumber ? questions() : surveyCompleted()}
+      </div>
+    );
+  };
 
-    const generateResult = () => {
-        return (
-            isEmpty(answer) ? null : (
-                <>
-                <br /> < br />
-                <h4 >
-                    Based on your investment profile, you might find this Zap useful: <br />
-                </h4>
-                    <ZapFullView
-                        name={Baskets[answer].name}
-                        components={Baskets[answer].components}
-                        isOrderable={Baskets[answer].isOrderable}
-                        description={Baskets[answer].description}
-                    />
-                </>
-            )
-        );
-    }
-
-    const questionaire = (questionNumber) => {
-        return (
-                <div className={styles.background}>
-                    {surveyList.length >= questionNumber ? questions() : surveyCompleted()}
-                </div>
-        );
-    };
-
-    return questionaire(questionNumber);
+  return questionaire(questionNumber);
 };
 
 export default SurveyPageView;
-

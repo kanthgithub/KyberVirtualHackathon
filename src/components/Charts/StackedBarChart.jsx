@@ -6,6 +6,7 @@ class StackedBarChart extends React.Component {
     super(props);
     this.chartRef = React.createRef();
   }
+
   componentDidMount() {
     this.myChart = new Chart(this.chartRef.current, {
       type: 'bar',

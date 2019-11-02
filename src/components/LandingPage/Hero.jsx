@@ -1,39 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 import '../../App.css';
 import heroimg from '../../assets/hero.svg';
 
 const Hero = () => (
-  <div className="container-fluid">
-    <div className="row mt-5">
-      <div className="col-12 col-md-6">
-        <div className="d-flex">
+  <Container>
+    <Row>
+      <Col xs={6}>
+        <Row className="pt-5">
           <h1>DeFi Zap</h1>
           <h5>
             <sup>Beta</sup>
           </h5>
-        </div>
-        <p className="lead text-center text-md-left mb-6 mb-lg-8">
-          Get instant exposure across multiple DeFi protocols based on your
-          investment goals.
-        </p>
-        <div className="d-flex">
-          <div className="text-center text-md-left">
-            <Link
-              className="btn btn-light shadow lift mr-1 my-2 py-3 font20 px-4"
-              to="/survey"
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="col-12 col-md-6">
-        <img src={heroimg} alt="Welcome to DeFiZap" />
-      </div>
-    </div>
-  </div>
+        </Row>
+        <Row className="pt-3">
+          <h4>
+            Get instant exposure across multiple DeFi protocols based on your
+            investment goals.
+          </h4>
+          {/**
+           * Below code is commented out as I am not sure how to move forward with this
+           */}
+          {/* <p className="lead text-md-left mb-6 mb-lg-8">
+            Get instant exposure across multiple DeFi protocols based on your
+            investment goals.
+          </p> */}
+        </Row>
+        <Row>
+          <Button
+            variant="light"
+            href="/survey"
+            className="shadow lift mr-1 my-2 py-3 font20 px-4"
+          >
+            Get Started
+          </Button>
+        </Row>
+      </Col>
+      <Col>
+        <img width="100%" src={heroimg} alt="Welcome to DeFiZap" />
+      </Col>
+    </Row>
+  </Container>
 );
 
 export default Hero;

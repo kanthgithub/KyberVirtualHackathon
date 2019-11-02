@@ -1,18 +1,18 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 
-import NavigationBar from '../Navbar';
-import WhyUseDeFiBaskets from './WhyUseDeFiBaskets';
+import NavigationBar from '../NavigationBar';
+import WhyUseDeFiZap from './WhyUseDeFiZap';
 import HowItWorks from './HowItWorks';
 import AvailableBaskets from './AvailableBaskets';
 import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
 
 const LandingPage = () => (
-  <div className="container">
+  <Container>
     <NavigationBar />
     <Hero />
-    <WhyUseDeFiBaskets />
+    <WhyUseDeFiZap />
     <HowItWorks />
     <AvailableBaskets />
     <Container>
@@ -23,7 +23,7 @@ const LandingPage = () => (
       <h4 className="pt-1">DeFiZap</h4>
       <p className="pb-1 text-muted">All Rights Reserved</p>
     </footer>
-  </div>
+  </Container>
 );
 
 export default LandingPage;
