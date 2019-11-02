@@ -41,6 +41,16 @@ const NavigationBar = () => (
         </Navbar.Text>
         <Navbar.Text>
           <a
+            href="https://devpost.com/software/defi-zap"
+            rel="noopener noreferrer"
+            target="_blank"
+            className={styles.anchorSpacing}
+          >
+            Devpost
+          </a>
+        </Navbar.Text>
+        <Navbar.Text>
+          <a
             href="https://t.me/defizap"
             rel="noopener noreferrer"
             target="_blank"

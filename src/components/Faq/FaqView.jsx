@@ -1,6 +1,7 @@
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
@@ -63,37 +64,45 @@ const FaqView = ({ ...props }) => {
         </Card>
         <Card className={styles.cardStyle}>
           <AccordionToggle as={HeaderButton} eventKey="3">
-<h4>
+            <h4>
                 How much does this cost?
-</h4>
+            </h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="3">
             <Card.Body>
-            <p>DeFiZap does not charge any fees for investing through Zaps and all smart contract code is open sourced. Furthermore, accessing DeFi protocols through Zaps costs less than individually transacting on each one to accomplish the same result. For example, going from ETH to cDai on Compound and ETH to LONG2xBZX on Fulcrum will end up costing you ~$5-$6 in transaction fees. Lender's Zap helps you accomplish ETH to cDai + LONG2xBZX in one transaction, for ~$0.86-$1.76.</p>
+            <p>DeFiZap does not charge any fees for investing through Zaps and all smart contract code is open sourced.</p>
+            <p>Furthermore, accessing DeFi protocols through Zaps costs less gas than individually transacting on each one to accomplish the same result. For example, going from ETH to cDai on Compound and ETH to LONG2xBZX on Fulcrum will end up costing you ~$3-$5 in gas fees.</p>
+            <p>Lender's Zap helps you accomplish ETH to cDai + LONG2xBZX in one transaction, for ~$0.86-$1.76.</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
         <Card className={styles.cardStyle}>
           <AccordionToggle as={HeaderButton} eventKey="4">
-<h4>
+            <h4>
                 What’s next for DeFiZap?
-</h4>
+            </h4>
           </AccordionToggle>
           <Accordion.Collapse eventKey="4">
             <Card.Body>
             <p>-Launch a simple DeFiZap Dashboard UI.</p>
-
             <p>-We are starting with ETH only deposits but will soon integrate Wyre to enable deploying capital into DeFi straight from your bank account.</p>
-
             <p>-Automatic Investment Plans - connect your bank accounts and set up recurring deposits to chosen Zap(s).</p>
-
             <p>-‘Anti-Zaps’ which essentially sell your allocated investments to an asset of your choice. </p>
-
             <p>-Unique tokens for each Zap which end users receive to track their overall balances and overall ROI.</p>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
       </Accordion>
+      <Row className="justify-content-center">
+      <Button
+        variant='outline-dark'
+        target="_blank"
+        href='https://defizap.typeform.com/to/UZSZg5'
+        type='link'
+        >
+          Don't see your Zap? Submit a request and we will create one!
+      </Button>
+      </Row>
     </Container>
     );
 };

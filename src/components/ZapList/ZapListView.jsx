@@ -38,12 +38,12 @@ const ZapListView = ({ ...props }) => {
                 </a>
                 <br /> <hr />
                 <a
-                  href='https://github.com/DeFiStrategies/ZapRequests/issues'
+                  href='https://defizap.typeform.com/to/UZSZg5'
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: 'blue', 'font-size': 22 }}
                 >
-                  Don't see your basket? Submit a request and we will create one!
+                  Don't see your Zap? Submit a request and we will create one!
                 </a>
                 </div>
               </div>
