@@ -54,7 +54,7 @@ const SurveyPageView = props => {
               >
                 Start Over
               </Button>
-              <Button href="/zaps" variant="outline-dark" size="lg">
+              <Button variant="outline-dark" href="/zaps" size="lg">
                 Explore all Zaps
               </Button>
             </>
@@ -71,11 +71,11 @@ const SurveyPageView = props => {
           {isLoading ? (
             <>
               <br />
-              <Spinner animation="grow" variant="light" />
-              <Spinner animation="grow" variant="light" />
-              <Spinner animation="grow" variant="light" />
-              <Spinner animation="grow" variant="light" />
-              <Spinner animation="grow" variant="light" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
             </>
           ) : (
             generateResult()
