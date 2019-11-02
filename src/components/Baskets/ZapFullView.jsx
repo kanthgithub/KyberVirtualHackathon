@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import autobind from 'react-autobind';
-import isEmpty from 'lodash/isEmpty';
 import PercentageCircle from '../PercentageCircle';
 
 import LenderBuyButton from '../BuyButton/LenderBuyButton';
@@ -13,36 +12,15 @@ import '../../App.css';
 class ZapFullView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: this.props.name,
-      components: this.props.components,
-      isOrderable: this.props.isOrderable,
-      isETHMaximalist: false,
-      description: isEmpty(this.props.description)
-        ? {
-            textQuestion: '',
-            textAnswer: [''],
-            textLink: [
-              {
-                text: '',
-                hyperLink: ''
-              }
-            ],
-            tutorialLink: ''
-          }
-        : this.props.description,
-      toggleInfo: false
-    };
+    this.state = {};
     autobind(this);
   }
 
   render() {
-    const { name } = this.state;
-    const { components } = this.state;
-    const { isOrderable } = this.state;
-    const { description } = this.state;
+    const { name, components, isOrderable, description } = this.props;
+
     return (
-      <div className={styles.cardContainer}>
+      <div key={name} className={styles.cardContainer}>
         <section className="pb-5 pt-md-12">
           <div className="container">
             <div className="card shadow" style={{ backgroundColor: '#ffffff' }}>
@@ -117,7 +95,11 @@ class ZapFullView extends Component {
                 </div>
                 <>
                   {isOrderable ? (
-                    <div className="collapse" id={`${this.props.id}`}>
+                    <div
+                      className="collapse"
+                      key={`${this.props.id}`}
+                      id={`${this.props.id}`}
+                    >
                       <Card.Body>
                         {
                           <>

@@ -36,15 +36,6 @@ const NavigationBar = () => (
             </Button>
           </Navbar.Text>
           <Navbar.Text>
-            <Button
-              className={styles.anchorSpacing}
-              variant="link"
-              href="https://defitutorials.com/"
-            >
-              Explore Zaps
-            </Button>
-          </Navbar.Text>
-          <Navbar.Text>
             <a href="/faq" className={styles.anchorSpacing}>
               FAQ
             </a>

@@ -15,6 +15,7 @@ const BasketsView = props => {
       <Container>
         <NavigationBar />
         <ZapFullView
+          key={name}
           name={name}
           components={components}
           isOrderable={isOrderable}

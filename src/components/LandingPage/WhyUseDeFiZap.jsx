@@ -9,10 +9,10 @@ import NonCustodial from '../../assets/non-custodial.svg';
 
 const WhyUseDeFiZap = () => (
   <Container>
-    <Row className="justify-content-md-center pt-5">
+    <Row className="justify-content-md-center pt-5 pb-3">
       <h2>WHY USE DEFIZAP?</h2>
     </Row>
-    <Row className="justify-content-md-center text-center ">
+    <Row className="justify-content-md-center text-center">
       <Col>
         <img
           src={SaveTime}
@@ -20,38 +20,7 @@ const WhyUseDeFiZap = () => (
           width="195px"
           alt="Save Time"
         />
-      </Col>
-
-      <Col>
-        <img
-          src={SaveGas}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-          width="170px"
-          alt="Save Time"
-        />
-      </Col>
-      <Col>
-        <img
-          src={NonCustodial}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-          width="125px"
-          alt="Save Time"
-        />
-      </Col>
-    </Row>
-    <Row className="justify-content-md-center text-center ">
-      <Col>
         <h4>Save Time</h4>
-      </Col>
-      <Col>
-        <h4>Save Gas</h4>
-      </Col>
-      <Col>
-        <h4>Non Custodial</h4>
-      </Col>
-    </Row>
-    <Row className="justify-content-md-center text-center ">
-      <Col>
         <h6>
           Zap is a smart contract that auto-spreads incoming deposits across
           multiple DeFi protocols based on pre-set allocations, bypassing many
@@ -59,6 +28,13 @@ const WhyUseDeFiZap = () => (
         </h6>
       </Col>
       <Col>
+        <img
+          src={SaveGas}
+          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
+          width="170px"
+          alt="Save Time"
+        />
+        <h4>Save Gas</h4>
         <h6>
           Access all your favorite DeFi protocols and save up to 40% on
           transaction fees.
@@ -73,6 +49,13 @@ const WhyUseDeFiZap = () => (
         </h6>
       </Col>
       <Col>
+        <img
+          src={NonCustodial}
+          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
+          width="125px"
+          alt="Save Time"
+        />
+        <h4>Non Custodial</h4>
         <h6>
           Zaps never hold your assets - you will instantly receive allocated
           DeFi tokens.

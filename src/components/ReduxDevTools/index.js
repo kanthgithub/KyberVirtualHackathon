@@ -5,6 +5,7 @@ import DockMonitor from 'redux-devtools-dock-monitor';
 
 const DevTools = () =>
   createDevTools(
+    // eslint-disable-next-line react/jsx-filename-extension
     <DockMonitor
       toggleVisibilityKey="ctrl-h"
       changePositionKey="ctrl-q"

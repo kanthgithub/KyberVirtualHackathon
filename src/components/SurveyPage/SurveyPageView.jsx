@@ -21,6 +21,24 @@ const SurveyPageView = props => {
     answer
   } = props;
 
+  const generateResult = () => {
+    return isEmpty(answer) ? null : (
+      <>
+        <br /> <br />
+        <h4>
+          Based on your investment profile, you might find this Zap useful:{' '}
+          <br />
+        </h4>
+        <ZapFullView
+          name={Baskets[answer].name}
+          components={Baskets[answer].components}
+          isOrderable={Baskets[answer].isOrderable}
+          description={Baskets[answer].description}
+        />
+      </>
+    );
+  };
+
   const surveyCompleted = () => (
     <>
       <div key={questionNumber}>
@@ -29,20 +47,20 @@ const SurveyPageView = props => {
           {surveyComplete ? (
             <>
               <Button
-                variant="outline-primary"
+                variant="outline-dark"
                 onClick={reDoSurvey}
                 className={styles.buttonspacing}
                 size="lg"
               >
                 Start Over
               </Button>
-              <Button href="/zaps" variant="outline-primary" size="lg">
+              <Button href="/zaps" variant="outline-dark" size="lg">
                 Explore all Zaps
               </Button>
             </>
           ) : (
             <Button
-              variant="outline-primary"
+              variant="outline-dark"
               onClick={submitResults}
               className={styles.buttonspacing}
               size="lg"
@@ -68,7 +86,7 @@ const SurveyPageView = props => {
   );
 
   const questions = () => {
-    const questions = surveyList.map(item => {
+    const questionsList = surveyList.map(item => {
       return (
         <>
           <div key={questionNumber}>
@@ -92,7 +110,7 @@ const SurveyPageView = props => {
                   return (
                     <li key={option.value} className={styles.buttonspacing}>
                       <Button
-                        variant="outline-primary"
+                        variant="outline-dark"
                         size="lg"
                         onClick={() => onAnswer(option.key)}
                       >
@@ -116,28 +134,10 @@ const SurveyPageView = props => {
         </>
       );
     });
-    return questions[questionNumber - 1];
+    return questionsList[questionNumber - 1];
   };
 
-  const generateResult = () => {
-    return isEmpty(answer) ? null : (
-      <>
-        <br /> <br />
-        <h4>
-          Based on your investment profile, you might find this Zap useful:{' '}
-          <br />
-        </h4>
-        <ZapFullView
-          name={Baskets[answer].name}
-          components={Baskets[answer].components}
-          isOrderable={Baskets[answer].isOrderable}
-          description={Baskets[answer].description}
-        />
-      </>
-    );
-  };
-
-  const questionaire = questionNumber => {
+  const questionaire = () => {
     return (
       <div className={styles.background}>
         {surveyList.length >= questionNumber ? questions() : surveyCompleted()}

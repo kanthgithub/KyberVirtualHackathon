@@ -12,8 +12,8 @@ const AvailableBaskets = () => (
       <h2>AVAILABLE ZAPS</h2>
     </Row>
     <Row>
-      {Object.values(AvailableZaps).map((zap, i) => (
-        <div key={i} className="col-md-6 col-lg-6">
+      {Object.values(AvailableZaps).map(zap => (
+        <div key={zap.id} className="col-md-6 col-lg-6">
           <ZapCardsView basketData={zap} />
         </div>
       ))}

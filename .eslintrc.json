@@ -24,7 +24,10 @@
     },
     "parser": "babel-eslint",
     "rules": {
-      "prettier/prettier": ["error", { "singleQuote": true }]
+      "prettier/prettier": ["error", { "singleQuote": true }],
+      "react/destructuring-assignment": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "no-console": "off"
     },
     "settings": {
       "react": {
