@@ -134,7 +134,7 @@ class ZapFullView extends Component {
                       <div className="col-12 col-md-12 col-lg-12 text-center">
                             <h4 style={{ color: 'black' }}>
                               This Zap is still under development.</h4>
-                            <h4 style={{ color: 'black' }}> In the meantime, check out our <a href="/zaps/lender"> Lender</a> Zap or <a href="zaps/ETHMaximalist"> ETH Maximalist</a> Zap.
+                            <h4 style={{ color: 'black' }}> In the meantime, check out <a href="/zaps/lender">Lender</a> or <a href="zaps/ETHMaximalist">ETH Maximalist</a>.
                             </h4>
                       </div>
                     </div>) }

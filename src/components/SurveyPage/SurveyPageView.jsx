@@ -1,6 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Spinner from 'react-bootstrap/Spinner';
 import isEmpty from 'lodash/isEmpty';
 
@@ -100,9 +101,9 @@ const SurveyPageView = ({ ...props }) => {
         return (
             isEmpty(answer) ? null : (
                 <>
-                <br /> < br />
+                <br />
                 <h4 style={{ color: "white" }}>
-                    Based on your investment profile, you might find this Zap useful: <br />
+                    You might find this Zap useful:
                 </h4>
                     <ZapFullView
                         name={Baskets[answer].name}
@@ -110,6 +111,18 @@ const SurveyPageView = ({ ...props }) => {
                         isOrderable={Baskets[answer].isOrderable}
                         description={Baskets[answer].description}
                     />
+                <Row className="justify-content-center">
+                    <Button
+                        variant='outline-dark'
+                        target="_blank"
+                        href='https://defizap.typeform.com/to/UZSZg5'
+                        type='link'
+                        size="lg"
+                    >
+                        Don't see your Zap? <br />
+                        Submit a request and we will create one!
+                    </Button>
+                </Row>
                 </>
             )
         );
