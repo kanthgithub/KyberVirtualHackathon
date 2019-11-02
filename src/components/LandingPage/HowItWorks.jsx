@@ -1,15 +1,15 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-import One from "../../assets/one.png";
-import Two from "../../assets/two.png";
-import Three from "../../assets/three.png";
+import One from '../../assets/one.png';
+import Two from '../../assets/two.png';
+import Three from '../../assets/three.png';
 
 const HowItWorks = () => (
   <Container>
-    <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
+    <Row className="justify-content-md-center" style={{ margin: '80px 0' }}>
       <h2>HOW IT WORKS?</h2>
     </Row>
     <Row className="justify-content-md-center text-center  mb-3">

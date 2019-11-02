@@ -87,7 +87,7 @@ class LenderBuyButton extends React.Component {
 
   renderModal() {
     const { open, value } = this.state;
-    const { name, isOrderable } = this.props;
+    const { name } = this.props;
     return (
       <Modal isOpen={open} toggle={this.toggle} centered>
         <ModalBody>

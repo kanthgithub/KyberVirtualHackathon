@@ -5,16 +5,13 @@ class Login extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: false
     };
     autobind(this);
   }
 
   render() {
-    return (
-      <div>
-      </div>
-    );
+    return <div></div>;
   }
 }
 

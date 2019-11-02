@@ -1,5 +1,5 @@
-import React from "react";
-import Chart from "chart.js";
+import React from 'react';
+import Chart from 'chart.js';
 
 class LineChart extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class LineChart extends React.Component {
   componentDidMount() {
     const { data, title, xLabel, yLabel } = this.props;
     this.myChart = new Chart(this.chartRef.current, {
-      type: "line",
+      type: 'line',
       data,
       options: {
         responsive: true,
@@ -18,11 +18,11 @@ class LineChart extends React.Component {
           text: title
         },
         tooltips: {
-          mode: "index",
+          mode: 'index',
           intersect: false
         },
         hover: {
-          mode: "nearest",
+          mode: 'nearest',
           intersect: true
         },
         scales: {

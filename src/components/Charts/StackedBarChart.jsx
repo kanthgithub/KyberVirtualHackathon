@@ -1,5 +1,5 @@
-import React from "react";
-import Chart from "chart.js";
+import React from 'react';
+import Chart from 'chart.js';
 
 class StackedBarChart extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class StackedBarChart extends React.Component {
   }
   componentDidMount() {
     this.myChart = new Chart(this.chartRef.current, {
-      type: "bar",
+      type: 'bar',
       data: this.props.data,
       options: {
         title: {
@@ -16,7 +16,7 @@ class StackedBarChart extends React.Component {
           text: this.props.title
         },
         tooltips: {
-          mode: "index",
+          mode: 'index',
           intersect: false
         },
         responsive: true,
