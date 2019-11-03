@@ -4,7 +4,6 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
 import kyberlogo from '../../assets/kyber-logo.png';
-
 import styles from './NavigationBar.module.css';
 
 const NavigationBar = () => (

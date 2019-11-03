@@ -35,7 +35,7 @@ const SurveyPageView = props => {
           isOrderable={Baskets[answer].isOrderable}
           description={Baskets[answer].description}
         />
-        <Row className="justify-content-center">
+        <Row className="justify-content-center pb-3">
           <Button
             variant="outline-dark"
             target="_blank"
@@ -43,7 +43,7 @@ const SurveyPageView = props => {
             type="link"
             size="lg"
           >
-            Don't see your Zap? <br />
+            Don&apos;t see your Zap? <br />
             Submit a request and we will create one!
           </Button>
         </Row>

@@ -21,7 +21,7 @@ class ZapFullView extends Component {
 
     return (
       <div key={name} className={styles.cardContainer}>
-        <section className="pb-5 pt-md-12">
+        <section className="pb-3 pt-md-12">
           <div className="container">
             <div className="card shadow" style={{ backgroundColor: '#ffffff' }}>
               <div className="card-body">
@@ -109,7 +109,7 @@ class ZapFullView extends Component {
                             })}
                             {description.textLink.map((linkData, i) => {
                               return (
-                                <>
+                                <div key={linkData.hyperlink}>
                                   <a
                                     href={linkData.hyperlink}
                                     target="_blank"
@@ -120,7 +120,7 @@ class ZapFullView extends Component {
                                   {i === description.textLink.length - 1
                                     ? ''
                                     : 'and'}{' '}
-                                </>
+                                </div>
                               );
                             })}
                           </>

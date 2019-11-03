@@ -28,7 +28,7 @@ const BasketsView = props => {
         />
         <Row className="justify-content-center">
           <Button
-            variant="outline-info"
+            variant="outline-dark"
             target="_blank"
             href="https://defizap.typeform.com/to/UZSZg5"
             type="link"
