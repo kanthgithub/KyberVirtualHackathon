@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import autobind from 'react-autobind';
 import isEmpty from 'lodash/isEmpty';
 
-import BasketsView from './BasketsView';
-import Baskets from '../../constants/Baskets';
+import ZapsView from './ZapsView';
+import Zaps from '../../constants/Zaps';
 
-class BasketsContainer extends PureComponent {
+class ZapsContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class BasketsContainer extends PureComponent {
   componentDidMount = async () => {
     const { id } = this.props.match.params;
     this.setState({ id });
-    const basketData = Baskets[id];
+    const basketData = Zaps[id];
     if (!isEmpty(basketData)) {
       this.setState({ basketData });
     }
@@ -26,8 +26,8 @@ class BasketsContainer extends PureComponent {
 
   render() {
     const { basketData } = this.state;
-    return <BasketsView basketData={basketData} />;
+    return <ZapsView basketData={basketData} />;
   }
 }
 
-export default BasketsContainer;
+export default ZapsContainer;

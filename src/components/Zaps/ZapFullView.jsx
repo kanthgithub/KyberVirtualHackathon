@@ -9,7 +9,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import PercentageCircle from '../PercentageCircle';
 import LenderBuyButton from '../BuyButton/LenderBuyButton';
 import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
-import styles from './Baskets.module.css';
+import styles from './Zaps.module.css';
 import '../../App.css';
 
 class ZapFullView extends Component {
@@ -121,6 +121,14 @@ class ZapFullView extends Component {
                   </Accordion>
                 ) : (
                   <div className="row justify-content-center my-4">
+                    {name === 'ETH Maximalist' ? (
+                      <ETHMAXIMALISTBuyButton
+                        name={name}
+                        isOrderable={isOrderable}
+                      />
+                    ) : (
+                      <LenderBuyButton name={name} isOrderable={isOrderable} />
+                    )}
                     <div className="col-12 col-md-12 col-lg-12 text-center">
                       <h4 style={{ color: 'black' }}>
                         This Zap is still under development.

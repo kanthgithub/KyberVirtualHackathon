@@ -7,8 +7,8 @@ import isEmpty from 'lodash/isEmpty';
 
 import NavigationBar from '../NavigationBar';
 import styles from './SurveyPageView.module.css';
-import ZapFullView from '../Baskets/ZapFullView';
-import Baskets from '../../constants/Baskets';
+import ZapFullView from '../Zaps/ZapFullView';
+import Zaps from '../../constants/Zaps';
 
 const SurveyPageView = props => {
   const {
@@ -30,10 +30,10 @@ const SurveyPageView = props => {
           You might find this Zap useful: <br />
         </h4>
         <ZapFullView
-          name={Baskets[answer].name}
-          components={Baskets[answer].components}
-          isOrderable={Baskets[answer].isOrderable}
-          description={Baskets[answer].description}
+          name={Zaps[answer].name}
+          components={Zaps[answer].components}
+          isOrderable={Zaps[answer].isOrderable}
+          description={Zaps[answer].description}
         />
         <Row className="justify-content-center pb-3">
           <Button

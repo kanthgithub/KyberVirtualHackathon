@@ -9,7 +9,7 @@ import NavigationBar from '../NavigationBar';
 
 import '../../App.css';
 
-const BasketsView = props => {
+const ZapsView = props => {
   const {
     basketData: { name, components, isOrderable, description, id }
   } = props;
@@ -42,4 +42,4 @@ const BasketsView = props => {
   return null;
 };
 
-export default BasketsView;
+export default ZapsView;

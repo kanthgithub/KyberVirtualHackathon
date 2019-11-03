@@ -1,4 +1,4 @@
-const Baskets = {
+const Zaps = {
   lender: {
     id: 'lender',
     name: 'Lender',
@@ -408,4 +408,4 @@ const Baskets = {
   }
 };
 
-export default Baskets;
+export default Zaps;

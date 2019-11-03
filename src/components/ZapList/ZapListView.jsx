@@ -1,9 +1,9 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 
-import ZapFullView from '../Baskets/ZapFullView';
+import ZapFullView from '../Zaps/ZapFullView';
 import NavigationBar from '../NavigationBar';
-import Zaps from '../../constants/Baskets';
+import Zaps from '../../constants/Zaps';
 import '../../App.css';
 
 const ZapListView = () => {

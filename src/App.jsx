@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 import './App.css';
 
-import BasketsPage from './components/Baskets';
+import ZapsPage from './components/Zaps';
 import Survey from './components/SurveyPage';
 import Faq from './components/Faq';
 import ZapListContainer from './components/ZapList/ZapListContainer';
@@ -41,7 +41,7 @@ class App extends PureComponent {
           {/* <Route exact path="/analytics" component={Analytics} /> */}
           <Route exact path="/survey" component={Survey} />
           <Route exact path="/zaps" component={ZapListContainer} />
-          <Route exact path="/zaps/:id" component={BasketsPage} />
+          <Route exact path="/zaps/:id" component={ZapsPage} />
           <Route exact path="/faq" component={Faq} />
         </Switch>
       </Router>
