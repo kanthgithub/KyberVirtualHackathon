@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import autobind from 'react-autobind';
-import PercentageCircle from '../PercentageCircle';
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import Accordion from 'react-bootstrap/Accordion';
 
+import PercentageCircle from '../PercentageCircle';
 import LenderBuyButton from '../BuyButton/LenderBuyButton';
 import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
 import styles from './Baskets.module.css';
@@ -15,6 +18,15 @@ class ZapFullView extends Component {
     this.state = {};
     autobind(this);
   }
+
+  customToggle = ({ children, eventKey }) => {
+    const decoratedOnClick = useAccordionToggle(eventKey);
+    return (
+      <Button onClick={decoratedOnClick} variant="outline-primary" size="lg">
+        {children}
+      </Button>
+    );
+  };
 
   render() {
     const { name, components, isOrderable, description } = this.props;
@@ -54,34 +66,23 @@ class ZapFullView extends Component {
                     ))}
                   </div>
                 </div>
-                <div
-                  className="row my-4"
-                  style={{ justifyContent: 'space-evenly' }}
-                >
-                  {isOrderable ? (
-                    <>
-                      <Button
-                        data-toggle="collapse"
-                        data-target={`#${this.props.id}`}
-                        variant="outline-primary"
-                        size="lg"
-                      >
+                {isOrderable ? (
+                  <Accordion>
+                    <Row className={styles.buttonSpacing}>
+                      <this.customToggle eventKey="0">
                         More info
-                      </Button>
-                      <br />
-                    </>
-                  ) : null}
-                  {name === 'ETH Maximalist' ? (
-                    <ETHMAXIMALISTBuyButton
-                      name={name}
-                      isOrderable={isOrderable}
-                    />
-                  ) : (
-                    <LenderBuyButton name={name} isOrderable={isOrderable} />
-                  )}
-                  {isOrderable ? (
-                    <>
-                      <br />
+                      </this.customToggle>
+                      {name === 'ETH Maximalist' ? (
+                        <ETHMAXIMALISTBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
+                      ) : (
+                        <LenderBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
+                      )}
                       <Button
                         href={description.tutorialLink}
                         variant="outline-info"
@@ -90,60 +91,49 @@ class ZapFullView extends Component {
                       >
                         View Tutorial
                       </Button>
-                    </>
-                  ) : null}
-                </div>
-                <>
-                  {isOrderable ? (
-                    <div
-                      className="collapse"
-                      key={`${this.props.id}`}
-                      id={`${this.props.id}`}
-                    >
-                      <Card.Body>
-                        {
-                          <>
-                            <h3>{description.textQuestion}</h3>
-                            {description.textAnswer.map(answer => {
-                              return <p key={answer}>{answer}</p>;
-                            })}
-                            {description.textLink.map((linkData, i) => {
-                              return (
-                                <div key={linkData.hyperlink}>
-                                  <a
-                                    href={linkData.hyperlink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                  >
-                                    {linkData.text}
-                                  </a>{' '}
-                                  {i === description.textLink.length - 1
-                                    ? ''
-                                    : 'and'}{' '}
-                                </div>
-                              );
-                            })}
-                          </>
-                        }
-                      </Card.Body>
+                    </Row>
+                    <Row>
+                      <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                          <h3>{description.textQuestion}</h3>
+                          {description.textAnswer.map(answer => {
+                            return <p key={answer}>{answer}</p>;
+                          })}
+                          {description.textLink.map((linkData, i) => {
+                            return (
+                              <div key={linkData.hyperlink}>
+                                <a
+                                  href={linkData.hyperlink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {linkData.text}
+                                </a>{' '}
+                                {i === description.textLink.length - 1
+                                  ? ''
+                                  : 'and'}{' '}
+                              </div>
+                            );
+                          })}
+                        </Card.Body>
+                      </Accordion.Collapse>
+                    </Row>
+                  </Accordion>
+                ) : (
+                  <div className="row justify-content-center my-4">
+                    <div className="col-12 col-md-12 col-lg-12 text-center">
+                      <h4 style={{ color: 'black' }}>
+                        This Zap is still under development.
+                      </h4>
+                      <h4 style={{ color: 'black' }}>
+                        {' '}
+                        In the meantime, check out{' '}
+                        <a href="/zaps/lender"> Lender</a> Zap or{' '}
+                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
+                      </h4>
                     </div>
-                  ) : (
-                    <div className="row justify-content-center my-4">
-                      <div className="col-12 col-md-12 col-lg-12 text-center">
-                        <h4 style={{ color: 'black' }}>
-                          This Zap is still under development.
-                        </h4>
-                        <h4 style={{ color: 'black' }}>
-                          {' '}
-                          In the meantime, check out{' '}
-                          <a href="/zaps/lender"> Lender</a> Zap or{' '}
-                          <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
-                        </h4>
-                      </div>
-                    </div>
-                  )}
-                </>
-                {this.state.isOrderable ? null : null}
+                  </div>
+                )}
               </div>
             </div>
           </div>
