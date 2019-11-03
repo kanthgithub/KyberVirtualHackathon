@@ -1,9 +1,13 @@
 import React from 'react';
 import isEmpty from 'lodash/isEmpty';
-
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+
 import ZapFullView from './ZapFullView';
 import NavigationBar from '../NavigationBar';
+
+import '../../App.css';
 
 const BasketsView = props => {
   const {
@@ -22,6 +26,16 @@ const BasketsView = props => {
           description={description}
           id={id}
         />
+        <Row className="justify-content-center">
+          <Button
+            variant="outline-info"
+            target="_blank"
+            href="https://defizap.typeform.com/to/UZSZg5"
+            type="link"
+          >
+            Don&apos;t see your Zap? Submit a request and we will create one!
+          </Button>
+        </Row>
       </Container>
     );
   }

@@ -36,19 +36,29 @@ const NavigationBar = () => (
             </Button>
           </Navbar.Text>
           <Navbar.Text>
-            <a href="/faq" className={styles.anchorSpacing}>
+            <Button variant="link" href="/faq" className={styles.anchorSpacing}>
               FAQ
-            </a>
+            </Button>
           </Navbar.Text>
           <Navbar.Text>
-            <a
+            <Button
+              href="https://devpost.com/software/defi-zap"
+              variant="link"
+              target="_blank"
+              className={styles.anchorSpacing}
+            >
+              Devpost
+            </Button>
+          </Navbar.Text>
+          <Navbar.Text>
+            <Button
               href="https://t.me/defizap"
-              rel="noopener noreferrer"
+              variant="link"
               target="_blank"
               className={styles.anchorSpacing}
             >
               Telegram
-            </a>
+            </Button>
           </Navbar.Text>
         </Nav>
         <Navbar.Text className={styles.logoPadding}>

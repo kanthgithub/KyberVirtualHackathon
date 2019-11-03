@@ -30,13 +30,12 @@ const ZapListView = () => {
             <br />
             <hr />
             <a
-              href="https://github.com/DeFiStrategies/ZapRequests/issues"
+              href="https://defizap.typeform.com/to/UZSZg5"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: 'blue', fontSize: 22 }}
+              style={{ color: 'blue', 'font-size': 22 }}
             >
-              Don&apos;t see your basket? Submit a request and we will create
-              one!
+              Don&apos;t see your Zap? Submit a request and we will create one!
             </a>
           </div>
         </div>
