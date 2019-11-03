@@ -2,6 +2,19 @@ h1 {
   font-size: 48px !important;
 }
 
+landingPage {
+  width: 80%;
+}
+
+sup{
+  font-size: x-small;
+  vertical-align: super;
+}
+
+.container-fluid{
+  max-width: 80%;
+}
+
 body {
   background-color: #f9fbfd;
 }

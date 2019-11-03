@@ -10,7 +10,7 @@ const NavigationBar = () => (
   <div className="mt-1 mb-3">
     <Navbar expand="md">
       <Navbar.Brand href="/">
-        DeFi Zap
+        DeFiZap
         <sup>Beta</sup>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

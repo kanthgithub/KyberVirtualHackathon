@@ -9,7 +9,7 @@ import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
 
 const LandingPage = () => (
-  <Container>
+  <Container fluid={true}>
     <NavigationBar />
     <Hero />
     <WhyUseDeFiZap />
