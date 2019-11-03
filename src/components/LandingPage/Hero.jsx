@@ -10,25 +10,18 @@ import heroimg from '../../assets/hero.svg';
 const Hero = () => (
   <Container>
     <Row>
-      <Col xs={6}>
+      <Col sm={12} md={6} lg={6}>
         <Row className="pt-5">
-          <h1>DeFi Zap</h1>
+          <h1>DeFiZap</h1>
           <h5>
             <sup>Beta</sup>
           </h5>
         </Row>
         <Row className="pt-3">
-          <h4>
+          <h4 className="lead">
             Get instant exposure across multiple DeFi protocols based on your
             investment goals.
           </h4>
-          {/**
-           * Below code is commented out as I am not sure how to move forward with this
-           */}
-          {/* <p className="lead text-md-left mb-6 mb-lg-8">
-            Get instant exposure across multiple DeFi protocols based on your
-            investment goals.
-          </p> */}
         </Row>
         <Row>
           <Button
@@ -40,7 +33,8 @@ const Hero = () => (
           </Button>
         </Row>
       </Col>
-      <Col>
+      <Col sm="auto" md="auto" lg="auto" />
+      <Col sm={8} md={4} lg={4}>
         <img width="100%" src={heroimg} alt="Welcome to DeFiZap" />
       </Col>
     </Row>
@@ -48,3 +42,9 @@ const Hero = () => (
 );
 
 export default Hero;
+
+/**
+ * 
+ * 
+
+ */

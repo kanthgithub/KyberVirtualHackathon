@@ -9,33 +9,23 @@ import NonCustodial from '../../assets/non-custodial.svg';
 
 const WhyUseDeFiZap = () => (
   <Container>
-    <Row className="justify-content-md-center pt-5 pb-3">
-      <h2>WHY USE DEFIZAP?</h2>
+    <Row className="justify-content-center pt-5 pb-3">
+      <h2>Why Use DeFiZap?</h2>
     </Row>
-    <Row className="justify-content-md-center text-center">
-      <Col>
-        <img
-          src={SaveTime}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-          width="195px"
-          alt="Save Time"
-        />
-        <h4>Save Time</h4>
-        <h6>
+    <Row className="justify-content-center text-center">
+      <Col sm md lg>
+        <img src={SaveTime} alt="Save Time" />
+        <h5>Save Time</h5>
+        <p>
           Zap is a smart contract that auto-spreads incoming deposits across
           multiple DeFi protocols based on pre-set allocations, bypassing many
           manual steps.
-        </h6>
+        </p>
       </Col>
-      <Col>
-        <img
-          src={SaveGas}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-          width="170px"
-          alt="Save Time"
-        />
-        <h4>Save Gas</h4>
-        <h6>
+      <Col sm md lg>
+        <img src={SaveGas} alt="Save Time" />
+        <h5>Save Gas</h5>
+        <p>
           Access all your favorite DeFi protocols and save up to 40% on
           transaction fees.
           <br />
@@ -46,17 +36,12 @@ const WhyUseDeFiZap = () => (
           >
             View our case study here.
           </a>
-        </h6>
+        </p>
       </Col>
-      <Col>
-        <img
-          src={NonCustodial}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 mr-3"
-          width="125px"
-          alt="Save Time"
-        />
-        <h4>Non Custodial</h4>
-        <h6>
+      <Col sm md lg>
+        <img src={NonCustodial} alt="Save Time" />
+        <h5>Non Custodial</h5>
+        <p>
           Zaps never hold your assets - you will instantly receive allocated
           DeFi tokens.
           <br />
@@ -67,7 +52,7 @@ const WhyUseDeFiZap = () => (
           >
             Review smart contract code.
           </a>
-        </h6>
+        </p>
       </Col>
     </Row>
   </Container>

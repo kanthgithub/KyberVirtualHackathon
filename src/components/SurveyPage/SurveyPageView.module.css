@@ -8,3 +8,8 @@
     background: -webkit-linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     background: linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  */
 }
+
+.anchorStyling {
+    font-size: 22px;
+    text-align: center;
+}

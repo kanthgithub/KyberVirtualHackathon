@@ -6,10 +6,10 @@ import Button from 'react-bootstrap/Button';
 import AvailableZaps from '../../constants/AvailableZaps';
 import ZapCardsView from '../ZapCards/ZapCardsView';
 
-const AvailableBaskets = () => (
+const AvailableZapsView = () => (
   <Container>
     <Row className="justify-content-md-center" style={{ marginBottom: '60px' }}>
-      <h2>AVAILABLE ZAPS</h2>
+      <h2>Available Zaps</h2>
     </Row>
     <Row>
       {Object.values(AvailableZaps).map(zap => (
@@ -31,4 +31,4 @@ const AvailableBaskets = () => (
   </Container>
 );
 
-export default AvailableBaskets;
+export default AvailableZapsView;
