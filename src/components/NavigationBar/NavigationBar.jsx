@@ -65,16 +65,6 @@ const NavigationBar = props => {
               </Button>
             </Navbar.Text>
           </Nav>
-          <Navbar.Text className={styles.logoPadding}>
-            <sup>powered by</sup>
-            <img
-              src={kyberlogo}
-              style={{
-                width: '70px'
-              }}
-              alt="Kyber Logo"
-            />
-          </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
     </div>
