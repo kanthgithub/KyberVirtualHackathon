@@ -1,23 +1,23 @@
 export default {
   labels: [
-    " 10/5",
-    " 10/6",
-    " 10/7",
-    " 10/8",
-    " 10/9",
-    "10/10",
-    "10/11",
-    "10/12",
-    "10/13",
-    "10/14",
-    "10/15",
-    "10/16"
+    ' 10/5',
+    ' 10/6',
+    ' 10/7',
+    ' 10/8',
+    ' 10/9',
+    '10/10',
+    '10/11',
+    '10/12',
+    '10/13',
+    '10/14',
+    '10/15',
+    '10/16'
   ],
   datasets: [
     {
-      label: "ETH12EMA",
-      borderColor: "rgb(75, 192, 192)",
-      backgroundColor: "rgb(75, 192, 192)",
+      label: 'ETH12EMA',
+      borderColor: 'rgb(75, 192, 192)',
+      backgroundColor: 'rgb(75, 192, 192)',
       data: [
         1.0,
         1.03712,
@@ -36,9 +36,9 @@ export default {
       ]
     },
     {
-      label: "ETH26EMA",
-      borderColor: "rgb(54, 162, 235)",
-      backgroundColor: "rgb(54, 162, 235)",
+      label: 'ETH26EMA',
+      borderColor: 'rgb(54, 162, 235)',
+      backgroundColor: 'rgb(54, 162, 235)',
       data: [
         1.0,
         1.04304,
@@ -57,9 +57,9 @@ export default {
       ]
     },
     {
-      label: "ETH20SMACO",
-      borderColor: "rgb(255, 159, 64)",
-      backgroundColor: "rgb(255, 159, 64)",
+      label: 'ETH20SMACO',
+      borderColor: 'rgb(255, 159, 64)',
+      backgroundColor: 'rgb(255, 159, 64)',
       data: [
         1.0,
         1.03713,
@@ -78,9 +78,9 @@ export default {
       ]
     },
     {
-      label: "ETH50MACO",
-      borderColor: "rgb(153, 102, 255)",
-      backgroundColor: "rgb(153, 102, 255)",
+      label: 'ETH50MACO',
+      borderColor: 'rgb(153, 102, 255)',
+      backgroundColor: 'rgb(153, 102, 255)',
       data: [
         1.0,
         1.03713,
@@ -99,9 +99,9 @@ export default {
       ]
     },
     {
-      label: "ETHMINVOL",
-      borderColor: "rgb(255, 205, 86)",
-      backgroundColor: "rgb(255, 205, 86)",
+      label: 'ETHMINVOL',
+      borderColor: 'rgb(255, 205, 86)',
+      backgroundColor: 'rgb(255, 205, 86)',
       data: [
         1.0,
         1.01781,
@@ -120,9 +120,9 @@ export default {
       ]
     },
     {
-      label: "ETHLOVOL",
-      borderColor: "rgb(2, 24, 190)",
-      backgroundColor: "rgb(2, 24, 190)",
+      label: 'ETHLOVOL',
+      borderColor: 'rgb(2, 24, 190)',
+      backgroundColor: 'rgb(2, 24, 190)',
       data: [
         1.0,
         1.01802,
@@ -141,9 +141,9 @@ export default {
       ]
     },
     {
-      label: "ETHHIVOL",
-      borderColor: "rgb(38, 38, 38)",
-      backgroundColor: "rgb(38, 38, 38)",
+      label: 'ETHHIVOL',
+      borderColor: 'rgb(38, 38, 38)',
+      backgroundColor: 'rgb(38, 38, 38)',
       data: [
         1.0,
         1.01813,

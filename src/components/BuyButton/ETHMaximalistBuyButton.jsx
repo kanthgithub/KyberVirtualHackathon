@@ -1,41 +1,35 @@
-import React from "react";
-import { Modal, ModalBody } from "reactstrap";
+import React from 'react';
+import { Modal, ModalBody } from 'reactstrap';
 import Button from 'react-bootstrap/Button';
 
-import "../../App.css";
-import web3 from "../../web3/web3";
-// import { CONTRACT_ABI } from "../../web3/abi";
-import { ETHMAXIMALIST_ABI } from "../../web3/EthMaximalistABI";
-import { ETHMAXIMALIST_CONTRACT_ADDRESS } from "../../web3/address";
-import Loading from "../Loading";
+import '../../App.css';
+import web3 from '../../web3/web3';
+import ETHMAXIMALIST_ABI from '../../web3/EthMaximalistABI';
+import { ETHMAXIMALIST_CONTRACT_ADDRESS } from '../../web3/address';
+import Loading from '../Loading';
 
 class ETHMAXIMALISTBuyButton extends React.Component {
-  state = { open: false, value: "", account: null, showLoader: false };
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+      value: '',
+      account: null,
+      showLoader: false,
+      errorMessage: '',
+      depositTxHash: ''
+    };
+  }
+
   componentDidMount() {
     this.initialize();
   }
 
-  async initialize() {
-    try {
-      const [account] = await window.ethereum.enable();
-
-      this.setState({
-        account
-      });
-    } catch (error) {
-      console.error(error);
-      this.setState({
-        errorMessage:
-          "Error connecting to MetaMask! Please try reloading the page..."
-      });
-    }
-  }
-
   async getGas() {
-    const res = await fetch("https://ethgasstation.info/json/ethgasAPI.json");
-    let response = await res.json();
-    let avgGasGwei = (response.average / 10) * 1000000000;
-    console.log("the Gas from the gas module2 is " + avgGasGwei);
+    const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
+    const response = await res.json();
+    const avgGasGwei = (response.average / 10) * 1000000000;
+    // console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
     this.setState({ gasValue: avgGasGwei });
   }
 
@@ -44,13 +38,15 @@ class ETHMAXIMALISTBuyButton extends React.Component {
   };
 
   toggle = () => {
-    this.setState({ open: !this.state.open });
+    const { open } = this.state;
+    this.setState({ open: !open });
   };
 
   handleSubmit = async event => {
+    const { value, account, gasValue } = this.state;
     event.preventDefault();
     await this.getGas();
-    const valueToInvest = this.state.value;
+    const valueToInvest = value;
     const contract = new web3.eth.Contract(
       ETHMAXIMALIST_ABI,
       ETHMAXIMALIST_CONTRACT_ADDRESS
@@ -61,30 +57,50 @@ class ETHMAXIMALISTBuyButton extends React.Component {
       tx = await contract.methods
         .ETHMaximalistZAP()
         .send({
-          from: this.state.account,
-          value: web3.utils.toWei(valueToInvest, "ether"),
+          from: account,
+          value: web3.utils.toWei(valueToInvest, 'ether'),
           gas: 5000000,
-          gasPrice: String(this.state.gasValue)
+          gasPrice: String(gasValue)
         })
-        .on("receipt", receipt => {
+        .on('receipt', receipt => {
           console.log(
-            "the tx hash of the ETHMaximalistZAP function is",
-            receipt["transactionHash"]
+            'the tx hash of the ETHMaximalistZAP function is',
+            receipt.transactionHash
           );
           this.setState({
-            depositTxHash: receipt["transactionHash"],
+            depositTxHash: receipt.transactionHash,
             showLoader: false
           });
         })
-        .on("error", error => {
+        .on('error', error => {
           alert(error);
           this.setState({ showLoader: false });
         });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
+    // eslint-disable-next-line no-console
     console.log(tx);
   };
+
+  async initialize() {
+    try {
+      const [account] = await window.ethereum.enable();
+
+      this.setState({
+        account
+      });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      this.setState({
+        // eslint-disable-next-line react/no-unused-state
+        errorMessage:
+          'Error connecting to MetaMask! Please try reloading the page...'
+      });
+    }
+  }
 
   renderModal() {
     const { open, value } = this.state;
@@ -106,8 +122,8 @@ class ETHMAXIMALISTBuyButton extends React.Component {
                   style={
                     value && value.length > 3
                       ? {
-                        width: `${70 + value.length * 10}px`
-                      }
+                          width: `${70 + value.length * 10}px`
+                        }
                       : {}
                   }
                 />
@@ -133,20 +149,22 @@ class ETHMAXIMALISTBuyButton extends React.Component {
       </Modal>
     );
   }
+
   render() {
     const { isOrderable } = this.props;
     return (
-      <div>
+      <>
         <Button
-        onClick={() => this.setState({ open: true })}
-        disabled={!isOrderable}
-        variant='outline-success'
-        size='lg'
-      >
-      Buy
-      </Button>
+          onClick={() => this.setState({ open: true })}
+          disabled={!isOrderable}
+          variant="outline-success"
+          size="lg"
+          className="m-2"
+        >
+          Buy
+        </Button>
         {this.renderModal()}
-      </div>
+      </>
     );
   }
 }

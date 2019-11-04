@@ -1,49 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-import NavigationBar from "../Navbar";
-import "../../App.css";
-import heroimg from "../../assets/hero.svg";
+import '../../App.css';
+import heroimg from '../../assets/hero.svg';
 
 const Hero = () => (
-  <div
-    className="hero-image"
-    style={{
-      height: "1000px",
-      marginBottom: "100px"
-    }}
-  >
-    <div className="container" style={{ paddingTop: "150px" }}>
-      <NavigationBar />
-      <div className="container-fluid">
-        <div className="row mt-5">
-          <div className="col-12 col-md-6" style={{ marginTop: "150px" }}>
-            <div className="d-flex">
-              <h1 className="text-light">DeFiZap</h1>
-              <button disabled className="btn btn-dark shadow beta-btn">BETA</button>
-            </div>
-            <p className="lead text-center text-md-left text-light mb-6 mb-lg-8">
-              Get instant exposure across multiple DeFi protocols based on your
-              investment goals.
-            </p>
-            <div className="d-flex">
-              <div className="text-center text-md-left">
-                <Link
-                  className="btn btn-light shadow lift mr-1 my-2 py-3 font20 px-4"
-                  to="/survey"
-                >
-                  Get Started
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-6">
-            <img src={heroimg} alt="Welcome to DeFiZap" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Container>
+    <Row>
+      <Col sm={12} md={6} lg={6}>
+        <Row className="pt-5">
+          <h1>DeFiZap</h1>
+          <h5>
+            <sup>Beta</sup>
+          </h5>
+        </Row>
+        <Row className="pt-3">
+          <h4 className="lead">
+            Get instant exposure across multiple DeFi protocols based on your
+            investment goals.
+          </h4>
+        </Row>
+        <Row>
+          <Button
+            variant="light"
+            href="/survey"
+            className="shadow lift mr-1 my-2 py-3 font20 px-4"
+          >
+            Get Started
+          </Button>
+        </Row>
+      </Col>
+      <Col sm={8} md={6} lg={6}>
+        <img width="100%" src={heroimg} alt="Welcome to DeFiZap" />
+      </Col>
+    </Row>
+  </Container>
 );
 
 export default Hero;
+
+/**
+ * 
+ * 
+
+ */

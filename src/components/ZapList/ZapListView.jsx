@@ -1,58 +1,55 @@
-import React from "react";
-import ZapFullView from '../Baskets/ZapFullView';
-import NavBar from '../Navbar';
-import Zaps from '../../constants/Baskets';
+import React from 'react';
+import Container from 'react-bootstrap/Container';
 
+import ZapFullView from '../Zaps/ZapFullView';
+import NavigationBar from '../NavigationBar';
+import Zaps from '../../constants/Zaps';
 import '../../App.css';
-import styles from './ZapList.module.css';
+import Button from 'react-bootstrap/Button';
 
-const ZapListView = ({ ...props }) => {
-        return (
-          <div
-            className="hero-image"
-            style={{
-            height: "1000px",
-            marginBottom: "100px"
-            }}
-          >
-          <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
-            <NavBar />
-            {Object.values(Zaps).map(zap => (
-                <ZapFullView
-                    name={zap.name}
-                    components={zap.components}
-                    isOrderable={zap.isOrderable}
-                    description={zap.description}
-                    id={zap.id}
-                />
-            ))}
-            <div className="container">
-              <div className="row justify-content-center my-4">
-                <div className="col-12 col-md-12 col-lg-12 text-center">
-                <hr />
-                <a
-                  href='/survey'
-                  style={{ color: 'blue', 'font-size': 22 }}
-                >
-                  Not sure which to pick? Try Zap Generator
-                </a>
-                <br /> <hr />
-                <a
-                  href='https://defizap.typeform.com/to/UZSZg5'
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: 'blue', 'font-size': 22 }}
-                >
-                  Don't see your Zap? Submit a request and we will create one!
-                </a>
-                </div>
-              </div>
-            </div>
-            <br />
-            <br />
+const ZapListView = () => {
+  return (
+    <Container>
+      <NavigationBar />
+      {Object.values(Zaps).map(zap => (
+        <ZapFullView
+          key={zap.name}
+          name={zap.name}
+          components={zap.components}
+          isOrderable={zap.isOrderable}
+          description={zap.description}
+          id={zap.id}
+        />
+      ))}
+      <div className="container">
+        <div className="row justify-content-center my-1">
+          <div className="col-12 col-md-12 col-lg-12 text-center">
+            <Button
+              variant="outline-info"
+              target="_blank"
+              size="lg"
+              href="/survey"
+              type="link"
+            >
+              Not sure which to pick? Try Zap Generator
+            </Button>
+            <hr />
+            <Button
+              variant="outline-info"
+              target="_blank"
+              size="lg"
+              href="https://defizap.typeform.com/to/UZSZg5"
+              type="link"
+            >
+              Don&apos;t see your Zap? Submit a request and we will create one!
+            </Button>
           </div>
-          </div>
-      );
+        </div>
+      </div>
+      <br />
+      <br />
+    </Container>
+  );
 };
 
 export default ZapListView;

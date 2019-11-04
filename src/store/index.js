@@ -13,7 +13,9 @@ const configureStore = (initialState, history) => {
   if (isDev) {
     // allow devs to use their own plugged in browser redux dev tool instead of the builtin component
     const devTools = DevTools();
-    const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : devTools.instrument();
+    const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__
+      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      : devTools.instrument();
     storeEnhancers.push(devToolsEnhancer);
   }
 
@@ -33,6 +35,6 @@ const configureStore = (initialState, history) => {
     });
   }
   return store;
-}
+};
 
 export default configureStore;

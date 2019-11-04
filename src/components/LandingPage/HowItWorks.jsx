@@ -1,60 +1,43 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React from 'react';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed';
 
-import One from "../../assets/one.png";
-import Two from "../../assets/two.png";
-import Three from "../../assets/three.png";
+import One from '../../assets/one.png';
+import Two from '../../assets/two.png';
+import Three from '../../assets/three.png';
 
 const HowItWorks = () => (
-  <Container>
-    <Row className="justify-content-md-center" style={{ margin: "80px 0" }}>
-      <h2>HOW IT WORKS?</h2>
+  <>
+    <Row className="flex text-center justify-content-center mt-1 mb-1">
+      <h2>How It Works?</h2>
     </Row>
-    <Row className="justify-content-md-center text-center  mb-3">
-      <Col className="mb-1">
-        <img
-          src={One}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-          width="100px"
-          alt="1"
-        />
+    <Row className="justify-content-md-center text-center mb-3">
+      <Col sm className="mb-1">
+        <img src={One} className="" width="30%" alt="1" />
+        <Col>PICK A ZAP</Col>
       </Col>
-      <Col>
-        <img
-          src={Two}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-          width="90px"
-          alt="2"
-        />
+      <Col sm md lg>
+        <img src={Two} className="" width="30%" alt="2" />
+        <Col>SEND INVESTMENT AMOUNT</Col>
       </Col>
-      <Col>
-        <img
-          src={Three}
-          className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-          width="100px"
-          alt="3"
-        />
+      <Col sm md lg>
+        <img src={Three} className="" width="30%" alt="3" />
+        <Col>RECEIVE ALLOCATED TOKENS</Col>
       </Col>
     </Row>
-    <Row className="justify-content-md-center text-center ">
-      <Col>PICK A ZAP</Col>
-      <Col>SEND INVESTMENT AMOUNT</Col>
-      <Col>RECEIVE ALLOCATED TOKENS</Col>
-    </Row>
-    <div className="row justify-content-center my-5">
-      <iframe
-        title="video"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/6kgaF3G8EVw"
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
-  </Container>
+    <Container className="pt-2 pb-4">
+      <ResponsiveEmbed aspectRatio="21by9" frameBorder="0">
+        <iframe
+          title="How DeFiZap works tutorial"
+          src="https://www.youtube.com/embed/6kgaF3G8EVw"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </ResponsiveEmbed>
+    </Container>
+  </>
 );
 
 export default HowItWorks;

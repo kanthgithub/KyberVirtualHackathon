@@ -2,13 +2,13 @@ import isEmpty from 'lodash/isEmpty';
 
 function buildHeaders(accept = 'application/json') {
   return new Headers({
-    Accept: accept,
+    Accept: accept
   });
 }
 
 // A Helper function to automagically chain promises together with some nice checkResponse syntax to handle errors.
 export function checkResponse(serviceComment) {
-  return (res) => {
+  return res => {
     if (res.ok) {
       if (res.status === 204) {
         return res;
@@ -16,7 +16,7 @@ export function checkResponse(serviceComment) {
 
       const text = res.text();
 
-      return text.then((value) => {
+      return text.then(value => {
         if (isEmpty(value)) {
           return res;
         }
@@ -39,7 +39,7 @@ export function buildOptions(method = 'GET', body, ignoreCache = false) {
     method,
     mode: 'cors',
     headers,
-    body,
+    body
   };
 
   if (ignoreCache) {
@@ -49,5 +49,5 @@ export function buildOptions(method = 'GET', body, ignoreCache = false) {
 }
 
 export function fetchRequest(endpoint, buildoption) {
-    return fetch(endpoint, buildoption());
+  return fetch(endpoint, buildoption());
 }
