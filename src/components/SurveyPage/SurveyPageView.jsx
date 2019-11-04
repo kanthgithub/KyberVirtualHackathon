@@ -116,7 +116,7 @@ const SurveyPageView = props => {
               <ol type="A" style={{ width: '70%' }}>
                 {item.options.map(option => {
                   return (
-                    <li key={option.value} className="m-2">
+                    <li key={option.value} className="m-2 pl-2">
                       <Button
                         variant="outline-dark"
                         size="lg"
