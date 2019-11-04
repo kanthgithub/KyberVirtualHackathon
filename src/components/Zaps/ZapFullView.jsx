@@ -42,11 +42,11 @@ class ZapFullView extends Component {
           <div className="container">
             <div className="card shadow" style={{ backgroundColor: '#ffffff' }}>
               <div className="card-body">
-                <div className="row justify-content-center">
-                  <div className="col-12 col-md-8 col-lg-8">
+                <Row className="flex-column">
+                  <Row sm md lg className="justify-content-center">
                     <h1 className="text-center my-3 hedger">{name}</h1>
-                  </div>
-                  <Row className="justify-content-center">
+                  </Row>
+                  <Row sm md lg className="justify-content-center">
                     {components.map(item => (
                       <div key={item.name}>
                         <PercentageCircle
@@ -57,7 +57,7 @@ class ZapFullView extends Component {
                       </div>
                     ))}
                   </Row>
-                </div>
+                </Row>
                 {isOrderable ? (
                   <Accordion>
                     <Row className={styles.buttonSpacing}>
