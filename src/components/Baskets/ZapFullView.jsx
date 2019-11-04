@@ -24,13 +24,13 @@ class ZapFullView extends Component {
         'textLink': [{
           'text': '',
           'hyperLink': ''
-        }]
+        }],
+        'tutorialLink': ''
       }: this.props.description,
       toggleInfo: false,
     };
     autobind(this);
   }
-
 
   render() {
     let name = this.state.name;
@@ -74,8 +74,8 @@ class ZapFullView extends Component {
                       isOrderable ? (
                         <>
                         <Button
-                          data-toggle="collapse" data-target="#collapseExample"
-                          variant="outline-info"
+                          data-toggle="collapse" data-target={`#${this.props.id}`}
+                          variant="outline-primary"
                           size='lg'
                         >
                           More info
@@ -90,7 +90,7 @@ class ZapFullView extends Component {
                         <>
                         <br />
                         <Button
-                          href='https://www.youtube.com/watch?v=6kgaF3G8EVw'
+                          href={description.tutorialLink}
                           variant="outline-info"
                           target="_blank"
                           size='lg'
@@ -101,40 +101,40 @@ class ZapFullView extends Component {
                 </div>
                 <>
                       {isOrderable ? (
-                        <div className="collapse" id="collapseExample">
-                        <Card.Body>
-                          {
-                            <>
-                              <h3>{description.textQuestion}</h3>
-                              {description.textAnswer.map(answer => {
-                                return (
-                                  <p key={answer}>{answer}</p>
-                                );
-                              })}
-                              {
-                              description.textLink.map((linkData, i) => {
-                                return (
-                                    <>
-                                    <a href={linkData.hyperlink}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      {linkData.text}
-                                    </a>
-                                    {' '} {i === (description.textLink.length -1) ? '' : 'and'} {' '}
-                                    </>
-                                )
-                              })
-                              }
-                            </>
-                          }
-                        </Card.Body>
+                        <div className="collapse" id={`${this.props.id}`}>
+                          <Card.Body>
+                            {
+                              <>
+                                <h3>{description.textQuestion}</h3>
+                                {description.textAnswer.map(answer => {
+                                  return (
+                                    <p key={answer}>{answer}</p>
+                                  );
+                                })}
+                                {
+                                description.textLink.map((linkData, i) => {
+                                  return (
+                                      <>
+                                      <a href={linkData.hyperlink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {linkData.text}
+                                      </a>
+                                      {' '} {i === (description.textLink.length -1) ? '' : 'and'} {' '}
+                                      </>
+                                  )
+                                })
+                                }
+                              </>
+                            }
+                          </Card.Body>
                         </div>
                       ): (<div className="row justify-content-center my-4">
                       <div className="col-12 col-md-12 col-lg-12 text-center">
                             <h4 style={{ color: 'black' }}>
                               This Zap is still under development.</h4>
-                            <h4 style={{ color: 'black' }}> In the meantime, check out our <a href="/zaps/lender"> Lender</a> Zap or <a href="zaps/ETHMaximalist"> ETH Maximalist</a> Zap.
+                            <h4 style={{ color: 'black' }}> In the meantime, check out <a href="/zaps/lender">Lender</a> or <a href="zaps/ETHMaximalist">ETH Maximalist</a>.
                             </h4>
                       </div>
                     </div>) }
