@@ -9,7 +9,7 @@ import heroimg from '../../assets/hero.svg';
 
 const Hero = () => (
   <div className="container-flex">
-    <div className="row">
+    <div className="row lprow">
       <div
         className="col-6 "
         style={{ alignSelf: 'center' }}

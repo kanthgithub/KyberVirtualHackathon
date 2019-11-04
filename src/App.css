@@ -6,6 +6,10 @@ landingPage {
   width: 80%;
 }
 
+.lprow{
+  margin: 0px !important;
+}
+
 sup{
   font-size: x-small;
   vertical-align: super;
@@ -15,8 +19,10 @@ sup{
   max-width: 80%;
 }
 
-body {
-  background-color: #f9fbfd;
+.landingPageFirstSection {
+  background-image: url("../src/assets/background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 25%;
 }
 
 .card {
