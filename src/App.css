@@ -1,7 +1,7 @@
 h1 {
   font-size: 48px !important;
 }
-
+/* Dipesh Stuff */
 landingPage {
   width: 80%;
 }
@@ -16,14 +16,22 @@ sup{
 }
 
 .container-fluid{
-  max-width: 80%;
+  max-width: 75%;
 }
 
 .landingPageFirstSection {
   background-image: url("../src/assets/background.png");
   background-repeat: no-repeat;
-  background-size: 100% 25%;
+  /* background-size: 100% 25%; */
+  background-size:contain;
+  /* background-position:center; */
 }
+
+.footerStyle {
+  background-color: white;
+}
+
+/* Dipesh Stuff Ends over here */
 
 .card {
   margin-bottom: 1.5rem;

@@ -6,13 +6,23 @@ import Button from 'react-bootstrap/Button';
 import kyberlogo from '../../assets/kyber-logo.png';
 import styles from './NavigationBar.module.css';
 
-const NavigationBar = () => (
+const NavigationBar = (props) => (
   <div className="mt-1 mb-3">
+    {console.log(props)}
     <Navbar expand="md">
-      <Navbar.Brand href="/">
+      {
+        props.isLandingPage ? null : 
+        
+          (<Navbar.Brand href="/">
+          DeFiZap
+        <sup>Beta</sup>
+        </Navbar.Brand>) 
+      }
+
+      {/* <Navbar.Brand href="/">
         DeFiZap
         <sup>Beta</sup>
-      </Navbar.Brand>
+      </Navbar.Brand> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

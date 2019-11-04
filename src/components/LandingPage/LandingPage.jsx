@@ -9,13 +9,10 @@ import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
 
 const LandingPage = () => (
-  <div className="landingPageFirstSection">
+  <div>
     <Container fluid={true}>
-
-      <NavigationBar />
+      <NavigationBar isLandingPage={true} />
       <Hero />
-
-
       <WhyUseDeFiZap />
       <HowItWorks />
       <AvailableZaps />
@@ -23,13 +20,12 @@ const LandingPage = () => (
         <h4 className="pt-1 pb-1 text-center">Frequently Asked Questions</h4>
       </Container>
       <FAQView />
-      <footer>
+      <footer className="footerStyle">
         <h4 className="pt-1">DeFiZap</h4>
         <p className="pb-1 text-muted">All Rights Reserved</p>
       </footer>
     </Container>
   </div>
-
 );
 
 export default LandingPage;
