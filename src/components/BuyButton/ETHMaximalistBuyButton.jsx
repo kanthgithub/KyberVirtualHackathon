@@ -153,17 +153,18 @@ class ETHMAXIMALISTBuyButton extends React.Component {
   render() {
     const { isOrderable } = this.props;
     return (
-      <div>
+      <>
         <Button
           onClick={() => this.setState({ open: true })}
           disabled={!isOrderable}
           variant="outline-success"
           size="lg"
+          className="m-2"
         >
           Buy
         </Button>
         {this.renderModal()}
-      </div>
+      </>
     );
   }
 }

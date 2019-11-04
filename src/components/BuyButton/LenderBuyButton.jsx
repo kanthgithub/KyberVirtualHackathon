@@ -154,6 +154,7 @@ class LenderBuyButton extends React.Component {
             disabled={!isOrderable}
             variant="outline-success"
             size="lg"
+            className="m-2"
           >
             Buy
           </Button>
@@ -163,6 +164,7 @@ class LenderBuyButton extends React.Component {
             disabled={!isOrderable}
             variant="outline-success"
             size="lg"
+            className="m-2"
           >
             Coming Soon
           </Button>

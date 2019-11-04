@@ -28,8 +28,9 @@ const ZapsView = props => {
         />
         <Row className="justify-content-center">
           <Button
-            variant="outline-dark"
+            variant="outline-info"
             target="_blank"
+            size="lg"
             href="https://defizap.typeform.com/to/UZSZg5"
             type="link"
           >

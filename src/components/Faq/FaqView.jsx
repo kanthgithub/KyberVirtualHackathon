@@ -188,15 +188,16 @@ const FaqView = props => {
           </Accordion.Collapse>
         </Card>
       </Accordion>
-      <Row className="justify-content-center">
-        <a
-          rel="noopener noreferrer"
+      <Row className="justify-content-center pb-2">
+        <Button
+          variant="outline-info"
           target="_blank"
-          className={styles.anchorStyling}
+          size="lg"
           href="https://defizap.typeform.com/to/UZSZg5"
+          type="link"
         >
           Don&apos;t see your Zap? Submit a request and we will create one!
-        </a>
+        </Button>
       </Row>
     </Container>
   );

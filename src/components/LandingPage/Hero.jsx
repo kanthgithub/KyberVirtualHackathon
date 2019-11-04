@@ -33,8 +33,7 @@ const Hero = () => (
           </Button>
         </Row>
       </Col>
-      <Col sm="auto" md="auto" lg="auto" />
-      <Col sm={8} md={4} lg={4}>
+      <Col sm={8} md={6} lg={6}>
         <img width="100%" src={heroimg} alt="Welcome to DeFiZap" />
       </Col>
     </Row>

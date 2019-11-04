@@ -22,7 +22,12 @@ class ZapFullView extends Component {
   customToggle = ({ children, eventKey }) => {
     const decoratedOnClick = useAccordionToggle(eventKey);
     return (
-      <Button onClick={decoratedOnClick} variant="outline-primary" size="lg">
+      <Button
+        className="m-2"
+        onClick={decoratedOnClick}
+        variant="outline-primary"
+        size="lg"
+      >
         {children}
       </Button>
     );
@@ -88,6 +93,7 @@ class ZapFullView extends Component {
                         variant="outline-info"
                         target="_blank"
                         size="lg"
+                        className="m-2"
                       >
                         View Tutorial
                       </Button>

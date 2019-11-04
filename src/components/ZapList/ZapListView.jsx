@@ -5,6 +5,7 @@ import ZapFullView from '../Zaps/ZapFullView';
 import NavigationBar from '../NavigationBar';
 import Zaps from '../../constants/Zaps';
 import '../../App.css';
+import Button from 'react-bootstrap/Button';
 
 const ZapListView = () => {
   return (
@@ -21,22 +22,27 @@ const ZapListView = () => {
         />
       ))}
       <div className="container">
-        <div className="row justify-content-center my-4">
+        <div className="row justify-content-center my-1">
           <div className="col-12 col-md-12 col-lg-12 text-center">
-            <hr />
-            <a href="/survey" style={{ color: 'blue', fontSize: 22 }}>
-              Not sure which to pick? Try Zap Generator
-            </a>
-            <br />
-            <hr />
-            <a
-              href="https://defizap.typeform.com/to/UZSZg5"
+            <Button
+              variant="outline-info"
               target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'blue', fontSize: 22 }}
+              size="lg"
+              href="/survey"
+              type="link"
+            >
+              Not sure which to pick? Try Zap Generator
+            </Button>
+            <hr />
+            <Button
+              variant="outline-info"
+              target="_blank"
+              size="lg"
+              href="https://defizap.typeform.com/to/UZSZg5"
+              type="link"
             >
               Don&apos;t see your Zap? Submit a request and we will create one!
-            </a>
+            </Button>
           </div>
         </div>
       </div>

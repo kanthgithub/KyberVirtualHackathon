@@ -10,7 +10,7 @@ import FAQView from '../Faq/FaqView';
 
 const LandingPage = () => (
   <Container>
-    <NavigationBar />
+    <NavigationBar isLandingPage />
     <Hero />
     <WhyUseDeFiZap />
     <HowItWorks />
