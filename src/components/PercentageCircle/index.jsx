@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import "../../App.css";
+import '../../App.css';
 
 const DEFAULT_VALUE = 0;
-const DEFAULT_COLOR = "#5540BF";
+const DEFAULT_COLOR = '#5540BF';
 const DEFAULT_MAX_VALUE = 100;
 
 export default props => {
@@ -39,7 +39,11 @@ export default props => {
           }}
         />
         <foreignObject x="30%" y="25%" width="150" height="100">
-          <p xmlns="http://www.w3.org/1999/xhtml" className="circleText d-flex" style={{ color: 'black' }}>
+          <p
+            xmlns="http://www.w3.org/1999/xhtml"
+            className="circleText d-flex"
+            style={{ color: 'black' }}
+          >
             {percentage}
             <span className="percentageText mt-4">%</span>
           </p>

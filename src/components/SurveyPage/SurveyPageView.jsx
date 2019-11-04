@@ -1,151 +1,167 @@
-import React from "react";
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Spinner from 'react-bootstrap/Spinner';
 import isEmpty from 'lodash/isEmpty';
 
-import NavigationBar from '../Navbar';
+import NavigationBar from '../NavigationBar';
 import styles from './SurveyPageView.module.css';
-import ZapFullView from "../Baskets/ZapFullView";
-import Baskets from '../../constants/Baskets';
+import ZapFullView from '../Zaps/ZapFullView';
+import Zaps from '../../constants/Zaps';
 
-const SurveyPageView = ({ ...props }) => {
-    const { questionNumber, onAnswer, surveyList, reDoSurvey, surveyComplete,
-        submitResults, isLoading, answer } = props;
+const SurveyPageView = props => {
+  const {
+    questionNumber,
+    onAnswer,
+    surveyList,
+    reDoSurvey,
+    surveyComplete,
+    submitResults,
+    isLoading,
+    answer
+  } = props;
 
-    const surveyCompleted = () => (
-        <>
-            <NavigationBar />
-            <div key={questionNumber} className={styles.containerPadding}>
-                <Container>
-                    {
-                        surveyComplete ? (<>
-                            <Button
-                                variant="outline-light"
-                                onClick={reDoSurvey}
-                                className={styles.buttonspacing}
-                                size="lg"
-                            >
-                                Start Over
-                        </Button>
-                            <Button
-                                href="/zaps"
-                                variant="outline-light"
-                                size="lg"
-                            >
-                                Explore all Zaps
-                        </Button>
-                        </>) : (
-                                <Button
-                                    variant="outline-light"
-                                    onClick={submitResults}
-                                    className={styles.buttonspacing}
-                                    size="lg"
-                                >
-                                    Get Results
-                                </Button>)
-                    }
-                    {
-                        isLoading ? (
-                            <>
-                                <br />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                                <Spinner animation="grow" variant="light" />
-                            </>
-                        ) : (generateResult())
-                    }
-                </Container>
-            </div>
-        </>
+  const generateResult = () => {
+    return isEmpty(answer) ? null : (
+      <>
+        <br /> <br />
+        <h4>
+          You might find this Zap useful: <br />
+        </h4>
+        <ZapFullView
+          name={Zaps[answer].name}
+          components={Zaps[answer].components}
+          isOrderable={Zaps[answer].isOrderable}
+          description={Zaps[answer].description}
+        />
+        <Row className="justify-content-center pb-3">
+          <Button
+            variant="outline-info"
+            target="_blank"
+            size="lg"
+            href="https://defizap.typeform.com/to/UZSZg5"
+            type="link"
+            className="m-3"
+          >
+            Don&apos;t see your Zap? Submit a request and we will create one!
+          </Button>
+        </Row>
+      </>
     );
+  };
 
-    const questions = () => {
-        const questions = surveyList.map(item => {
-            return (
-                <>
-                <NavigationBar />
-                <div key={questionNumber} className={styles.containerPadding}>
-                    <Container key={questionNumber}>
-                        {questionNumber === 1 ? (
-                            <><h4 style={{ color: "white" }}>Answer a few multiple choice questions to see which Zap might fit your needs:</h4><br /></>
-                        ) : null}
-                        <h4 style={{ color: "white" }}>{item.question}</h4>
-                        <h5 style={{ color: "white", fontSize: 15 }}>Question {questionNumber} out of 4</h5>
-                        <ol type="A" style={{ color: "white" }}>
-                            {item.options.map(option => {
-                                return (
-                                    <li key={option.value} className={styles.buttonspacing}>
-                                        <Button variant="outline-light" size="lg" onClick={() => onAnswer(option.key)}>
-                                            {option.value}
-                                        </Button>
-                                    </li>
-                                );
-                            })}
-                        </ol>
-                        <br />
-                        <h5 style={{ color: "white", fontSize: 15 }}>DISCLOSURE: THIS IS NOT INVESTMENT ADVICE. DO NOT MAKE INVESTMENT DECISIONS SOLELY BASED ON</h5>
-                        <h5 style={{ color: "white", fontSize: 15 }}>RESULTS GENERATED BY THIS TOOL. THIS PROJECT IS IN BETA. USE AT YOUR OWN DISCRETION.</h5>
-                    </Container>
-                </div>
-                </>
-            );
-        });
-        return questions[questionNumber - 1];
-    };
-
-    const generateResult = () => {
-        return (
-            isEmpty(answer) ? null : (
-                <>
-                <br />
-                <h4 style={{ color: "white" }}>
-                    You might find this Zap useful:
-                </h4>
-                    <ZapFullView
-                        name={Baskets[answer].name}
-                        components={Baskets[answer].components}
-                        isOrderable={Baskets[answer].isOrderable}
-                        description={Baskets[answer].description}
-                    />
-                <Row className="justify-content-center">
-                    <Button
-                        variant='outline-dark'
-                        target="_blank"
-                        href='https://defizap.typeform.com/to/UZSZg5'
-                        type='link'
-                        size="lg"
-                    >
-                        Don't see your Zap? <br />
-                        Submit a request and we will create one!
-                    </Button>
-                </Row>
-                </>
-            )
-        );
-    }
-
-    const questionaire = (questionNumber) => {
-        return (
-            <div
-                className="hero-image"
-                style={{
-                    height: "1000px",
-                    marginBottom: "100px"
-                }}
+  const surveyCompleted = () => (
+    <>
+      <div key={questionNumber}>
+        <Container>
+          <NavigationBar />
+          {surveyComplete ? (
+            <>
+              <Button
+                variant="outline-dark"
+                onClick={reDoSurvey}
+                className={styles.buttonspacing}
+                size="lg"
+              >
+                Start Over
+              </Button>
+              <Button variant="outline-dark" href="/zaps" size="lg">
+                Explore all Zaps
+              </Button>
+            </>
+          ) : (
+            <Button
+              variant="outline-dark"
+              onClick={submitResults}
+              className={styles.buttonspacing}
+              size="lg"
             >
-                <div className={styles.containerPadding} style={{ paddingTop: "150px" }}>
-                    {surveyList.length >= questionNumber ? questions() : surveyCompleted()}
-                </div>
-            </div>
-        );
-    };
+              Get Results
+            </Button>
+          )}
+          {isLoading ? (
+            <>
+              <br />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+              <Spinner animation="grow" />
+            </>
+          ) : (
+            generateResult()
+          )}
+        </Container>
+      </div>
+    </>
+  );
 
-    return questionaire(questionNumber);
+  const questions = () => {
+    const questionsList = surveyList.map(item => {
+      return (
+        <>
+          <div key={questionNumber}>
+            <Container key={questionNumber}>
+              <NavigationBar />
+              <h4>
+                Answer a few multiple choice questions to see which Zap might
+                fit your needs
+              </h4>
+              <br />
+              <h4>{item.question}</h4>
+              <h5 style={{ fontSize: 15 }}>
+                Question {questionNumber} out of 4
+              </h5>
+              <ol type="A" style={{ width: '70%' }}>
+                {item.options.map(option => {
+                  return (
+                    <li key={option.value} className="m-2 pl-2">
+                      <Button
+                        variant="outline-dark"
+                        size="lg"
+                        onClick={() => onAnswer(option.key)}
+                        className="shadow"
+                        block
+                      >
+                        {option.value}
+                      </Button>
+                    </li>
+                  );
+                })}
+              </ol>
+              <Row>
+                <h5 style={{ fontSize: 15 }} className="m-3">
+                  DISCLOSURE:
+                  <p>
+                    This is not Investment Advice. Do not make investment
+                    decisions solely based on results generated by this tool.
+                    This Project is in Beta. Use at your own discretion.
+                  </p>
+                  <p>
+                    Please note that we are not licensed financial advisors
+                    under any law. Please Consult your own independent
+                    investment advisor before making any Investment Decisions
+                  </p>
+                </h5>
+              </Row>
+            </Container>
+          </div>
+        </>
+      );
+    });
+    return questionsList[questionNumber - 1];
+  };
+
+  const questionaire = () => {
+    return (
+      <div className={styles.background}>
+        {surveyList.length >= questionNumber ? questions() : surveyCompleted()}
+      </div>
+    );
+  };
+
+  return questionaire(questionNumber);
 };
 
 export default SurveyPageView;
-

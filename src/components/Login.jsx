@@ -4,17 +4,12 @@ import autobind from 'react-autobind';
 class Login extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: false,
-    };
+    this.state = {};
     autobind(this);
   }
 
   render() {
-    return (
-      <div>
-      </div>
-    );
+    return <div />;
   }
 }
 

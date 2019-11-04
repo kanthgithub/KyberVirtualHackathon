@@ -1,19 +1,19 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import { Route, Switch } from "react-router-dom";
-import { ConnectedRouter as Router } from "connected-react-router";
-import autobind from "react-autobind";
-import { connect } from "react-redux";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter as Router } from 'connected-react-router';
+import autobind from 'react-autobind';
+import { connect } from 'react-redux';
 
-import "./App.css";
+import './App.css';
 
-import Home from "./pages/home";
-import Dashboard from "./pages/dashboard";
-import Baskets from "./pages/zaps";
-import BasketsPage from './components/Baskets';
-import Analytics from "./pages/analytics";
-import Survey from "./pages/survey";
+import ZapsPage from './components/Zaps';
+import Survey from './components/SurveyPage';
 import Faq from './components/Faq';
+import ZapListContainer from './components/ZapList/ZapListContainer';
+import LandingPage from './components/LandingPage';
+// import Analytics from "./pages/analytics";
+// import Dashboard from "./pages/dashboard";
 
 class App extends PureComponent {
   static propTypes = {
@@ -36,13 +36,13 @@ class App extends PureComponent {
     return (
       <Router history={history}>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/" component={LandingPage} />
+          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+          {/* <Route exact path="/analytics" component={Analytics} /> */}
           <Route exact path="/survey" component={Survey} />
-          <Route exact path="/zaps" component={Baskets} />
-          <Route exact path="/zaps/:id" component={BasketsPage} />
-          <Route exact path="/analytics" component={Analytics} />
-          <Route exact path='/faq' component={Faq} />
+          <Route exact path="/zaps" component={ZapListContainer} />
+          <Route exact path="/zaps/:id" component={ZapsPage} />
+          <Route exact path="/faq" component={Faq} />
         </Switch>
       </Router>
     );

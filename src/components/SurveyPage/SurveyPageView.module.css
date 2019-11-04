@@ -1,8 +1,16 @@
 .buttonspacing {
-    padding: 10px;
-    margin: 10px;
+    padding: 0.5rem;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
-.containerPadding {
-    padding-top: 2em;
+.background {
+    /* background: #070b34;
+    background: -webkit-linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to bottom, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  */
+}
+
+.anchorStyling {
+    font-size: 22px;
+    text-align: center;
 }

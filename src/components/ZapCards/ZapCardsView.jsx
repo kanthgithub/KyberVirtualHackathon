@@ -1,9 +1,9 @@
-import React from "react";
-import isEmpty from "lodash/isEmpty";
+import React from 'react';
+import isEmpty from 'lodash/isEmpty';
 import Button from 'react-bootstrap/Button';
 
-import PercentageCircle from "../PercentageCircle";
-import "../../App.css";
+import PercentageCircle from '../PercentageCircle';
+import '../../App.css';
 
 const ZapCardsView = props => {
   const {
@@ -12,7 +12,7 @@ const ZapCardsView = props => {
 
   if (!isEmpty(props.basketData)) {
     return (
-      <div className="card shadow" style={{ backgroundColor: "#ffffff" }}>
+      <div className="card shadow" style={{ backgroundColor: '#ffffff' }}>
         <div className="card-body">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-10">
@@ -29,11 +29,7 @@ const ZapCardsView = props => {
           </div>
           <div className="row justify-content-center my-4">
             <div className="col-12 col-md-12 col-lg-12 text-center ">
-              <Button
-                href={`/zaps/${id}`}
-                size='lg'
-                variant="outline-primary"
-              >
+              <Button href={`/zaps/${id}`} size="lg" variant="outline-primary">
                 More Info
               </Button>
             </div>

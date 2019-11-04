@@ -4,17 +4,15 @@ import autobind from 'react-autobind';
 import ZapListView from './ZapListView';
 
 class ZapListContainer extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {};
-        autobind(this);
-    };
+  constructor(props) {
+    super(props);
+    this.state = {};
+    autobind(this);
+  }
 
-    render() {
-        return (
-            <ZapListView/>
-        );
-    }
+  render() {
+    return <ZapListView />;
+  }
 }
 
 export default ZapListContainer;

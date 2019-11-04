@@ -92,17 +92,6 @@ body {
   color: #1314ad;
 }
 
-.hero-image {
-  background-image: url("../src/assets/background.png");
-
-  height: 30%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  margin-top: -150px;
-}
-
 footer {
   left: 0;
   bottom: 0;

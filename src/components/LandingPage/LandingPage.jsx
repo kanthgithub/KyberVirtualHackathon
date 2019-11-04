@@ -1,29 +1,29 @@
-import React from "react";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
 
-import WhyUseDeFiBaskets from "./WhyUseDeFiBaskets";
-import HowItWorks from "./HowItWorks";
-import AvailableBaskets from "./AvailableBaskets";
-import Hero from "./Hero";
+import NavigationBar from '../NavigationBar';
+import WhyUseDeFiZap from './WhyUseDeFiZap';
+import HowItWorks from './HowItWorks';
+import AvailableZaps from './AvailableZapsView';
+import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
-import Container from "react-bootstrap/Container";
 
 const LandingPage = () => (
-  <div>
+  <Container>
+    <NavigationBar isLandingPage />
     <Hero />
-    <div className="container">
-      <WhyUseDeFiBaskets />
-      <HowItWorks />
-      <AvailableBaskets />
-      <Container>
-        <h4 className="pt-1">Frequently Asked Questions</h4>
-      </Container>
-      <FAQView />
-    </div>
+    <WhyUseDeFiZap />
+    <HowItWorks />
+    <AvailableZaps />
+    <Container>
+      <h4 className="pt-1 pb-1 text-center">Frequently Asked Questions</h4>
+    </Container>
+    <FAQView />
     <footer>
       <h4 className="pt-1">DeFiZap</h4>
       <p className="pb-1 text-muted">All Rights Reserved</p>
     </footer>
-  </div>
+  </Container>
 );
 
 export default LandingPage;
