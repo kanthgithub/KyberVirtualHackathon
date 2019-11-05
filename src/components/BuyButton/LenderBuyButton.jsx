@@ -152,7 +152,7 @@ class LenderBuyButton extends React.Component {
           <Button
             onClick={() => this.setState({ open: true })}
             disabled={!isOrderable}
-            variant="success"
+            variant="outline-success"
             size="lg"
             className="m-2"
           >
@@ -162,7 +162,7 @@ class LenderBuyButton extends React.Component {
           <Button
             onClick={() => this.setState({ open: true })}
             disabled={!isOrderable}
-            variant="success"
+            variant="outline-success"
             size="lg"
             className="m-2"
           >

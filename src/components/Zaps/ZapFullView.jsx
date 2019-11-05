@@ -25,7 +25,7 @@ class ZapFullView extends Component {
       <Button
         className="m-2"
         onClick={decoratedOnClick}
-        variant="primary"
+        variant="link"
         size="lg"
       >
         {children}
@@ -61,9 +61,15 @@ class ZapFullView extends Component {
                 {isOrderable ? (
                   <Accordion>
                     <Row className={styles.buttonSpacing}>
-                      <this.customToggle eventKey="0">
-                        More info
-                      </this.customToggle>
+                      <Button
+                        href={description.tutorialLink}
+                        variant="outline-primary"
+                        target="_blank"
+                        size="lg"
+                        className="m-2"
+                      >
+                        View Tutorial
+                      </Button>
                       {name === 'ETH Maximalist' ? (
                         <ETHMAXIMALISTBuyButton
                           name={name}
@@ -75,15 +81,9 @@ class ZapFullView extends Component {
                           isOrderable={isOrderable}
                         />
                       )}
-                      <Button
-                        href={description.tutorialLink}
-                        variant="info"
-                        target="_blank"
-                        size="lg"
-                        className="m-2"
-                      >
-                        View Tutorial
-                      </Button>
+                      <this.customToggle eventKey="0">
+                        More info
+                      </this.customToggle>
                     </Row>
                     <Row>
                       <Accordion.Collapse eventKey="0">
