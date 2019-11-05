@@ -18,8 +18,8 @@ const WhyUseDeFiZap = () => (
         <h5>Save Time</h5>
         <p>
           Zap is a smart contract that auto-spreads incoming deposits across
-          multiple DeFi protocols based on pre-set allocations, bypassing many
-          manual steps.
+          multiple DeFi protocols in a single transaction and based on pre-set
+          allocations - bypassing many manual steps.
         </p>
       </Col>
       <Col sm md lg>

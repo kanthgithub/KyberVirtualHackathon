@@ -7,6 +7,7 @@ import HowItWorks from './HowItWorks';
 import AvailableZaps from './AvailableZapsView';
 import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
+import Footer from '../Footer';
 
 const LandingPage = () => (
   <Container>
@@ -19,10 +20,7 @@ const LandingPage = () => (
       <h4 className="pt-1 pb-1 text-center">Frequently Asked Questions</h4>
     </Container>
     <FAQView />
-    <footer>
-      <h4 className="pt-1">DeFiZap</h4>
-      <p className="pb-1 text-muted">All Rights Reserved</p>
-    </footer>
+    <Footer />
   </Container>
 );
 
