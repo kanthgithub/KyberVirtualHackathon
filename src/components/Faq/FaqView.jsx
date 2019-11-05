@@ -190,11 +190,13 @@ const FaqView = props => {
       </Accordion>
       <Row className="justify-content-center pb-2">
         <Button
-          variant="outline-info"
+          variant="primary"
           target="_blank"
           size="lg"
           href="https://defizap.typeform.com/to/UZSZg5"
           type="link"
+          className="mx-3"
+          block
         >
           Don&apos;t see your Zap? Submit a request and we will create one!
         </Button>

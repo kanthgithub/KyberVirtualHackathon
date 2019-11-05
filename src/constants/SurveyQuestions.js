@@ -41,7 +41,7 @@ const surveyQuestions = [
   },
   {
     questionNumber: 3,
-    question: 'What is your current strategy',
+    question: 'What is your current strategy?',
     options: [
       {
         value: 'Capturing short-term price fluctuations',

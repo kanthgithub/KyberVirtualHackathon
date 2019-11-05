@@ -37,12 +37,13 @@ const SurveyPageView = props => {
         />
         <Row className="justify-content-center pb-3">
           <Button
-            variant="outline-info"
+            variant="info"
             target="_blank"
             size="lg"
             href="https://defizap.typeform.com/to/UZSZg5"
             type="link"
             className="m-3"
+            block
           >
             Don&apos;t see your Zap? Submit a request and we will create one!
           </Button>
@@ -59,26 +60,39 @@ const SurveyPageView = props => {
           {surveyComplete ? (
             <>
               <Button
-                variant="outline-dark"
+                variant="primary"
                 onClick={reDoSurvey}
-                className={styles.buttonspacing}
+                className="mx-1 px-1"
                 size="lg"
               >
                 Start Over
               </Button>
-              <Button variant="outline-dark" href="/zaps" size="lg">
+              <Button
+                className="mx-1 px-1"
+                variant="primary"
+                href="/zaps"
+                size="lg"
+              >
                 Explore all Zaps
               </Button>
             </>
           ) : (
-            <Button
-              variant="outline-dark"
-              onClick={submitResults}
-              className={styles.buttonspacing}
-              size="lg"
-            >
-              Get Results
-            </Button>
+            <>
+              <h4>
+                Answer a few multiple choice questions to see which Zap might
+                fit your needs
+              </h4>
+              <br />
+              <Button
+                variant="primary"
+                onClick={submitResults}
+                className={styles.buttonspacing}
+                size="lg"
+                block
+              >
+                Get Results
+              </Button>
+            </>
           )}
           {isLoading ? (
             <>
@@ -109,16 +123,16 @@ const SurveyPageView = props => {
                 fit your needs
               </h4>
               <br />
-              <h4>{item.question}</h4>
               <h5 style={{ fontSize: 15 }}>
                 Question {questionNumber} out of 4
               </h5>
-              <ol type="A" style={{ width: '70%' }}>
+              <h4>{item.question}</h4>
+              <ol type="A">
                 {item.options.map(option => {
                   return (
-                    <li key={option.value} className="m-2 pl-2">
+                    <li key={option.value} className="m-3 pl-2 px-2">
                       <Button
-                        variant="outline-dark"
+                        variant="primary"
                         size="lg"
                         onClick={() => onAnswer(option.key)}
                         className="shadow"
