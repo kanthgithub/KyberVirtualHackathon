@@ -17,7 +17,7 @@ const Hero = () => (
             <sup>Beta</sup>
           </h5>
         </Row>
-        <Row className="pt-3">
+        <Row className="pt-3 pb-3">
           <h4 className="lead">
             Get instant exposure across multiple DeFi protocols based on your
             investment goals.
@@ -25,7 +25,7 @@ const Hero = () => (
         </Row>
         <Row>
           <Button
-            variant="light"
+            variant="primary"
             href="/survey"
             className="shadow lift mr-1 my-2 py-3 font20 px-4"
           >
@@ -41,9 +41,3 @@ const Hero = () => (
 );
 
 export default Hero;
-
-/**
- * 
- * 
-
- */

@@ -25,7 +25,7 @@ class ZapFullView extends Component {
       <Button
         className="m-2"
         onClick={decoratedOnClick}
-        variant="outline-primary"
+        variant="link"
         size="lg"
       >
         {children}
@@ -38,7 +38,7 @@ class ZapFullView extends Component {
 
     return (
       <div key={name} className={styles.cardContainer}>
-        <section className="pb-3 pt-md-12">
+        <section className="pb-2 pt-md-12">
           <div className="container">
             <div className="card shadow" style={{ backgroundColor: '#ffffff' }}>
               <div className="card-body">
@@ -61,9 +61,15 @@ class ZapFullView extends Component {
                 {isOrderable ? (
                   <Accordion>
                     <Row className={styles.buttonSpacing}>
-                      <this.customToggle eventKey="0">
-                        More info
-                      </this.customToggle>
+                      <Button
+                        href={description.tutorialLink}
+                        variant="outline-primary"
+                        target="_blank"
+                        size="lg"
+                        className="m-2"
+                      >
+                        View Tutorial
+                      </Button>
                       {name === 'ETH Maximalist' ? (
                         <ETHMAXIMALISTBuyButton
                           name={name}
@@ -75,15 +81,9 @@ class ZapFullView extends Component {
                           isOrderable={isOrderable}
                         />
                       )}
-                      <Button
-                        href={description.tutorialLink}
-                        variant="outline-info"
-                        target="_blank"
-                        size="lg"
-                        className="m-2"
-                      >
-                        View Tutorial
-                      </Button>
+                      <this.customToggle eventKey="0">
+                        More info
+                      </this.customToggle>
                     </Row>
                     <Row>
                       <Accordion.Collapse eventKey="0">
@@ -129,7 +129,7 @@ class ZapFullView extends Component {
                       <h4 style={{ color: 'black' }}>
                         {' '}
                         In the meantime, check out{' '}
-                        <a href="/zaps/lender"> Lender</a> Zap or{' '}
+                        <a href="/zaps/lender"> Lender</a> or{' '}
                         <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
                       </h4>
                     </div>

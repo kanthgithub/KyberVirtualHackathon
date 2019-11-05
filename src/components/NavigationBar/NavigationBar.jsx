@@ -3,7 +3,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
-import kyberlogo from '../../assets/kyber-logo.png';
 import styles from './NavigationBar.module.css';
 
 const NavigationBar = props => {
@@ -52,6 +51,16 @@ const NavigationBar = props => {
                 className={styles.anchorSpacing}
               >
                 Devpost
+              </Button>
+            </Navbar.Text>
+            <Navbar.Text>
+              <Button
+                href="https://defitutorials.com/"
+                variant="link"
+                target="_blank"
+                className={styles.anchorSpacing}
+              >
+                Tutorials
               </Button>
             </Navbar.Text>
             <Navbar.Text>
