@@ -19,7 +19,7 @@ const Zaps = {
         'Lender Zap allocates incoming deposits 90% to cDai and 10% to dLETH2x.',
         'Therefore, if you send 1 ETH to this Lender.DeFiZap.eth, or buy from our website, 0.9 of your worth will go towards investing in Compound.Finance while 0.1 of your ETH will be used to open a Perpetual ETH Long with 2x leverage.',
         "Lender's Zap is interesting because, within a year, the interest generated from cDai could completely cover your margin trade purchase. Think of it as trading with your future interest earned.",
-        'After sending your ETH, you will immediately receive allocated tokens (cDAI+dLETH2x) which track your DAI lending balance + margin trade position. Once you receive these tokens you can visit Compound.Finance to view/withdraw interest earned and Fulcrum.Trade to view your ROI/close position on dLETH2x.'
+        'After sending your ETH, you will immediately receive allocated tokens (cDAI+dLETH2x) which track your DAI lending balance + margin trade position. Once you receive these tokens you can visit Compound.Finance to view/withdraw interest earned and Fulcrum.Trade to view your ROI/ close position on dLETH2x.'
       ],
       textLink: [
         {
@@ -69,6 +69,42 @@ const Zaps = {
         'https://defitutorials.substack.com/p/eth-maximalist-zap-walk-through-tutorial'
     }
   },
+  moderatebull: {
+    id: 'moderatebull',
+    name: 'Moderate Bull',
+    isOrderable: true,
+    components: [
+      {
+        name: 'sETH',
+        percent: 50
+      },
+      {
+        name: 'sBTC',
+        percent: 50
+      }
+    ],
+    description: {
+      textQuestion: 'What does Moderate Bull Zap do?',
+      textAnswer: [
+        'Your deposit is automatically allocated 50% to sBTC and 50% to sETH Synths which represent BTC and ETH long positions on Synthetix’s protocol.',
+        'For example, if you send 1 ETH to ModerateBull.DeFiZap.Eth:',
+        '0.5 of your ETH will go towards longing BTC by purchasing sBTC on Synthetix exchange.',
+        '0.5 of your ETH will go towards longing ETH by purchasing sETH on Synthetix exchange.',
+        'After sending your deposit, you will immediately receive allocated Synths (sBTC+sETH) which track your trade positions.',
+        'Soon you will be able to manage your purchased assets right from DeFiZap Dashboard but for now you can visit Synthetix.Exchange to view balances and trade your Synths.'
+      ],
+      textLink: [
+        {
+          text:
+            'Check out this tutorial to help you understand how Synthetix works.',
+          hyperlink:
+            'https://defitutorials.substack.com/p/the-ultimate-guide-to-synthetix'
+        }
+      ],
+      tutorialLink:
+        'https://defitutorials.substack.com/p/moderate-bull-defizap-walk-through'
+    }
+  },
   bullSharpe: {
     id: 'bullSharpe',
     name: 'Conservative Bull',
@@ -96,25 +132,6 @@ const Zaps = {
       {
         name: 'dSETH1x',
         percent: 10
-      }
-    ]
-  },
-  moderateBull: {
-    id: 'moderateBull',
-    name: 'Moderate Bull',
-    isOrderable: false,
-    components: [
-      {
-        name: 'cDai',
-        percent: 25
-      },
-      {
-        name: 'ETH20SMACO',
-        percent: 25
-      },
-      {
-        name: 'ETHMINVOL',
-        percent: 50
       }
     ]
   },

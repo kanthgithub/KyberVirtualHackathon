@@ -29,6 +29,21 @@ const AVAILABLE_ZAPS = {
         percent: 10
       }
     ]
+  },
+  moderateBull: {
+    id: 'moderatebull',
+    name: 'Moderate Bull',
+    isOrderable: true,
+    components: [
+      {
+        name: 'sETH',
+        percent: 50
+      },
+      {
+        name: 'sBTC',
+        percent: 50
+      }
+    ]
   }
 };
 
