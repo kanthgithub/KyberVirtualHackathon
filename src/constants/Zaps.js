@@ -91,7 +91,8 @@ const Zaps = {
         '0.5 of your ETH will go towards longing BTC by purchasing sBTC on Synthetix exchange.',
         '0.5 of your ETH will go towards longing ETH by purchasing sETH on Synthetix exchange.',
         'After sending your deposit, you will immediately receive allocated Synths (sBTC+sETH) which track your trade positions.',
-        'Soon you will be able to manage your purchased assets right from DeFiZap Dashboard but for now you can visit Synthetix.Exchange to view balances and trade your Synths.'
+        'Soon you will be able to manage your purchased assets right from DeFiZap Dashboard but for now you can visit Synthetix.Exchange to view balances and trade your Synths.',
+        'Please note: Etherscan will show you a warning error.  Please do not worry, that is just an internal check error that does not impact the transaction and you will receive the necessary sBTC and sETH in your wallet without any issues. If you are sending ETH directly to ModerateBull.DeFiZap.Eth, please ensure that the Gas Price is set to no more than 1 Gwei.'
       ],
       textLink: [
         {
