@@ -7,11 +7,12 @@ import HowItWorks from './HowItWorks';
 import AvailableZaps from './AvailableZapsView';
 import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
+import styles from './landing.module.css';
 
 const LandingPage = () => (
   <Container>
     <NavigationBar isLandingPage />
-    <Hero />
+    <Hero className={styles.tempHeroContainer} />
     <WhyUseDeFiZap />
     <HowItWorks />
     <AvailableZaps />
