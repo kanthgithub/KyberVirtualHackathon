@@ -69,6 +69,43 @@ const Zaps = {
         'https://defitutorials.substack.com/p/eth-maximalist-zap-walk-through-tutorial'
     }
   },
+  moderatebull: {
+    id: 'moderatebull',
+    name: 'Moderate Bull',
+    isOrderable: true,
+    components: [
+      {
+        name: 'sETH',
+        percent: 50
+      },
+      {
+        name: 'sBTC',
+        percent: 50
+      }
+    ],
+    description: {
+      textQuestion: 'What does Moderate Bull Zap do?',
+      textAnswer: [
+        'Your deposit is automatically allocated 50% to sBTC and 50% to sETH Synths which represent BTC and ETH long positions on Synthetix’s protocol.',
+        'For example, if you send 1 ETH to ModerateBull.DeFiZap.Eth:',
+        '0.5 of your ETH will go towards longing BTC by purchasing sBTC on Synthetix exchange.',
+        '0.5 of your ETH will go towards longing ETH by purchasing sETH on Synthetix exchange.',
+        'After sending your deposit, you will immediately receive allocated Synths (sBTC+sETH) which track your trade positions.',
+        'Soon you will be able to manage your purchased assets right from DeFiZap Dashboard but for now you can visit Synthetix.Exchange to view balances and trade your Synths.',
+        'Please note: Etherscan will show you a warning error.  Please do not worry, that is just an internal check error that does not impact the transaction and you will receive the necessary sBTC and sETH in your wallet without any issues. If you are sending ETH directly to ModerateBull.DeFiZap.Eth, please ensure that the Gas Price is set to no more than 1 Gwei.'
+      ],
+      textLink: [
+        {
+          text:
+            'Check out this tutorial to help you understand how Synthetix works.',
+          hyperlink:
+            'https://defitutorials.substack.com/p/the-ultimate-guide-to-synthetix'
+        }
+      ],
+      tutorialLink:
+        'https://defitutorials.substack.com/p/moderate-bull-defizap-walk-through'
+    }
+  },
   bullSharpe: {
     id: 'bullSharpe',
     name: 'Conservative Bull',
@@ -96,25 +133,6 @@ const Zaps = {
       {
         name: 'dSETH1x',
         percent: 10
-      }
-    ]
-  },
-  moderateBull: {
-    id: 'moderateBull',
-    name: 'Moderate Bull',
-    isOrderable: false,
-    components: [
-      {
-        name: 'cDai',
-        percent: 25
-      },
-      {
-        name: 'ETH20SMACO',
-        percent: 25
-      },
-      {
-        name: 'ETHMINVOL',
-        percent: 50
       }
     ]
   },

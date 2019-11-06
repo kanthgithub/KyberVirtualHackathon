@@ -146,3 +146,13 @@ input[type="number"]::-webkit-outer-spin-button {
 .beta-btn {
   display: contents;
 }
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1450px;
+  }
+  .tempHeroContainer {
+    margin-top: 75px;
+    margin-bottom: 150px;
+  }
+}

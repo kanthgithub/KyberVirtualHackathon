@@ -8,7 +8,7 @@ import '../../App.css';
 import heroimg from '../../assets/hero.svg';
 
 const Hero = () => (
-  <Container>
+  <Container className="tempHeroContainer">
     <Row>
       <Col sm={12} md={6} lg={6}>
         <Row className="pt-5">

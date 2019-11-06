@@ -64,19 +64,19 @@ const surveyResults = {
   moderate: {
     beginner: {
       shortTerm: {
-        bull: 'moderateBull',
+        bull: 'moderatebull',
         bear: 'moderate',
         flat: 'moderate',
         notSure: 'moderate'
       },
       mediumTerm: {
-        bull: 'moderateBull',
+        bull: 'moderatebull',
         bear: 'moderate',
         flat: 'moderate',
         notSure: 'moderate'
       },
       longTerm: {
-        bull: 'moderateBull',
+        bull: 'moderatebull',
         bear: 'moderateBear',
         flat: 'moderate',
         notSure: 'moderate'
@@ -104,7 +104,7 @@ const surveyResults = {
     },
     advanced: {
       shortTerm: {
-        bull: 'moderateBull',
+        bull: 'moderatebull',
         bear: 'shortTermBear',
         flat: 'shortTermFlat',
         notSure: 'shortTermFlat'

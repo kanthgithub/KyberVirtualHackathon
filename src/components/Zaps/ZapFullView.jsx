@@ -9,6 +9,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import PercentageCircle from '../PercentageCircle';
 import LenderBuyButton from '../BuyButton/LenderBuyButton';
 import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
+import ModerateBullBuyButton from '../BuyButton/ModerateBullBuyButton';
 import styles from './Zaps.module.css';
 import '../../App.css';
 
@@ -70,8 +71,14 @@ class ZapFullView extends Component {
                       >
                         View Tutorial
                       </Button>
+                      {/* eslint-disable-next-line no-nested-ternary */}
                       {name === 'ETH Maximalist' ? (
                         <ETHMAXIMALISTBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
+                      ) : name === 'Moderate Bull' ? (
+                        <ModerateBullBuyButton
                           name={name}
                           isOrderable={isOrderable}
                         />
@@ -114,8 +121,14 @@ class ZapFullView extends Component {
                   </Accordion>
                 ) : (
                   <div className="row justify-content-center my-4">
+                    {/* eslint-disable-next-line no-nested-ternary */}
                     {name === 'ETH Maximalist' ? (
                       <ETHMAXIMALISTBuyButton
+                        name={name}
+                        isOrderable={isOrderable}
+                      />
+                    ) : name === 'Moderate Bull' ? (
+                      <ModerateBullBuyButton
                         name={name}
                         isOrderable={isOrderable}
                       />
@@ -129,8 +142,9 @@ class ZapFullView extends Component {
                       <h4 style={{ color: 'black' }}>
                         {' '}
                         In the meantime, check out{' '}
-                        <a href="/zaps/lender"> Lender</a> or{' '}
-                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
+                        <a href="/zaps/lender"> Lender</a>,{' '}
+                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a> or
+                        <a href="/zaps/moderatebull"> Moderate Bull</a>.
                       </h4>
                     </div>
                   </div>
