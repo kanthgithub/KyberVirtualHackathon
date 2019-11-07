@@ -29,8 +29,7 @@ class ETHMAXIMALISTBuyButton extends React.Component {
     const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
     const response = await res.json();
     const avgGasGwei = (response.average / 10) * 1000000000;
-    // console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
-    this.setState({ gasValue: avgGasGwei });
+    await this.setState({ gasValue: avgGasGwei });
   }
 
   handleChange = event => {
@@ -43,14 +42,14 @@ class ETHMAXIMALISTBuyButton extends React.Component {
   };
 
   handleSubmit = async event => {
-    const { value, account, gasValue } = this.state;
     event.preventDefault();
+    const { value, account } = this.state;
     await this.getGas();
-    const valueToInvest = value;
     const contract = new web3.eth.Contract(
       ETHMAXIMALIST_ABI,
       ETHMAXIMALIST_CONTRACT_ADDRESS
     );
+    const valueToInvest = value;
     this.setState({ showLoader: true });
     let tx;
     try {
@@ -60,7 +59,7 @@ class ETHMAXIMALISTBuyButton extends React.Component {
           from: account,
           value: web3.utils.toWei(valueToInvest, 'ether'),
           gas: 5000000,
-          gasPrice: String(gasValue)
+          gasPrice: String(this.state.gasValue)
         })
         .on('receipt', receipt => {
           console.log(

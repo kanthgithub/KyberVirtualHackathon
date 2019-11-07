@@ -1,20 +1,4 @@
 const AVAILABLE_ZAPS = {
-  ETHMaximalist: {
-    id: 'ETHMaximalist',
-    name: 'ETH Maximalist',
-    isOrderable: true,
-    color: '',
-    components: [
-      {
-        name: 'dLETH2x',
-        percent: 50
-      },
-      {
-        name: 'dsWBTC',
-        percent: 50
-      }
-    ]
-  },
   lender: {
     id: 'lender',
     name: 'Lender',
@@ -56,6 +40,22 @@ const AVAILABLE_ZAPS = {
       },
       {
         name: 'dLWBTC2x',
+        percent: 50
+      }
+    ]
+  },
+  ETHMaximalist: {
+    id: 'ETHMaximalist',
+    name: 'ETH Maximalist',
+    isOrderable: true,
+    color: '',
+    components: [
+      {
+        name: 'dLETH2x',
+        percent: 50
+      },
+      {
+        name: 'dsWBTC',
         percent: 50
       }
     ]
