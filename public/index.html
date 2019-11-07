@@ -11,6 +11,31 @@
 
     gtag('config', 'UA-151459475-1');
   </script>
+  <script>
+
+    let favicon_images = [
+      './Path1.png',
+      './Path2.png',
+      './Path3.png',
+      './Path4.png',
+      './Path5.png',
+      './Path6.png',
+    ];
+    let image_counter = 0; // To keep track of the current image
+
+    setInterval(function () {
+      $("link[rel='icon']").remove();
+      $("link[rel='shortcut icon']").remove();
+      $("head").append('<link rel="icon" href="' + image_counter + '" type="image/gif">');
+
+      // If last image then goto first image
+      // Else go to next image    
+      if (image_counter == favicon_images.length - 1)
+        image_counter = 0;
+      else
+        image_counter++;
+    }, 200);
+  </script>
 
   <meta charset="utf-8" />
   <meta name="title" content="DeFiZap | Invest in multiple DeFi protocols in a Zap">
@@ -26,7 +51,9 @@
   <meta name="robots" content="index, follow">
   <meta name="Googlebot" content="follow">
 
-  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+  <link rel="icon" href="/favicon.gif" type="gif" type="image/x-icon">
+  <!-- <link rel="shortcut icon" href="/favicon.png"> -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="DeFiZap" content="Get instant exposure across multiple DeFi protocols based on your investment goals." />
@@ -50,7 +77,7 @@
 
 
 
-  <link rel="apple-touch-icon" href="favicon.png" />
+  <!-- <link rel="apple-touch-icon" href="favicon.png" /> -->
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -83,5 +110,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
