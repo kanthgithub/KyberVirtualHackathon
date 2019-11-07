@@ -8,6 +8,9 @@ import ETHMAXIMALIST_ABI from '../../web3/EthMaximalistABI';
 import { ETHMAXIMALIST_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
 
+/**
+ * THIS FILE IS NO LONGER BEING USED ANYWHERE.
+ */
 class ETHMAXIMALISTBuyButton extends React.Component {
   constructor(props) {
     super(props);

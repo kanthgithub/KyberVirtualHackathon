@@ -4,9 +4,8 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
-import { CONTRACT_ABI } from '../../web3/abi';
-import { LENDER_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
+import contractProvider from '../../utils/web3DataProvider';
 
 class LenderBuyButton extends React.Component {
   constructor(props) {
@@ -44,38 +43,65 @@ class LenderBuyButton extends React.Component {
   handleSubmit = async event => {
     event.preventDefault();
     await this.getGas();
+    const { contractAbi, contractAddress } = contractProvider(this.props.name);
     const valueToInvest = this.state.value;
-    const contract = new web3.eth.Contract(
-      CONTRACT_ABI,
-      LENDER_CONTRACT_ADDRESS
-    );
+    const contract = new web3.eth.Contract(contractAbi, contractAddress);
     this.setState({ showLoader: true });
     let tx;
-    try {
-      tx = await contract.methods
-        .SafeNotSorryZapInvestment()
-        .send({
-          from: this.state.account,
-          value: web3.utils.toWei(valueToInvest, 'ether'),
-          gas: 4500000,
-          gasPrice: String(this.state.gasValue)
-        })
-        .on('receipt', receipt => {
-          console.log(
-            'the tx hash of the SafeNotSorryZapInvestment function is',
-            receipt.transactionHash
-          );
-          this.setState({
-            depositTxHash: receipt.transactionHash,
-            showLoader: false
+    if (this.props.name === 'Lender') {
+      try {
+        tx = await contract.methods
+          .sendInvestment() // NEED A STANDARD NAME FOR THE CONTRACT METHOD FOR ALL ZAP METHODS
+          .send({
+            from: this.state.account,
+            value: web3.utils.toWei(valueToInvest, 'ether'),
+            gas: 5000000,
+            gasPrice: String(this.state.gasValue)
+          })
+          .on('receipt', receipt => {
+            console.log(
+              'the tx hash of the sendInvestment function is',
+              receipt.transactionHash
+            );
+            this.setState({
+              depositTxHash: receipt.transactionHash,
+              showLoader: false
+            });
+          })
+          .on('error', error => {
+            alert(error);
+            this.setState({ showLoader: false });
           });
-        })
-        .on('error', error => {
-          alert(error);
-          this.setState({ showLoader: false });
-        });
-    } catch (error) {
-      console.log(error);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        tx = await contract.methods
+          .LetsInvest() // This is our standard name for all Invest methods.
+          .send({
+            from: this.state.account,
+            value: web3.utils.toWei(valueToInvest, 'ether'),
+            gas: 5000000,
+            gasPrice: String(this.state.gasValue)
+          })
+          .on('receipt', receipt => {
+            console.log(
+              'the tx hash of the sendInvestment function is',
+              receipt.transactionHash
+            );
+            this.setState({
+              depositTxHash: receipt.transactionHash,
+              showLoader: false
+            });
+          })
+          .on('error', error => {
+            alert(error);
+            this.setState({ showLoader: false });
+          });
+      } catch (error) {
+        console.log(error);
+      }
     }
     console.log(tx);
   };
@@ -83,7 +109,6 @@ class LenderBuyButton extends React.Component {
   async initialize() {
     try {
       const [account] = await window.ethereum.enable();
-
       this.setState({
         account
       });
