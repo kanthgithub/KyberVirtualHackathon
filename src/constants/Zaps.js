@@ -129,7 +129,7 @@ const Zaps = {
         'For example, if you send 1 ETH to DoubleBull.DeFiZap.eth:',
         ' - 0.5 of your ETH will go towards opening Perpetual BTC Long position with 2x leverage.',
         ' - 0.5 ETH will be used to open Perpetual ETH Long with 2x leverage. This means you will have exposure to 1 ETH (0.5x2).',
-        'After sending your deposit, you will immediately receive allocated bZx tokens (dLETH2x+dLWBTC) which track your open margin trade positions.',
+        'After sending your deposit, you will immediately receive allocated bZx tokens (dLETH2x+dLWBTC2x) which track your open margin trade positions.',
         'Soon you will be able to manage your purchased assets right from DeFiZap Dashboard but for now you can visit Fulcrum.Trade to view your balances and trade your positions.'
       ],
       textLink: [
