@@ -4,10 +4,11 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
+import MODERATE_BULL_ABI from '../../web3/moderateBullAbi';
+import { MODERATE_BULL_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
-import contractProvider from '../../utils/web3DataProvider';
 
-class LenderBuyButton extends React.Component {
+class ModerateBullBuyButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +29,7 @@ class LenderBuyButton extends React.Component {
     const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
     const response = await res.json();
     const avgGasGwei = (response.average / 10) * 1000000000;
-    console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
+    // console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
     this.setState({ gasValue: avgGasGwei });
   }
 
@@ -37,84 +38,64 @@ class LenderBuyButton extends React.Component {
   };
 
   toggle = () => {
-    this.setState({ open: !this.state.open });
+    const { open } = this.state;
+    this.setState({ open: !open });
   };
 
   handleSubmit = async event => {
+    const { value, account, gasValue } = this.state;
     event.preventDefault();
     await this.getGas();
-    const { contractAbi, contractAddress } = contractProvider(this.props.name);
-    const valueToInvest = this.state.value;
-    const contract = new web3.eth.Contract(contractAbi, contractAddress);
+    const valueToInvest = value;
+    const contract = new web3.eth.Contract(
+      MODERATE_BULL_ABI,
+      MODERATE_BULL_CONTRACT_ADDRESS
+    );
     this.setState({ showLoader: true });
     let tx;
-    if (this.props.name === 'Lender') {
-      try {
-        tx = await contract.methods
-          .sendInvestment() // NEED A STANDARD NAME FOR THE CONTRACT METHOD FOR ALL ZAP METHODS
-          .send({
-            from: this.state.account,
-            value: web3.utils.toWei(valueToInvest, 'ether'),
-            gas: 5000000,
-            gasPrice: String(this.state.gasValue)
-          })
-          .on('receipt', receipt => {
-            console.log(
-              'the tx hash of the sendInvestment function is',
-              receipt.transactionHash
-            );
-            this.setState({
-              depositTxHash: receipt.transactionHash,
-              showLoader: false
-            });
-          })
-          .on('error', error => {
-            alert(error);
-            this.setState({ showLoader: false });
+    try {
+      tx = await contract.methods
+        .LetsInvest()
+        .send({
+          from: account,
+          value: web3.utils.toWei(valueToInvest, 'ether'),
+          gas: 1000000,
+          gasPrice: '1000000000'
+        })
+        .on('receipt', receipt => {
+          console.log(
+            'the tx hash of the ETHMaximalistZAP function is',
+            receipt.transactionHash
+          );
+          this.setState({
+            depositTxHash: receipt.transactionHash,
+            showLoader: false
           });
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      try {
-        tx = await contract.methods
-          .LetsInvest() // This is our standard name for all Invest methods.
-          .send({
-            from: this.state.account,
-            value: web3.utils.toWei(valueToInvest, 'ether'),
-            gas: 5000000,
-            gasPrice: String(this.state.gasValue)
-          })
-          .on('receipt', receipt => {
-            console.log(
-              'the tx hash of the sendInvestment function is',
-              receipt.transactionHash
-            );
-            this.setState({
-              depositTxHash: receipt.transactionHash,
-              showLoader: false
-            });
-          })
-          .on('error', error => {
-            alert(error);
-            this.setState({ showLoader: false });
-          });
-      } catch (error) {
-        console.log(error);
-      }
+        })
+        .on('error', error => {
+          alert(error);
+          this.setState({ showLoader: false });
+        });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
     }
+    // eslint-disable-next-line no-console
     console.log(tx);
   };
 
   async initialize() {
     try {
       const [account] = await window.ethereum.enable();
+
       this.setState({
         account
       });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       this.setState({
+        // eslint-disable-next-line react/no-unused-state
         errorMessage:
           'Error connecting to MetaMask! Please try reloading the page...'
       });
@@ -172,32 +153,20 @@ class LenderBuyButton extends React.Component {
   render() {
     const { isOrderable } = this.props;
     return (
-      <div>
-        {isOrderable ? (
-          <Button
-            onClick={() => this.setState({ open: true })}
-            disabled={!isOrderable}
-            variant="outline-success"
-            size="lg"
-            className="m-2"
-          >
-            Buy
-          </Button>
-        ) : (
-          <Button
-            onClick={() => this.setState({ open: true })}
-            disabled={!isOrderable}
-            variant="outline-success"
-            size="lg"
-            className="m-2"
-          >
-            Coming Soon
-          </Button>
-        )}
+      <>
+        <Button
+          onClick={() => this.setState({ open: true })}
+          disabled={!isOrderable}
+          variant="outline-success"
+          size="lg"
+          className="m-2"
+        >
+          Buy
+        </Button>
         {this.renderModal()}
-      </div>
+      </>
     );
   }
 }
 
-export default LenderBuyButton;
+export default ModerateBullBuyButton;

@@ -13,7 +13,7 @@ const AvailableZapsView = () => (
     </Row>
     <Row>
       {Object.values(AvailableZaps).map(zap => (
-        <div key={zap.id} className="col-md-6 col-lg-6">
+        <div key={zap.id} className="col-md-3 col-lg-3">
           <ZapCardsView basketData={zap} />
         </div>
       ))}

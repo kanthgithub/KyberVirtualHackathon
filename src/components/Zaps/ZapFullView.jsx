@@ -8,7 +8,8 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import PercentageCircle from '../PercentageCircle';
 import LenderBuyButton from '../BuyButton/LenderBuyButton';
-// import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
+import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
+import ModerateBullBuyButton from '../BuyButton/ModerateBullBuyButton';
 import styles from './Zaps.module.css';
 import '../../App.css';
 
@@ -70,7 +71,23 @@ class ZapFullView extends Component {
                       >
                         View Tutorial
                       </Button>
-                      <LenderBuyButton name={name} isOrderable={isOrderable} />
+                      {/* eslint-disable-next-line no-nested-ternary */}
+                      {name === 'ETH Maximalist' ? (
+                        <ETHMAXIMALISTBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
+                      ) : name === 'Moderate Bull' ? (
+                        <ModerateBullBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
+                      ) : (
+                        <LenderBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
+                      )}
                       <this.customToggle eventKey="0">
                         More info
                       </this.customToggle>
@@ -104,7 +121,20 @@ class ZapFullView extends Component {
                   </Accordion>
                 ) : (
                   <div className="row justify-content-center my-4">
-                    <LenderBuyButton name={name} isOrderable={isOrderable} />
+                    {/* eslint-disable-next-line no-nested-ternary */}
+                    {name === 'ETH Maximalist' ? (
+                      <ETHMAXIMALISTBuyButton
+                        name={name}
+                        isOrderable={isOrderable}
+                      />
+                    ) : name === 'Moderate Bull' ? (
+                      <ModerateBullBuyButton
+                        name={name}
+                        isOrderable={isOrderable}
+                      />
+                    ) : (
+                      <LenderBuyButton name={name} isOrderable={isOrderable} />
+                    )}
                     <div className="col-12 col-md-12 col-lg-12 text-center">
                       <h4 style={{ color: 'black' }}>
                         This Zap is still under development.
@@ -112,8 +142,10 @@ class ZapFullView extends Component {
                       <h4 style={{ color: 'black' }}>
                         {' '}
                         In the meantime, check out{' '}
-                        <a href="/zaps/lender"> Lender</a> or{' '}
-                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
+                        <a href="/zaps/lender"> Lender</a>,{' '}
+                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a> or
+                        <a href="/zaps/moderatebull"> Moderate Bull</a> or
+                        <a href="/zaps/doublebull"> Double Bull</a>.
                       </h4>
                     </div>
                   </div>
