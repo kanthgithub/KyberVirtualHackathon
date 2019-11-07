@@ -12,6 +12,7 @@ import ETHMAXIMALISTBuyButton from '../BuyButton/ETHMaximalistBuyButton';
 import ModerateBullBuyButton from '../BuyButton/ModerateBullBuyButton';
 import styles from './Zaps.module.css';
 import '../../App.css';
+import DoubleBullBuyButton from '../BuyButton/DoubleBullBuyButton';
 
 class ZapFullView extends Component {
   constructor(props) {
@@ -82,6 +83,11 @@ class ZapFullView extends Component {
                           name={name}
                           isOrderable={isOrderable}
                         />
+                      ) : name === 'Double Bull' ? (
+                        <DoubleBullBuyButton
+                          name={name}
+                          isOrderable={isOrderable}
+                        />
                       ) : (
                         <LenderBuyButton
                           name={name}
@@ -132,6 +138,11 @@ class ZapFullView extends Component {
                         name={name}
                         isOrderable={isOrderable}
                       />
+                    ) : name === 'Double Bull' ? (
+                      <DoubleBullBuyButton
+                        name={name}
+                        isOrderable={isOrderable}
+                      />
                     ) : (
                       <LenderBuyButton name={name} isOrderable={isOrderable} />
                     )}
@@ -144,7 +155,8 @@ class ZapFullView extends Component {
                         In the meantime, check out{' '}
                         <a href="/zaps/lender"> Lender</a>,{' '}
                         <a href="zaps/ETHMaximalist"> ETH Maximalist</a> or
-                        <a href="/zaps/moderatebull"> Moderate Bull</a>.
+                        <a href="/zaps/moderatebull"> Moderate Bull</a> or
+                        <a href="/zaps/doublebull"> Double Bull</a>.
                       </h4>
                     </div>
                   </div>

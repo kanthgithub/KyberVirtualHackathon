@@ -44,6 +44,21 @@ const AVAILABLE_ZAPS = {
         percent: 50
       }
     ]
+  },
+  doublebull: {
+    id: 'doublebull',
+    name: 'Double Bull',
+    isOrderable: true,
+    components: [
+      {
+        name: 'dLETH2x',
+        percent: 50
+      },
+      {
+        name: 'dLWBTC2x',
+        percent: 50
+      }
+    ]
   }
 };
 
