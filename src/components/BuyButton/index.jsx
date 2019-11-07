@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
-import { CONTRACT_ABI } from '../../web3/abi';
+import LENDER_ABI from '../../web3/abi';
 import { LENDER_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
 
@@ -45,10 +45,7 @@ class BuyButton extends React.Component {
     event.preventDefault();
     await this.getGas();
     const valueToInvest = this.state.value;
-    const contract = new web3.eth.Contract(
-      CONTRACT_ABI,
-      LENDER_CONTRACT_ADDRESS
-    );
+    const contract = new web3.eth.Contract(LENDER_ABI, LENDER_CONTRACT_ADDRESS);
     this.setState({ showLoader: true });
     let tx;
     try {

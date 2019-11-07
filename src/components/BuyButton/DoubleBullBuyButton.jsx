@@ -4,10 +4,11 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
+import SHORT_TERM_BULL_ABI from '../../web3/shortTermBullAbi';
+import { SHORT_TERM_BULL_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
-import contractProvider from '../../utils/web3DataProvider';
 
-class LenderBuyButton extends React.Component {
+class DoubleBullBuyButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +29,7 @@ class LenderBuyButton extends React.Component {
     const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
     const response = await res.json();
     const avgGasGwei = (response.average / 10) * 1000000000;
-    console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
+    // console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
     this.setState({ gasValue: avgGasGwei });
   }
 
@@ -37,29 +38,33 @@ class LenderBuyButton extends React.Component {
   };
 
   toggle = () => {
-    this.setState({ open: !this.state.open });
+    const { open } = this.state;
+    this.setState({ open: !open });
   };
 
   handleSubmit = async event => {
+    const { value, account, gasValue } = this.state;
     event.preventDefault();
     await this.getGas();
-    const { contractAbi, contractAddress } = contractProvider(this.props.name);
-    const valueToInvest = this.state.value;
-    const contract = new web3.eth.Contract(contractAbi, contractAddress);
+    const valueToInvest = value;
+    const contract = new web3.eth.Contract(
+      SHORT_TERM_BULL_ABI,
+      SHORT_TERM_BULL_CONTRACT_ADDRESS
+    );
     this.setState({ showLoader: true });
     let tx;
     try {
       tx = await contract.methods
-        .SafeNotSorryZapInvestment()
+        .LetsInvest()
         .send({
-          from: this.state.account,
+          from: account,
           value: web3.utils.toWei(valueToInvest, 'ether'),
-          gas: 5000000,
-          gasPrice: String(this.state.gasValue)
+          gas: 1000000,
+          gasPrice: '1000000000'
         })
         .on('receipt', receipt => {
           console.log(
-            'the tx hash of the sendInvestment function is',
+            'the tx hash of the ETHMaximalistZAP function is',
             receipt.transactionHash
           );
           this.setState({
@@ -72,20 +77,25 @@ class LenderBuyButton extends React.Component {
           this.setState({ showLoader: false });
         });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
+    // eslint-disable-next-line no-console
     console.log(tx);
   };
 
   async initialize() {
     try {
       const [account] = await window.ethereum.enable();
+
       this.setState({
         account
       });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       this.setState({
+        // eslint-disable-next-line react/no-unused-state
         errorMessage:
           'Error connecting to MetaMask! Please try reloading the page...'
       });
@@ -143,32 +153,20 @@ class LenderBuyButton extends React.Component {
   render() {
     const { isOrderable } = this.props;
     return (
-      <div>
-        {isOrderable ? (
-          <Button
-            onClick={() => this.setState({ open: true })}
-            disabled={!isOrderable}
-            variant="outline-success"
-            size="lg"
-            className="m-2"
-          >
-            Buy
-          </Button>
-        ) : (
-          <Button
-            onClick={() => this.setState({ open: true })}
-            disabled={!isOrderable}
-            variant="outline-success"
-            size="lg"
-            className="m-2"
-          >
-            Coming Soon
-          </Button>
-        )}
+      <>
+        <Button
+          onClick={() => this.setState({ open: true })}
+          disabled={!isOrderable}
+          variant="outline-success"
+          size="lg"
+          className="m-2"
+        >
+          Buy
+        </Button>
         {this.renderModal()}
-      </div>
+      </>
     );
   }
 }
 
-export default LenderBuyButton;
+export default DoubleBullBuyButton;

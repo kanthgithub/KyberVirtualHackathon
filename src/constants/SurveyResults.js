@@ -146,16 +146,16 @@ const surveyResults = {
     },
     expert: {
       shortTerm: {
-        bull: 'shortTermBull',
+        bull: 'doublebull',
         bear: 'riskyBear',
-        flat: 'shortTermBull',
-        notSure: 'shortTermBull'
+        flat: 'doublebull',
+        notSure: 'doublebull'
       },
       mediumTerm: {
-        bull: 'shortTermBull',
+        bull: 'doublebull',
         bear: 'activeBear',
-        flat: 'shortTermBull',
-        notSure: 'shortTermBull'
+        flat: 'doublebull',
+        notSure: 'doublebull'
       },
       longTerm: {
         bull: 'riskyBull',
