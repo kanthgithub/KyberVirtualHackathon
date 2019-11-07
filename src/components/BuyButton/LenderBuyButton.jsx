@@ -48,60 +48,31 @@ class LenderBuyButton extends React.Component {
     const contract = new web3.eth.Contract(contractAbi, contractAddress);
     this.setState({ showLoader: true });
     let tx;
-    if (this.props.name === 'Lender') {
-      try {
-        tx = await contract.methods
-          .sendInvestment() // NEED A STANDARD NAME FOR THE CONTRACT METHOD FOR ALL ZAP METHODS
-          .send({
-            from: this.state.account,
-            value: web3.utils.toWei(valueToInvest, 'ether'),
-            gas: 5000000,
-            gasPrice: String(this.state.gasValue)
-          })
-          .on('receipt', receipt => {
-            console.log(
-              'the tx hash of the sendInvestment function is',
-              receipt.transactionHash
-            );
-            this.setState({
-              depositTxHash: receipt.transactionHash,
-              showLoader: false
-            });
-          })
-          .on('error', error => {
-            alert(error);
-            this.setState({ showLoader: false });
+    try {
+      tx = await contract.methods
+        .SafeNotSorryZapInvestment()
+        .send({
+          from: this.state.account,
+          value: web3.utils.toWei(valueToInvest, 'ether'),
+          gas: 5000000,
+          gasPrice: String(this.state.gasValue)
+        })
+        .on('receipt', receipt => {
+          console.log(
+            'the tx hash of the sendInvestment function is',
+            receipt.transactionHash
+          );
+          this.setState({
+            depositTxHash: receipt.transactionHash,
+            showLoader: false
           });
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      try {
-        tx = await contract.methods
-          .LetsInvest() // This is our standard name for all Invest methods.
-          .send({
-            from: this.state.account,
-            value: web3.utils.toWei(valueToInvest, 'ether'),
-            gas: 5000000,
-            gasPrice: String(this.state.gasValue)
-          })
-          .on('receipt', receipt => {
-            console.log(
-              'the tx hash of the sendInvestment function is',
-              receipt.transactionHash
-            );
-            this.setState({
-              depositTxHash: receipt.transactionHash,
-              showLoader: false
-            });
-          })
-          .on('error', error => {
-            alert(error);
-            this.setState({ showLoader: false });
-          });
-      } catch (error) {
-        console.log(error);
-      }
+        })
+        .on('error', error => {
+          alert(error);
+          this.setState({ showLoader: false });
+        });
+    } catch (error) {
+      console.log(error);
     }
     console.log(tx);
   };
