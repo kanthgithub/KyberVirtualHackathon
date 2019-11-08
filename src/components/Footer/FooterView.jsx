@@ -7,7 +7,7 @@ import synthetix from '../../assets/FooterIcons/synthetix.svg';
 import bzx from '../../assets/FooterIcons/bzx.svg';
 import compound from '../../assets/FooterIcons/compound.svg';
 import kyber from '../../assets/FooterIcons/kyber.svg';
-// import tokensets from '../../assets/FooterIcons/tokensets.svg';
+import tokensets from '../../assets/FooterIcons/tokensets.svg';
 
 const FooterView = () => (
   <Row className="pt-1 mt-1 text-center justify-content-center bg-light">
@@ -17,25 +17,25 @@ const FooterView = () => (
     {/* </Row> */}
     <Row>
       <Col sm md lg className="p-1 m-1">
-        <img src={ethereum} width="150px" alt="ethereum" />
+        <img src={ethereum} className="img-fluid" width="250px" alt="ethereum" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={compound} width="150px" alt="compound" />
+        <img src={compound} className="img-fluid" width="150px" alt="compound" />
       </Col>
       {/** TOKENSETS currently has a white background, so it's UGLY. Can't put this in right now.
         Try on local, the footer currently has a bg-light background so it's not that bad.
         */}
-      {/* <Col sm md lg className="p-1 m-1">
-        <img src={tokensets} width="150px" alt="tokensets" />
-      </Col> */}
       <Col sm md lg className="p-1 m-1">
-        <img src={bzx} width="150px" alt="bzx" />
+        <img src={tokensets} className="img-fluid" width="150px" alt="tokensets" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={kyber} width="150px" alt="kyber" />
+        <img src={bzx} className="img-fluid" width="150px" alt="bzx" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={synthetix} width="150px" alt="synthetix" />
+        <img src={kyber} className="img-fluid" width="150px" alt="kyber" />
+      </Col>
+      <Col sm md lg className="p-1 m-1">
+        <img src={synthetix} className="img-fluid" width="150px" alt="synthetix" />
       </Col>
     </Row>
   </Row>
