@@ -43,7 +43,7 @@ class DoubleBullBuyButton extends React.Component {
   };
 
   handleSubmit = async event => {
-    const { value, account, gasValue } = this.state;
+    const { value, account } = this.state;
     event.preventDefault();
     await this.getGas();
     const valueToInvest = value;
