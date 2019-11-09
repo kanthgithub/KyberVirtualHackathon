@@ -60,7 +60,7 @@ class DoubleBullBuyButton extends React.Component {
           from: account,
           value: web3.utils.toWei(valueToInvest, 'ether'),
           gas: 1000000,
-          gasPrice: '1000000000'
+          gasPrice: String(this.state.gasValue)
         })
         .on('receipt', receipt => {
           console.log(

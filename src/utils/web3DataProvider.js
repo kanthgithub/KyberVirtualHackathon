@@ -6,7 +6,7 @@ import {
 
 import LENDER_ABI from '../web3/abi';
 import ETHMAXIMALIST_ABI from '../web3/EthMaximalistABI';
-import SHORTTERMBULL_ABI from '../web3/ShortTermBullAbi';
+import SHORTTERMBULL_ABI from '../web3/shortTermBullAbi';
 
 const contractProvider = name => {
   switch (name) {
