@@ -59,12 +59,12 @@ class DoubleBullBuyButton extends React.Component {
         .send({
           from: account,
           value: web3.utils.toWei(valueToInvest, 'ether'),
-          gas: 1000000,
+          gas: 5000000,
           gasPrice: String(this.state.gasValue)
         })
         .on('receipt', receipt => {
           console.log(
-            'the tx hash of the ETHMaximalistZAP function is',
+            'the tx hash of the Double Bull Buy function is',
             receipt.transactionHash
           );
           this.setState({
