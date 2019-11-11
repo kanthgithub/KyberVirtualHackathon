@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/Button';
 import '../../App.css';
 import AccordionToggle from 'react-bootstrap/AccordionToggle';
 import styles from './Faq.module.css';
+import { GENERATE_ZAP, FAQ_PAGE } from '../../constants/googleAnalytics';
+import { registerEvent } from '../../api/googleAnalytics';
 
 const HeaderButton = props => (
   <Button variant="outline-link" onClick={props.onClick}>
@@ -197,6 +199,11 @@ const FaqView = props => {
           type="link"
           className="mx-3"
           block
+          onClick={() =>
+            registerEvent({
+              category: GENERATE_ZAP,
+              action: FAQ_PAGE
+            })}
         >
           Don&apos;t see your Zap? Submit a request and we will create one!
         </Button>

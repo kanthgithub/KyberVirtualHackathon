@@ -9,12 +9,19 @@ import App from './App';
 import configureStore from './store';
 import './index.css';
 import Loading from './components/Loading';
+import { initializeGA, registerPageView } from './api/googleAnalytics';
 
 const basename = process.env.REACT_APP_ROUTER_BASENAME || '';
 const history = createBrowserHistory({ basename });
 const store = configureStore({}, history);
 
 const rootElement = document.getElementById('root');
+
+initializeGA();
+
+history.listen(location => {
+  registerPageView(location.pathname);
+});
 
 ReactDOM.render(
   <Provider store={store}>

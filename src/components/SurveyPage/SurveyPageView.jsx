@@ -9,6 +9,8 @@ import NavigationBar from '../NavigationBar';
 import styles from './SurveyPageView.module.css';
 import ZapFullView from '../Zaps/ZapFullView';
 import Zaps from '../../constants/Zaps';
+import { registerEvent } from '../../api/googleAnalytics';
+import { GENERATE_ZAP, SURVEY_PAGE } from '../../constants/googleAnalytics';
 
 const SurveyPageView = props => {
   const {
@@ -44,6 +46,12 @@ const SurveyPageView = props => {
             type="link"
             className="m-3"
             block
+            onClick={() =>
+              registerEvent({
+                category: GENERATE_ZAP,
+                action: SURVEY_PAGE
+              })
+            }
           >
             Don&apos;t see your Zap? Submit a request and we will create one!
           </Button>

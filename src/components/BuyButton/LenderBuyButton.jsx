@@ -6,6 +6,8 @@ import '../../App.css';
 import web3 from '../../web3/web3';
 import Loading from '../Loading';
 import contractProvider from '../../utils/web3DataProvider';
+import { registerEvent } from '../../api/googleAnalytics';
+import { BUY_ZAP, INITIATE_PURCHASE } from '../../constants/googleAnalytics';
 
 class LenderBuyButton extends React.Component {
   constructor(props) {
@@ -42,6 +44,10 @@ class LenderBuyButton extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    registerEvent({
+      category: INITIATE_PURCHASE,
+      action: this.props.name
+    });
     await this.getGas();
     const { contractAbi, contractAddress } = contractProvider(this.props.name);
     const valueToInvest = this.state.value;
@@ -141,12 +147,18 @@ class LenderBuyButton extends React.Component {
   }
 
   render() {
-    const { isOrderable } = this.props;
+    const { isOrderable, name } = this.props;
     return (
       <div>
         {isOrderable ? (
           <Button
-            onClick={() => this.setState({ open: true })}
+            onClick={() => {
+              this.setState({ open: true });
+              registerEvent({
+                category: BUY_ZAP,
+                action: name
+              });
+            }}
             disabled={!isOrderable}
             variant="outline-success"
             size="lg"

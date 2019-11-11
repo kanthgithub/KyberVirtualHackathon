@@ -4,6 +4,8 @@ import autobind from 'react-autobind';
 import SurveyPageView from './SurveyPageView';
 import surveyList from '../../constants/SurveyQuestions';
 import surveyResponse from '../../constants/SurveyResults';
+import { registerEvent } from '../../api/googleAnalytics';
+import { SURVEY_COMPLETED } from '../../constants/googleAnalytics';
 
 class SurveyPageContainer extends PureComponent {
   constructor(props) {
@@ -44,6 +46,7 @@ class SurveyPageContainer extends PureComponent {
 
   submitResults = () => {
     this.setState({ isLoading: true, surveyComplete: false });
+    registerEvent({ category: SURVEY_COMPLETED });
     const result = this.onCompletion();
     setTimeout(() => {
       this.setState({ isLoading: false, surveyComplete: true, answer: result });
