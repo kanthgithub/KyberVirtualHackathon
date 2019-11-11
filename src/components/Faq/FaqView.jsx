@@ -30,26 +30,31 @@ const FaqView = props => {
             <Card.Body>
               <p>
                 Zap is a smart contract that auto-spreads incoming deposits
-                across multiple DeFi protocols based on pre-set allocations,
-                bypassing many manual steps. You can send ETH to a Zap contract
-                of your choosing and receive allocated tokens. For example,
-                Lender&apos;s Zap allocates incoming deposits 90% to cDai and
-                10% to dLETH2x. Therefore, if you send 1 ETH to this Zap, you
-                will receive 0.9 ETH&apos;s worth of cDai and place a 2X margin
-                trade with 0.1 ETH on Fulcrum (giving you exposure to 0.2 ETH).
-                Lender&apos;s Zap is interesting because, within a year, the
-                interest generated from cDai could completely cover your margin
-                trade purchase.Think of it as trading with your future interest
+                across multiple DeFi protocols based on pre-set allocations in a
+                single transaction, bypassing many manual steps. You can send
+                ETH to a Zap contract of your choosing and receive allocated
+                tokens.{' '}
+              </p>
+              <p>
+                For example, Lender&#39;s Zap allocates incoming deposits 90% to
+                cDai and 10% to dLETH2x. Therefore, if you send 1 ETH to this
+                Zap, you will receive 0.9 ETH&#39;s worth of cDai and place a 2X
+                margin trade with 0.1 ETH on Fulcrum (giving you exposure to 0.2
+                ETH).{' '}
+              </p>
+              <p>
+                Lender Zap is interesting because, within a year, the interest
+                generated from cDai could completely cover your margin trade
+                purchase.Think of it as trading with your future interest
                 earned.{' '}
               </p>
               <p>
-                Lender&apos;s Zap is live on the mainnet and we’ve registered
+                Lender Zap is live on the mainnet and we’ve registered
                 Lender.DefiZap.eth on The Ethereum Name Service so that
-                investing into Compound + Fulcrum is as easy as sending a
-                deposit from your wallet.
+                investing into Compound + Fulcrum is as easy as sending a text.
               </p>
               <p>
-                We&apos;ve also created a &apos;Zap Generator&apos; to help
+                We&#39;ve also created a &#39;Zap Generator&#39; to help
                 end-users filter available Zaps based on their investment goals
                 and risk profile. Users answer a few multiple-choice questions
                 to see which Zap might fit their needs. Some combinations are
@@ -68,13 +73,13 @@ const FaqView = props => {
               <p>
                 Ultimately, we intend to allow our users to be able to create
                 their own Zaps, based on their custom requirements. In the
-                meantime, you can submit a request by{' '}
+                meantime, you can{' '}
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
-                  href="https://github.com/DeFiStrategies/ZapRequests/issues/new"
+                  href="https://defizap.typeform.com/to/UZSZg5"
                 >
-                  creating a new issue on our Github.
+                  submit a request here.
                 </a>
               </p>
             </Card.Body>
@@ -98,7 +103,7 @@ const FaqView = props => {
                 >
                   Compound
                 </a>
-                .{' '}
+                {', '}
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
@@ -106,25 +111,23 @@ const FaqView = props => {
                 >
                   Fulcrum
                 </a>
-                .{' '}
-                <a
-                  href="https://www.tokensets.com/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {' '}
-                  TokenSets
-                </a>{' '}
-                (Coming soon).{' '}
+                {', '}
                 <a
                   href="https://www.synthetix.io/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  {' '}
                   Synthetix
                 </a>
-                . (Coming soon).
+                {', '}
+                <a
+                  href="https://www.tokensets.com/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  TokenSets
+                </a>
+                {' (Coming soon), '}
                 <a
                   href="https://dydx.exchange/"
                   rel="noopener noreferrer"
@@ -133,7 +136,15 @@ const FaqView = props => {
                   {' '}
                   dYdX
                 </a>
-                . (Coming soon).
+                {'. (Coming soon), '}
+                <a
+                  href="https://www.pooltogether.us/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Pooltogether
+                </a>
+                {' (Coming soon).'}
               </p>
             </Card.Body>
           </Accordion.Collapse>
@@ -145,19 +156,18 @@ const FaqView = props => {
           <Accordion.Collapse eventKey="3">
             <Card.Body>
               <p>
-                DeFiZap does not charge any fees for investing through Zaps and
-                all smart contract code is open sourced.
+                DeFiZap does not charge any fees for using Zaps and all smart
+                contract code is available for review on our Github. In many
+                cases, accessing DeFi protocols through DeFiZap costs less than
+                individually transacting on each one to attain the same
+                end-result.{' '}
               </p>
               <p>
-                Furthermore, accessing DeFi protocols through Zaps costs less
-                gas than individually transacting on each one to accomplish the
-                same result. For example, going from ETH to cDai on Compound and
-                ETH to LONG2xBZX on Fulcrum will end up costing you ~$3-$5 in
-                gas fees.
-              </p>
-              <p>
-                Lender&apos;s Zap helps you accomplish ETH to cDai + LONG2xBZX
-                in one transaction, for ~$0.86-$1.76.
+                For example, going from ETH to cDai on Compound and ETH to
+                dLETH2x on Fulcrum will end up costing you ~$2-3 in transaction
+                fees with at least 4 Metamask interactions. Lender Zap helps you
+                accomplish ETH to cDai + dLETH2x in one transaction, for
+                ~$0.86-$1.76.{' '}
               </p>
             </Card.Body>
           </Accordion.Collapse>
@@ -168,7 +178,7 @@ const FaqView = props => {
           </AccordionToggle>
           <Accordion.Collapse eventKey="4">
             <Card.Body>
-              <p>-Launch a simple DeFiZap Dashboard UI.</p>
+              <p>-Launch a simple DeFi Zap Dashboard UI.</p>
               <p>
                 -We are starting with ETH only deposits but will soon integrate
                 Wyre to enable deploying capital into DeFi straight from your
@@ -197,13 +207,11 @@ const FaqView = props => {
           size="lg"
           href="https://defizap.typeform.com/to/UZSZg5"
           type="link"
+          onClick={() =>
+            registerEvent({ category: GENERATE_ZAP, action: FAQ_PAGE })
+          }
           className="mx-3"
           block
-          onClick={() =>
-            registerEvent({
-              category: GENERATE_ZAP,
-              action: FAQ_PAGE
-            })}
         >
           Don&apos;t see your Zap? Submit a request and we will create one!
         </Button>

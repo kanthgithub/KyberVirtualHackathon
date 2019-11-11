@@ -154,9 +154,9 @@ class ZapFullView extends Component {
                         {' '}
                         In the meantime, check out{' '}
                         <a href="/zaps/lender"> Lender</a>,{' '}
-                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a> or
-                        <a href="/zaps/moderatebull"> Moderate Bull</a> or
-                        <a href="/zaps/doublebull"> Double Bull</a>.
+                        <a href="/zaps/moderatebull"> Moderate Bull</a>,{' '}
+                        <a href="/zaps/doublebull"> Double Bull</a> or
+                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
                       </h4>
                     </div>
                   </div>
