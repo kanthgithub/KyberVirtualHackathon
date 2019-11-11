@@ -7,10 +7,9 @@ import web3 from '../../web3/web3';
 import ETHMAXIMALIST_ABI from '../../web3/EthMaximalistABI';
 import { ETHMAXIMALIST_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
+import { registerEvent } from '../../api/googleAnalytics';
+import { BUY_ZAP, INITIATE_PURCHASE } from '../../constants/googleAnalytics';
 
-/**
- * THIS FILE IS NO LONGER BEING USED ANYWHERE.
- */
 class ETHMAXIMALISTBuyButton extends React.Component {
   constructor(props) {
     super(props);
@@ -46,6 +45,10 @@ class ETHMAXIMALISTBuyButton extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    registerEvent({
+      category: INITIATE_PURCHASE,
+      action: this.props.name
+    });
     const { value, account } = this.state;
     await this.getGas();
     const contract = new web3.eth.Contract(
@@ -153,11 +156,17 @@ class ETHMAXIMALISTBuyButton extends React.Component {
   }
 
   render() {
-    const { isOrderable } = this.props;
+    const { isOrderable, name } = this.props;
     return (
       <>
         <Button
-          onClick={() => this.setState({ open: true })}
+          onClick={() => {
+            this.setState({ open: true });
+            registerEvent({
+              category: BUY_ZAP,
+              action: name
+            });
+          }}
           disabled={!isOrderable}
           variant="outline-success"
           size="lg"

@@ -6,6 +6,11 @@ import Row from 'react-bootstrap/Row';
 
 import '../../App.css';
 import heroimg from '../../assets/hero.svg';
+import { registerEvent } from '../../api/googleAnalytics';
+import {
+  USER_INITIATED_SURVEY,
+  VIA_GET_START_BUTTON
+} from '../../constants/googleAnalytics';
 
 const Hero = () => (
   <Container className="tempHeroContainer">
@@ -25,6 +30,13 @@ const Hero = () => (
         </Row>
         <Row>
           <Button
+            onClick={() =>
+              registerEvent({
+                category: USER_INITIATED_SURVEY,
+                action: VIA_GET_START_BUTTON,
+                label: '',
+                value: 1
+              })}
             variant="primary"
             href="/survey"
             className="shadow lift mr-1 my-2 py-3 font20 px-4"
