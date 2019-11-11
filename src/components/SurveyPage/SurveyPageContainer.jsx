@@ -46,7 +46,10 @@ class SurveyPageContainer extends PureComponent {
 
   submitResults = () => {
     this.setState({ isLoading: true, surveyComplete: false });
-    registerEvent({ category: SURVEY_COMPLETED });
+    registerEvent({
+      category: SURVEY_COMPLETED,
+      action: 'User clicked on Get Results.'
+    });
     const result = this.onCompletion();
     setTimeout(() => {
       this.setState({ isLoading: false, surveyComplete: true, answer: result });
