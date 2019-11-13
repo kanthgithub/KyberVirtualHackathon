@@ -55,6 +55,16 @@ const NavigationBar = props => {
             </Navbar.Text>
             <Navbar.Text>
               <Button
+                href="https://defitutorials.com/"
+                variant="link"
+                target="_blank"
+                className={styles.anchorSpacing}
+              >
+                Tutorials
+              </Button>
+            </Navbar.Text>
+            <Navbar.Text>
+              <Button
                 href="https://t.me/defizap"
                 variant="link"
                 target="_blank"

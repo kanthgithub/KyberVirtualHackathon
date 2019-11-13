@@ -8,6 +8,11 @@ import ZapFullView from './ZapFullView';
 import NavigationBar from '../NavigationBar';
 
 import '../../App.css';
+import {
+  INDIVIDUAL_ZAP_PAGE,
+  GENERATE_ZAP
+} from '../../constants/googleAnalytics';
+import { registerEvent } from '../../api/googleAnalytics';
 
 const ZapsView = props => {
   const {
@@ -33,6 +38,12 @@ const ZapsView = props => {
             size="lg"
             href="https://defizap.typeform.com/to/UZSZg5"
             type="link"
+            onClick={() =>
+              registerEvent({
+                category: GENERATE_ZAP,
+                action: INDIVIDUAL_ZAP_PAGE
+              })
+            }
           >
             Don&apos;t see your Zap? Submit a request and we will create one!
           </Button>

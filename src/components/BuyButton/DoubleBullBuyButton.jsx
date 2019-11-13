@@ -4,13 +4,13 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
-import ETHMAXIMALIST_ABI from '../../web3/EthMaximalistABI';
-import { ETHMAXIMALIST_CONTRACT_ADDRESS } from '../../web3/address';
+import SHORT_TERM_BULL_ABI from '../../web3/shortTermBullAbi';
+import { SHORT_TERM_BULL_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
 import { registerEvent } from '../../api/googleAnalytics';
 import { BUY_ZAP, INITIATE_PURCHASE } from '../../constants/googleAnalytics';
 
-class ETHMAXIMALISTBuyButton extends React.Component {
+class DoubleBullBuyButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,8 @@ class ETHMAXIMALISTBuyButton extends React.Component {
     const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
     const response = await res.json();
     const avgGasGwei = (response.average / 10) * 1000000000;
-    await this.setState({ gasValue: avgGasGwei });
+    // console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
+    this.setState({ gasValue: avgGasGwei });
   }
 
   handleChange = event => {
@@ -44,23 +45,23 @@ class ETHMAXIMALISTBuyButton extends React.Component {
   };
 
   handleSubmit = async event => {
+    const { value, account } = this.state;
     event.preventDefault();
     registerEvent({
       category: INITIATE_PURCHASE,
       action: this.props.name
     });
-    const { value, account } = this.state;
     await this.getGas();
-    const contract = new web3.eth.Contract(
-      ETHMAXIMALIST_ABI,
-      ETHMAXIMALIST_CONTRACT_ADDRESS
-    );
     const valueToInvest = value;
+    const contract = new web3.eth.Contract(
+      SHORT_TERM_BULL_ABI,
+      SHORT_TERM_BULL_CONTRACT_ADDRESS
+    );
     this.setState({ showLoader: true });
     let tx;
     try {
       tx = await contract.methods
-        .ETHMaximalistZAP()
+        .LetsInvest()
         .send({
           from: account,
           value: web3.utils.toWei(valueToInvest, 'ether'),
@@ -69,7 +70,7 @@ class ETHMAXIMALISTBuyButton extends React.Component {
         })
         .on('receipt', receipt => {
           console.log(
-            'the tx hash of the ETHMaximalistZAP function is',
+            'the tx hash of the Double Bull Buy function is',
             receipt.transactionHash
           );
           this.setState({
@@ -180,4 +181,4 @@ class ETHMAXIMALISTBuyButton extends React.Component {
   }
 }
 
-export default ETHMAXIMALISTBuyButton;
+export default DoubleBullBuyButton;

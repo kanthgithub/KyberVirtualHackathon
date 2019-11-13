@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
-import { CONTRACT_ABI } from '../../web3/abi';
-import { LENDER_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
+import contractProvider from '../../utils/web3DataProvider';
+import { registerEvent } from '../../api/googleAnalytics';
+import { BUY_ZAP, INITIATE_PURCHASE } from '../../constants/googleAnalytics';
 
 class LenderBuyButton extends React.Component {
   constructor(props) {
@@ -43,12 +44,14 @@ class LenderBuyButton extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    registerEvent({
+      category: INITIATE_PURCHASE,
+      action: this.props.name
+    });
     await this.getGas();
+    const { contractAbi, contractAddress } = contractProvider(this.props.name);
     const valueToInvest = this.state.value;
-    const contract = new web3.eth.Contract(
-      CONTRACT_ABI,
-      LENDER_CONTRACT_ADDRESS
-    );
+    const contract = new web3.eth.Contract(contractAbi, contractAddress);
     this.setState({ showLoader: true });
     let tx;
     try {
@@ -57,12 +60,12 @@ class LenderBuyButton extends React.Component {
         .send({
           from: this.state.account,
           value: web3.utils.toWei(valueToInvest, 'ether'),
-          gas: 4500000,
+          gas: 5000000,
           gasPrice: String(this.state.gasValue)
         })
         .on('receipt', receipt => {
           console.log(
-            'the tx hash of the SafeNotSorryZapInvestment function is',
+            'the tx hash of the sendInvestment function is',
             receipt.transactionHash
           );
           this.setState({
@@ -83,7 +86,6 @@ class LenderBuyButton extends React.Component {
   async initialize() {
     try {
       const [account] = await window.ethereum.enable();
-
       this.setState({
         account
       });
@@ -145,12 +147,18 @@ class LenderBuyButton extends React.Component {
   }
 
   render() {
-    const { isOrderable } = this.props;
+    const { isOrderable, name } = this.props;
     return (
       <div>
         {isOrderable ? (
           <Button
-            onClick={() => this.setState({ open: true })}
+            onClick={() => {
+              this.setState({ open: true });
+              registerEvent({
+                category: BUY_ZAP,
+                action: name
+              });
+            }}
             disabled={!isOrderable}
             variant="outline-success"
             size="lg"

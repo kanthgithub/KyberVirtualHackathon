@@ -1,4 +1,49 @@
 const AVAILABLE_ZAPS = {
+  lender: {
+    id: 'lender',
+    name: 'Lender',
+    isOrderable: true,
+    components: [
+      {
+        name: 'cDai',
+        percent: 90
+      },
+      {
+        name: 'dLETH2x',
+        percent: 10
+      }
+    ]
+  },
+  moderateBull: {
+    id: 'moderatebull',
+    name: 'Moderate Bull',
+    isOrderable: true,
+    components: [
+      {
+        name: 'sETH',
+        percent: 50
+      },
+      {
+        name: 'sBTC',
+        percent: 50
+      }
+    ]
+  },
+  doublebull: {
+    id: 'doublebull',
+    name: 'Double Bull',
+    isOrderable: true,
+    components: [
+      {
+        name: 'dLETH2x',
+        percent: 50
+      },
+      {
+        name: 'dLWBTC2x',
+        percent: 50
+      }
+    ]
+  },
   ETHMaximalist: {
     id: 'ETHMaximalist',
     name: 'ETH Maximalist',
@@ -12,21 +57,6 @@ const AVAILABLE_ZAPS = {
       {
         name: 'dsWBTC',
         percent: 50
-      }
-    ]
-  },
-  lender: {
-    id: 'lender',
-    name: 'Lender',
-    isOrderable: true,
-    components: [
-      {
-        name: 'cDai',
-        percent: 90
-      },
-      {
-        name: 'dLETH2x',
-        percent: 10
       }
     ]
   }

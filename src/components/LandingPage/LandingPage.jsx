@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 
 import NavigationBar from '../NavigationBar';
 import WhyUseDeFiZap from './WhyUseDeFiZap';
-import HowItWorks from './HowItWorks';
+// import HowItWorks from './HowItWorks';
 import AvailableZaps from './AvailableZapsView';
 import Hero from './Hero';
 import FAQView from '../Faq/FaqView';
@@ -14,7 +14,7 @@ const LandingPage = () => (
     <NavigationBar isLandingPage />
     <Hero />
     <WhyUseDeFiZap />
-    <HowItWorks />
+    {/* <HowItWorks /> */}
     <AvailableZaps />
     <Container>
       <h4 className="pt-1 pb-1 text-center">Frequently Asked Questions</h4>

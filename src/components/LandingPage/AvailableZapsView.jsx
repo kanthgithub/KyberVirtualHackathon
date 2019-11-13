@@ -8,19 +8,19 @@ import ZapCardsView from '../ZapCards/ZapCardsView';
 
 const AvailableZapsView = () => (
   <Container>
-    <Row className="justify-content-md-center" style={{ marginBottom: '60px' }}>
+    <Row className="justify-content-md-center mb-2">
       <h2>Available Zaps</h2>
     </Row>
     <Row>
       {Object.values(AvailableZaps).map(zap => (
-        <div key={zap.id} className="col-md-6 col-lg-6">
+        <div key={zap.id} className="col-sm-3 col-md-3 col-lg-3">
           <ZapCardsView basketData={zap} />
         </div>
       ))}
       <div className="container">
         <div className="row justify-content-center my-4">
           <div className="col-12 col-md-12 col-lg-12 text-center">
-            <Button variant="outline-dark" href="/zaps" size="lg">
+            <Button variant="info" href="/zaps" size="lg" block>
               View All Zaps
             </Button>
           </div>
