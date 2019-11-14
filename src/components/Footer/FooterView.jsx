@@ -7,38 +7,37 @@ import synthetix from '../../assets/FooterIcons/synthetix.svg';
 import bzx from '../../assets/FooterIcons/bzx.svg';
 import compound from '../../assets/FooterIcons/compound.svg';
 import kyber from '../../assets/FooterIcons/kyber.svg';
-import tokensets from '../../assets/FooterIcons/tokensets.svg';
+import tokensets from '../../assets/FooterIcons/set-logo-color.svg';
 
 const FooterView = () => (
-  <Row className="pt-1 mt-1 text-center justify-content-center bg-light">
-    {/** Can't seem to align this powered by text, needs work. */}
-    {/* <Row className="text-muted justify-content-center text-center"> */}
-    {/* Powered By */}
-    {/* </Row> */}
-    <Row>
+  <>
+    <Row className="font-weight-bold justify-content-center">Built on</Row>
+    <Row className="pt-0 mt-0 text-center justify-content-center mb-4">
       <Col sm md lg className="p-1 m-1">
-        <img src={ethereum} className="img-fluid" width="250px" alt="ethereum" />
+        <img src={ethereum} width="200px" alt="ethereum" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={compound} className="img-fluid" width="150px" alt="compound" />
-      </Col>
-      {/** TOKENSETS currently has a white background, so it's UGLY. Can't put this in right now.
-        Try on local, the footer currently has a bg-light background so it's not that bad.
-        */}
-      <Col sm md lg className="p-1 m-1">
-        <img src={bzx} className="img-fluid" width="150px" alt="bzx" />
+        <img src={compound} width="200px" alt="compound" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={kyber} className="img-fluid" width="150px" alt="kyber" />
+        <img src={bzx} width="120px" alt="bzx" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={synthetix} className="img-fluid" width="150px" alt="synthetix" />
+        <img src={kyber} width="100px" alt="kyber" />
+      </Col>
+      <Col
+        sm
+        md
+        lg
+        className="py-2 m-1 justify-content-center align-items-center"
+      >
+        <img src={synthetix} width="200px" alt="synthetix" />
       </Col>
       <Col sm md lg className="p-1 m-1">
-        <img src={tokensets} className="img-fluid" width="150px" alt="tokensets" />
+        <img src={tokensets} width="100px" alt="tokensets" />
       </Col>
     </Row>
-  </Row>
+  </>
 );
 
 export default FooterView;

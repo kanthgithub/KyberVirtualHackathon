@@ -23,10 +23,6 @@ class ModerateBullBuyButton extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.initialize();
-  }
-
   async getGas() {
     const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
     const response = await res.json();
@@ -44,49 +40,59 @@ class ModerateBullBuyButton extends React.Component {
   };
 
   handleSubmit = async event => {
-    const { value, account } = this.state;
+    event.preventDefault();
     registerEvent({
       category: INITIATE_PURCHASE,
       action: this.props.name
     });
-    event.preventDefault();
+    await this.initialize();
+    const networkId = await web3.eth.net.getId();
     await this.getGas();
-    const valueToInvest = value;
-    const contract = new web3.eth.Contract(
-      MODERATE_BULL_ABI,
-      MODERATE_BULL_CONTRACT_ADDRESS
-    );
-    this.setState({ showLoader: true });
-    let tx;
-    try {
-      tx = await contract.methods
-        .LetsInvest()
-        .send({
-          from: account,
-          value: web3.utils.toWei(valueToInvest, 'ether'),
-          gas: 1000000,
-          gasPrice: '1000000000'
-        })
-        .on('receipt', receipt => {
-          console.log(
-            'the tx hash of the ETHMaximalistZAP function is',
-            receipt.transactionHash
-          );
-          this.setState({
-            depositTxHash: receipt.transactionHash,
-            showLoader: false
+    if (networkId !== 1) {
+      alert(
+        'Sorry, you need to be on the Ethereum MainNet to use our services.'
+      );
+    } else {
+      const { value, account } = this.state;
+      const valueToInvest = value;
+      const contract = new web3.eth.Contract(
+        MODERATE_BULL_ABI,
+        MODERATE_BULL_CONTRACT_ADDRESS
+      );
+      this.setState({ showLoader: true });
+      let tx;
+      try {
+        tx = await contract.methods
+          .LetsInvest()
+          .send({
+            from: account,
+            value: web3.utils.toWei(valueToInvest, 'ether'),
+            gas: 1000000,
+            gasPrice: '1000000000'
+          })
+          .on('receipt', receipt => {
+            console.log(
+              'the tx hash of the ETHMaximalistZAP function is',
+              receipt.transactionHash
+            );
+            this.setState({
+              depositTxHash: receipt.transactionHash,
+              showLoader: false
+            });
+          })
+          .on('error', error => {
+            alert(
+              'Sorry, we encountered an error, please try again or reach out to us if this persists.'
+            );
+            this.setState({ showLoader: false });
           });
-        })
-        .on('error', error => {
-          alert(error);
-          this.setState({ showLoader: false });
-        });
-    } catch (error) {
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      }
       // eslint-disable-next-line no-console
-      console.log(error);
+      console.log(tx);
     }
-    // eslint-disable-next-line no-console
-    console.log(tx);
   };
 
   async initialize() {
