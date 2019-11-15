@@ -1,33 +1,40 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import AvailableZaps from '../../constants/AvailableZaps';
+import Zaps from '../../constants/Zaps';
 import ZapCardsView from '../ZapCards/ZapCardsView';
 
+const calculateNumberOfSlides = () => {
+  if (window.innerWidth < 800) return 1;
+  if (window.innerWidth < 1000) return 2;
+  return 3;
+};
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: calculateNumberOfSlides(),
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  centerMode: true
+};
+
 const AvailableZapsView = () => (
-  <Container>
-    <Row className="justify-content-center mb-2">
-      <h2>Available Zaps</h2>
-    </Row>
-    <Row>
-      {Object.values(AvailableZaps).map(zap => (
-        <div key={zap.id} className="col-sm-3 col-md-3 col-lg-3">
-          <ZapCardsView basketData={zap} />
-        </div>
-      ))}
-      <div className="container">
-        <div className="row justify-content-center my-4 mx-0">
-          <div className="col-12 col-md-12 col-lg-12 text-center">
-            <Button variant="info" href="/zaps" size="lg" block>
-              View All Zaps
-            </Button>
+  <Container className="my-4 py-4">
+    <Slider {...settings}>
+      {Object.values(Zaps)
+        .filter(zap => zap.isOrderable === true)
+        .map(zap => (
+          <div key={zap.id} className="mx-2 px-2">
+            <ZapCardsView basketData={zap} />
           </div>
-        </div>
-      </div>
-    </Row>
-    <br />
+        ))}
+    </Slider>
   </Container>
 );
 
