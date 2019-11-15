@@ -1,13 +1,22 @@
 import React from 'react';
 import { Modal, ModalBody } from 'reactstrap';
 import Button from 'react-bootstrap/Button';
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import Row from 'react-bootstrap/Row';
+import Web3 from 'web3';
+import isEmpty from 'lodash/isEmpty';
 
 import '../../App.css';
-import web3 from '../../web3/web3';
 import Loading from '../Loading';
 import contractProvider from '../../utils/web3DataProvider';
 import { registerEvent } from '../../api/googleAnalytics';
 import { BUY_ZAP, INITIATE_PURCHASE } from '../../constants/googleAnalytics';
+import {
+  fetchRequest,
+  buildOptions,
+  checkResponse
+} from '../../api/apiHelpers';
 
 class LenderBuyButton extends React.Component {
   constructor(props) {
@@ -17,17 +26,20 @@ class LenderBuyButton extends React.Component {
       value: '',
       account: null,
       showLoader: false,
+      gasMode: 'average',
       errorMessage: '',
       depositTxHash: ''
     };
   }
 
   async getGas() {
-    const res = await fetch('https://ethgasstation.info/json/ethgasAPI.json');
-    const response = await res.json();
-    const avgGasGwei = (response.average / 10) * 1000000000;
-    console.log(`the Gas from the gas module2 is ${avgGasGwei}`);
-    this.setState({ gasValue: avgGasGwei });
+    const response = await fetchRequest(
+      'https://ethgasstation.info/json/ethgasAPI.json',
+      () => buildOptions()
+    ).then(checkResponse('Failed to get gas from Gas Station'));
+    const { gasMode } = this.state;
+    const gasValue = (response[`${gasMode}`] / 10) * 1000000000;
+    this.setState({ gasValue });
   }
 
   handleChange = event => {
@@ -45,6 +57,14 @@ class LenderBuyButton extends React.Component {
       action: this.props.name
     });
     await this.initialize();
+    let web3;
+    if (
+      typeof window.ethereum !== 'undefined' ||
+      typeof window.web3 !== 'undefined'
+    ) {
+      const provider = window.ethereum || window.web3.currentProvider;
+      web3 = new Web3(provider);
+    }
     const networkId = await web3.eth.net.getId();
     await this.getGas();
     if (networkId !== 1) {
@@ -52,7 +72,7 @@ class LenderBuyButton extends React.Component {
         'Sorry, you need to be on the Ethereum MainNet to use our services.'
       );
     } else {
-      const { contractAbi, contractAddress } = contractProvider(
+      const { contractAbi, contractAddress, gas, gasPrice } = contractProvider(
         this.props.name
       );
       const valueToInvest = this.state.value;
@@ -60,14 +80,19 @@ class LenderBuyButton extends React.Component {
       this.setState({ showLoader: true });
       let tx;
       try {
-        tx = await contract.methods
-          .SafeNotSorryZapInvestment()
-          .send({
-            from: this.state.account,
-            value: web3.utils.toWei(valueToInvest, 'ether'),
-            gas: 5000000,
-            gasPrice: String(this.state.gasValue)
-          })
+        if (this.props.name === 'Lender') {
+          tx = await contract.methods.SafeNotSorryZapInvestment();
+        } else if (this.props.name === 'ETH Maximalist') {
+          tx = await contract.methods.ETHMaximalistZAP();
+        } else {
+          tx = await contract.methods.LetsInvest();
+        }
+        tx.send({
+          from: this.state.account,
+          value: web3.utils.toWei(valueToInvest, 'ether'),
+          gas,
+          gasPrice: isEmpty(gasPrice) ? String(this.state.gasValue) : gasPrice
+        })
           .on('receipt', receipt => {
             console.log(
               'the tx hash of the sendInvestment function is',
@@ -91,18 +116,17 @@ class LenderBuyButton extends React.Component {
     }
   };
 
+  setGasMode = async gasMode => {
+    await this.setState({ gasMode });
+  };
+
   async initialize() {
     try {
       const [account] = await window.ethereum.enable();
-      this.setState({
-        account
-      });
+      this.setState({ account });
     } catch (error) {
       console.error(error);
-      this.setState({
-        errorMessage:
-          'Error connecting to MetaMask! Please try reloading the page...'
-      });
+      alert('You will need to connect web3 wallet');
     }
   }
 
@@ -126,22 +150,57 @@ class LenderBuyButton extends React.Component {
                   style={
                     value && value.length > 3
                       ? {
-                          width: `${70 + value.length * 10}px`
+                          width: `${80 + value.length * 20}px`
                         }
-                      : {}
+                      : {
+                          width: '80px'
+                        }
                   }
                 />
                 <p className="buytext pt-4 ml-2">ETH</p>
               </div>
+              <Row className="justify-content-center py-3">
+                Select Transaction Speed:{' '}
+              </Row>
+              <Row className="justify-content-center py-2">
+                <ToggleButtonGroup
+                  type="radio"
+                  name="gasOptions"
+                  value={this.state.gasMode}
+                  onChange={this.setGasMode}
+                >
+                  <ToggleButton
+                    variant="outline-success"
+                    size="lg"
+                    value="average"
+                  >
+                    Slow
+                  </ToggleButton>
+                  <ToggleButton
+                    variant="outline-success"
+                    size="lg"
+                    value="fast"
+                  >
+                    Average
+                  </ToggleButton>
+                  <ToggleButton
+                    size="lg"
+                    value="fastest"
+                    variant="outline-success"
+                  >
+                    Fast
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </Row>
             </div>
             <div className="my-4 row justify-content-center">
               <input
                 type="submit"
-                className="font20 mx-3 btn btn-dark btn-large shadow px-4 py-2 "
-                value="Buy"
+                className="font20 mx-3 btn btn-outline-success btn-large shadow px-4 py-2"
+                value="Confirm"
               />
               <div
-                className="font20 btn btn-outline-dark btn-large shadow px-4 py-2 "
+                className="font20 btn btn-outline-dark btn-large shadow px-4 py-2 mx-3"
                 onClick={this.toggle}
               >
                 Cancel

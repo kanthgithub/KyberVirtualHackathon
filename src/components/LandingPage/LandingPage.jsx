@@ -16,7 +16,7 @@ const LandingPage = () => (
     <AvailableZaps />
     <Footer />
     <Container>
-      <h4 className="pt-1 pb-1 text-center">Frequently Asked Questions</h4>
+      <h2 className="pt-1 pb-1 text-center">Frequently Asked Questions</h2>
     </Container>
     <FAQView />
     <div className="text-center py-1 mb-2">
