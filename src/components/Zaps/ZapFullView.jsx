@@ -110,11 +110,8 @@ class ZapFullView extends Component {
                       </h4>
                       <h4 style={{ color: 'black' }}>
                         {' '}
-                        In the meantime, check out{' '}
-                        <a href="/zaps/lender"> Lender</a>,{' '}
-                        <a href="/zaps/moderatebull"> Moderate Bull</a>,{' '}
-                        <a href="/zaps/doublebull"> Double Bull</a> or
-                        <a href="zaps/ETHMaximalist"> ETH Maximalist</a>.
+                        In the meantime, check out our available Zaps{' '}
+                        <a href="/availablezaps">here</a>.
                       </h4>
                     </div>
                   </div>

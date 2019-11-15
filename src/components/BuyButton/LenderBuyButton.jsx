@@ -58,14 +58,15 @@ class LenderBuyButton extends React.Component {
     });
     await this.initialize();
     let web3;
+    let networkId;
     if (
       typeof window.ethereum !== 'undefined' ||
       typeof window.web3 !== 'undefined'
     ) {
       const provider = window.ethereum || window.web3.currentProvider;
       web3 = new Web3(provider);
+      networkId = await web3.eth.net.getId();
     }
-    const networkId = await web3.eth.net.getId();
     await this.getGas();
     if (networkId !== 1) {
       alert(
@@ -129,11 +130,7 @@ class LenderBuyButton extends React.Component {
       });
     } catch (error) {
       console.error(error);
-      this.setState({
-        errorMessage:
-          'Error connecting to MetaMask! Please try reloading the page...'
-      });
-      alert('Error ', this.state.errorMessage);
+      alert('You will need to connect web3 wallet');
     }
   }
 
@@ -157,9 +154,11 @@ class LenderBuyButton extends React.Component {
                   style={
                     value && value.length > 3
                       ? {
-                          width: `${70 + value.length * 10}px`
+                          width: `${80 + value.length * 20}px`
                         }
-                      : {}
+                      : {
+                          width: '80px'
+                        }
                   }
                 />
                 <p className="buytext pt-4 ml-2">ETH</p>
