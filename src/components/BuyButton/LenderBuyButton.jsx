@@ -58,15 +58,14 @@ class LenderBuyButton extends React.Component {
     });
     await this.initialize();
     let web3;
-    let networkId;
     if (
       typeof window.ethereum !== 'undefined' ||
       typeof window.web3 !== 'undefined'
     ) {
       const provider = window.ethereum || window.web3.currentProvider;
       web3 = new Web3(provider);
-      networkId = await web3.eth.net.getId();
     }
+    const networkId = await web3.eth.net.getId();
     await this.getGas();
     if (networkId !== 1) {
       alert(
@@ -123,11 +122,8 @@ class LenderBuyButton extends React.Component {
 
   async initialize() {
     try {
-      await window.ethereum.enable();
-      const account = window.web3.eth.defaultAccount;
-      this.setState({
-        account
-      });
+      const [account] = await window.ethereum.enable();
+      this.setState({ account });
     } catch (error) {
       console.error(error);
       alert('You will need to connect web3 wallet');

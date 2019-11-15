@@ -165,7 +165,7 @@ const Zaps = {
         '- 0.5 of your ETH will be converted to cDAI.',
         '- 0.5 of your ETH will be converted to iDAI.',
         'After sending your deposit, you will immediately receive allocated tokens.',
-        "Soon you will be able to manage these tokens right from DeFiZap Dashboard but for now you can visit Compound + Fulcrum to see how much intrest you've earned or make a withdrawal."
+        "Soon you will be able to manage these tokens right from DeFiZap Dashboard but for now you can visit Compound + Fulcrum to see how much interest you've earned or make a withdrawal."
       ],
       textLink: [
         {
@@ -180,7 +180,7 @@ const Zaps = {
         }
       ],
       tutorialLink:
-        'https://defitutorials.substack.com/p/lender-zap-walk-through-tutorial'
+        'https://defitutorials.substack.com/p/super-saver-defizap-walk-through'
     }
   },
   bullSharpe: {
