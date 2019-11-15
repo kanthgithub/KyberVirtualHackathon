@@ -25,7 +25,8 @@ const settings = {
 };
 
 const AvailableZapsView = () => (
-  <Container className="my-4 py-4">
+  <Container className="my-2 py-4">
+    <h2 className="pt-1 pb-1 text-center">Available Zaps</h2>
     <Slider {...settings}>
       {Object.values(Zaps)
         .filter(zap => zap.isOrderable === true)
