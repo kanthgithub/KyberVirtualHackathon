@@ -1,13 +1,13 @@
 import isEmpty from 'lodash/isEmpty';
 
-function buildHeaders(accept = 'application/json') {
+const buildHeaders = (accept = 'application/json') => {
   return new Headers({
     Accept: accept
   });
-}
+};
 
 // A Helper function to automagically chain promises together with some nice checkResponse syntax to handle errors.
-export function checkResponse(serviceComment) {
+export const checkResponse = serviceComment => {
   return res => {
     if (res.ok) {
       if (res.status === 204) {
@@ -26,9 +26,9 @@ export function checkResponse(serviceComment) {
     console.log('res ', res);
     throw new Error(`Error fetching ${serviceComment}`, res);
   };
-}
+};
 
-export function buildOptions(method = 'GET', body, ignoreCache = false) {
+export const buildOptions = (method = 'GET', body, ignoreCache = false) => {
   const headers = buildHeaders('application/json');
 
   if (['POST', 'PUT', 'PATCH', 'DELETE'].indexOf(method.toUpperCase()) !== -1) {
@@ -46,8 +46,8 @@ export function buildOptions(method = 'GET', body, ignoreCache = false) {
     options.cache = 'no-store';
   }
   return options;
-}
+};
 
-export function fetchRequest(endpoint, buildoption) {
+export const fetchRequest = (endpoint, buildoption) => {
   return fetch(endpoint, buildoption());
-}
+};
