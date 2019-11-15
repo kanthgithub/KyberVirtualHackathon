@@ -208,9 +208,8 @@ const FaqView = props => {
           href="https://defizap.typeform.com/to/UZSZg5"
           type="link"
           onClick={() =>
-            registerEvent({ category: GENERATE_ZAP, action: FAQ_PAGE })
-          }
-          className="mx-3"
+            registerEvent({ category: GENERATE_ZAP, action: FAQ_PAGE })}
+          className="mx-3 pb-3"
           block
         >
           Don&apos;t see your Zap? Submit a request and we will create one!

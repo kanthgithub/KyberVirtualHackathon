@@ -9,7 +9,7 @@ import NonCustodial from '../../assets/non-custodial.svg';
 
 const WhyUseDeFiZap = () => (
   <Container>
-    <Row className="justify-content-center pt-5 pb-3 mb-3">
+    <Row className="justify-content-center pt-5 pb-0">
       <h2>Why Use DeFiZap?</h2>
     </Row>
     <Row className="justify-content-center text-center">
