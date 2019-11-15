@@ -37,14 +37,14 @@ const FaqView = props => {
               </p>
               <p>
                 For example, Lender&#39;s Zap allocates incoming deposits 90% to
-                cDai and 10% to dLETH2x. Therefore, if you send 1 ETH to this
-                Zap, you will receive 0.9 ETH&#39;s worth of cDai and place a 2X
+                cDAI and 10% to dLETH2x. Therefore, if you send 1 ETH to this
+                Zap, you will receive 0.9 ETH&#39;s worth of cDAI and place a 2X
                 margin trade with 0.1 ETH on Fulcrum (giving you exposure to 0.2
                 ETH).{' '}
               </p>
               <p>
                 Lender Zap is interesting because, within a year, the interest
-                generated from cDai could completely cover your margin trade
+                generated from cDAI could completely cover your margin trade
                 purchase.Think of it as trading with your future interest
                 earned.{' '}
               </p>
@@ -163,10 +163,10 @@ const FaqView = props => {
                 end-result.{' '}
               </p>
               <p>
-                For example, going from ETH to cDai on Compound and ETH to
+                For example, going from ETH to cDAI on Compound and ETH to
                 dLETH2x on Fulcrum will end up costing you ~$2-3 in transaction
                 fees with at least 4 Metamask interactions. Lender Zap helps you
-                accomplish ETH to cDai + dLETH2x in one transaction, for
+                accomplish ETH to cDAI + dLETH2x in one transaction, for
                 ~$0.86-$1.76.{' '}
               </p>
             </Card.Body>
@@ -208,7 +208,8 @@ const FaqView = props => {
           href="https://defizap.typeform.com/to/UZSZg5"
           type="link"
           onClick={() =>
-            registerEvent({ category: GENERATE_ZAP, action: FAQ_PAGE })}
+            registerEvent({ category: GENERATE_ZAP, action: FAQ_PAGE })
+          }
           className="mx-3 pb-3"
           block
         >

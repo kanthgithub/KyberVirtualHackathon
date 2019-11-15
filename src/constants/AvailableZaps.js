@@ -5,7 +5,7 @@ const AVAILABLE_ZAPS = {
     isOrderable: true,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 90
       },
       {

@@ -5,7 +5,7 @@ const Zaps = {
     isOrderable: true,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 90
       },
       {
@@ -16,9 +16,9 @@ const Zaps = {
     description: {
       textQuestion: 'What does this Zap do?',
       textAnswer: [
-        'Lender Zap allocates incoming deposits 90% to cDai and 10% to dLETH2x.',
+        'Lender Zap allocates incoming deposits 90% to cDAI and 10% to dLETH2x.',
         'Therefore, if you send 1 ETH to this Lender.DeFiZap.eth, or buy from our website, 0.9 of your worth will go towards investing in Compound.Finance while 0.1 of your ETH will be used to open a Perpetual ETH Long with 2x leverage.',
-        "Lender's Zap is interesting because, within a year, the interest generated from cDai could completely cover your margin trade purchase. Think of it as trading with your future interest earned.",
+        "Lender's Zap is interesting because, within a year, the interest generated from cDAI could completely cover your margin trade purchase. Think of it as trading with your future interest earned.",
         'After sending your ETH, you will immediately receive allocated tokens (cDAI+dLETH2x) which track your DAI lending balance + margin trade position. Once you receive these tokens you can visit Compound.Finance to view/withdraw interest earned and Fulcrum.Trade to view your ROI/ close position on dLETH2x.'
       ],
       textLink: [
@@ -143,13 +143,53 @@ const Zaps = {
         'https://defitutorials.substack.com/p/double-bull-defizap-walk-through'
     }
   },
+  supersaver: {
+    id: 'supersaver',
+    name: 'Super Saver',
+    isOrderable: true,
+    components: [
+      {
+        name: 'cDAI',
+        percent: 50
+      },
+      {
+        name: 'iDAI',
+        percent: 50
+      }
+    ],
+    description: {
+      textQuestion: 'What does SuperSaver Zap do?',
+      textAnswer: [
+        'Your deposit is automatically allocated 50% to cDAI and 50% to iDAI which represent your DAI supply balances on Compound and Fulcrum',
+        'For example, if you send 1 ETH to SuperSaver.DeFiZap.Eth:',
+        '- 0.5 of your ETH will be converted to cDAI.',
+        '- 0.5 of your ETH will be converted to iDAI.',
+        'After sending your deposit, you will immediately receive allocated tokens.',
+        "Soon you will be able to manage these tokens right from DeFiZap Dashboard but for now you can visit Compound + Fulcrum to see how much intrest you've earned or make a withdrawal."
+      ],
+      textLink: [
+        {
+          text: 'Check out this tutorial we made to help you use Fulcrum',
+          hyperlink:
+            'https://defitutorials.substack.com/p/margin-trading-with-fulcrum'
+        },
+        {
+          text: 'Compound.',
+          hyperlink:
+            'https://defitutorials.substack.com/p/earn-passive-income-with-compound'
+        }
+      ],
+      tutorialLink:
+        'https://defitutorials.substack.com/p/lender-zap-walk-through-tutorial'
+    }
+  },
   bullSharpe: {
     id: 'bullSharpe',
     name: 'Conservative Bull',
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 90
       },
       {
@@ -164,7 +204,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 90
       },
       {
@@ -179,7 +219,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 50
       },
       {
@@ -198,7 +238,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 50
       },
       {
@@ -217,7 +257,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 20
       },
       {
@@ -236,7 +276,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 20
       },
       {
@@ -274,7 +314,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 25
       },
       {
@@ -297,7 +337,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 25
       },
       {
@@ -316,7 +356,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 50
       },
       {
@@ -350,7 +390,7 @@ const Zaps = {
     isOrderable: false,
     components: [
       {
-        name: 'cDai',
+        name: 'cDAI',
         percent: 50
       },
       {

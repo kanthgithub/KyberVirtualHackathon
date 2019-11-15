@@ -14,10 +14,10 @@ const surveyResults = {
         notSure: 'lender'
       },
       longTerm: {
-        bull: 'lender',
-        bear: 'lender',
-        flat: 'lender',
-        notSure: 'lender'
+        bull: 'supersaver',
+        bear: 'supersaver',
+        flat: 'supersaver',
+        notSure: 'supersaver'
       }
     },
     expert: {
@@ -36,8 +36,8 @@ const surveyResults = {
       longTerm: {
         bull: 'bullSharpe',
         bear: 'bearSharpe',
-        flat: 'lender',
-        notSure: 'lender'
+        flat: 'supersaver',
+        notSure: 'supersaver'
       }
     },
     advanced: {
@@ -56,8 +56,8 @@ const surveyResults = {
       longTerm: {
         bull: 'bullSharpe',
         bear: 'bearSharpe',
-        flat: 'lender',
-        notSure: 'lender'
+        flat: 'supersaver',
+        notSure: 'supersaver'
       }
     }
   },
