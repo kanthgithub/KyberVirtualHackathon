@@ -28,12 +28,7 @@ const FooterView = () => (
       <Col sm md lg className="p-1">
         <img src={kyber} width="100px" alt="kyber" />
       </Col>
-      <Col
-        sm
-        md
-        lg
-        className="py-2 m-1 justify-content-center align-items-center"
-      >
+      <Col sm md lg className="py-2 m-1">
         <img src={synthetix} width="200px" alt="synthetix" />
       </Col>
       <Col sm md lg className="p-1">
