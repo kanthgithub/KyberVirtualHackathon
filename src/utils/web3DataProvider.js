@@ -6,7 +6,7 @@ import {
 } from '../web3/address';
 
 import LENDER_ABI from '../web3/abi';
-import ETHMAXIMALIST_ABI from '../web3/EthMaximalistAbi';
+import ETHMAXIMALIST_ABI from '../web3/ethmaxAbi';
 import SHORTTERMBULL_ABI from '../web3/DoubleBullAbi';
 import MODERATE_BULL_ABI from '../web3/moderateBullAbi';
 
