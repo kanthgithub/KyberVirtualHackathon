@@ -13,14 +13,19 @@ const ZapCardsView = props => {
 
   if (!isEmpty(props.basketData)) {
     return (
-      <Card className=" text-center justify-content-center">
+      <Card className="text-center justify-content-center">
         <Card.Body>
-          <Card.Title className="my-4 font30">{name}</Card.Title>
-          <div className="row justify-content-center flex flex-wrap">
-            {components.map(({ ingredientName, percent }) => (
-              <div key={ingredientName}>
+          <div
+            className="font-30 lender mt-0 mb-4 pb-4"
+            style={{ height: '50px' }}
+          >
+            <h3>{name}</h3>
+          </div>
+          <div className="mt-2 row justify-content-center flex flex-wrap">
+            {components.map(({ name, percent }) => (
+              <div key={name}>
                 <PercentageCircle percentage={percent} color="#1314ad" />
-                <h6 className="text-center mt-3">{ingredientName}</h6>
+                <h6 className="text-center mt-3">{name}</h6>
               </div>
             ))}
           </div>

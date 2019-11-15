@@ -9,7 +9,7 @@ import ZapCardsView from '../ZapCards/ZapCardsView';
 
 const calculateNumberOfSlides = () => {
   if (window.innerWidth < 800) return 1;
-  if (window.innerWidth < 1000) return 2;
+  if (window.innerWidth < 1025) return 2;
   return 3;
 };
 
