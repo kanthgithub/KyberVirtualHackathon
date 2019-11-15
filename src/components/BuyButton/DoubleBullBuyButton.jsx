@@ -4,8 +4,8 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
-import SHORT_TERM_BULL_ABI from '../../web3/shortTermBullAbi';
-import { SHORT_TERM_BULL_CONTRACT_ADDRESS } from '../../web3/address';
+import SHORT_TERM_BULL_ABI from '../../web3/DoubleBullAbi';
+import { DOUBLE_BULL_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
 import { registerEvent } from '../../api/googleAnalytics';
 import { BUY_ZAP, INITIATE_PURCHASE } from '../../constants/googleAnalytics';
@@ -58,7 +58,7 @@ class DoubleBullBuyButton extends React.Component {
       const valueToInvest = value;
       const contract = new web3.eth.Contract(
         SHORT_TERM_BULL_ABI,
-        SHORT_TERM_BULL_CONTRACT_ADDRESS
+        DOUBLE_BULL_CONTRACT_ADDRESS
       );
       this.setState({ showLoader: true });
       let tx;

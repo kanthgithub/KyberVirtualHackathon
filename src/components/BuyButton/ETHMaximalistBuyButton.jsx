@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 import '../../App.css';
 import web3 from '../../web3/web3';
-import ETHMAXIMALIST_ABI from '../../web3/EthMaximalistABI';
+import ETHMAXIMALIST_ABI from '../../web3/EthMaximalistAbi';
 import { ETHMAXIMALIST_CONTRACT_ADDRESS } from '../../web3/address';
 import Loading from '../Loading';
 import { registerEvent } from '../../api/googleAnalytics';

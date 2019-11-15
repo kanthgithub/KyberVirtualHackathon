@@ -8,6 +8,7 @@ import bzx from '../../assets/FooterIcons/bzx.svg';
 import compound from '../../assets/FooterIcons/compound.svg';
 import kyber from '../../assets/FooterIcons/kyber.svg';
 import tokensets from '../../assets/FooterIcons/set-logo-color.svg';
+import uniswap from '../../assets/FooterIcons/uniswap.png';
 
 const FooterView = () => (
   <>
@@ -35,6 +36,9 @@ const FooterView = () => (
       </Col>
       <Col sm md lg className="p-1 m-1">
         <img src={tokensets} width="100px" alt="tokensets" />
+      </Col>
+      <Col sm md lg className="p-1 m-1">
+        <img src={uniswap} width="60px" alt="uniswap" />
       </Col>
     </Row>
   </>

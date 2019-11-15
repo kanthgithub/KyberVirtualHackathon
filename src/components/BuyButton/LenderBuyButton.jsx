@@ -1,9 +1,10 @@
 import React from 'react';
 import { Modal, ModalBody } from 'reactstrap';
 import Button from 'react-bootstrap/Button';
+import Web3 from 'web3';
+import isEmpty from 'lodash/isEmpty';
 
 import '../../App.css';
-import web3 from '../../web3/web3';
 import Loading from '../Loading';
 import contractProvider from '../../utils/web3DataProvider';
 import { registerEvent } from '../../api/googleAnalytics';
@@ -18,7 +19,8 @@ class LenderBuyButton extends React.Component {
       account: null,
       showLoader: false,
       errorMessage: '',
-      depositTxHash: ''
+      depositTxHash: '',
+      web3: null
     };
   }
 
@@ -45,6 +47,14 @@ class LenderBuyButton extends React.Component {
       action: this.props.name
     });
     await this.initialize();
+    let web3;
+    if (
+      typeof window.ethereum !== 'undefined' ||
+      typeof window.web3 !== 'undefined'
+    ) {
+      const provider = window.ethereum || window.web3.currentProvider;
+      web3 = new Web3(provider);
+    }
     const networkId = await web3.eth.net.getId();
     await this.getGas();
     if (networkId !== 1) {
@@ -52,7 +62,7 @@ class LenderBuyButton extends React.Component {
         'Sorry, you need to be on the Ethereum MainNet to use our services.'
       );
     } else {
-      const { contractAbi, contractAddress } = contractProvider(
+      const { contractAbi, contractAddress, gas, gasPrice } = contractProvider(
         this.props.name
       );
       const valueToInvest = this.state.value;
@@ -60,14 +70,19 @@ class LenderBuyButton extends React.Component {
       this.setState({ showLoader: true });
       let tx;
       try {
-        tx = await contract.methods
-          .SafeNotSorryZapInvestment()
-          .send({
-            from: this.state.account,
-            value: web3.utils.toWei(valueToInvest, 'ether'),
-            gas: 5000000,
-            gasPrice: String(this.state.gasValue)
-          })
+        if (this.props.name === 'Lender') {
+          tx = await contract.methods.SafeNotSorryZapInvestment();
+        } else if (this.props.name === 'ETH Maximalist') {
+          tx = await contract.methods.ETHMaximalistZAP();
+        } else {
+          tx = await contract.methods.LetsInvest();
+        }
+        tx.send({
+          from: this.state.account,
+          value: web3.utils.toWei(valueToInvest, 'ether'),
+          gas,
+          gasPrice: isEmpty(gasPrice) ? String(this.state.gasValue) : gasPrice
+        })
           .on('receipt', receipt => {
             console.log(
               'the tx hash of the sendInvestment function is',
@@ -93,7 +108,8 @@ class LenderBuyButton extends React.Component {
 
   async initialize() {
     try {
-      const [account] = await window.ethereum.enable();
+      await window.ethereum.enable();
+      const account = window.web3.eth.defaultAccount;
       this.setState({
         account
       });
